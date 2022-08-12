@@ -14,6 +14,9 @@ github-repo: audioblast/acoustic-viz
 ---
 
 # About
+Bioacoustics and ecoacoustics are rapidly advancing multi-disciplinary fields of study that focus on how organisms communicate using sound, and the overall sound of a landscape (the soundscape). Despite the focus on sound, much of the communication of ideas, and even sounds, between researchers is done using graphical representations.
 
-Why this book?
+This should not come as a surprise, the printing press came centuries before the radio as a means for long distance communication, and ink on paper has a permanence that sounds would not achieve for a long time after the invention of writing. The current flourishing of these disciplines is driven as much by the low cost and ease of use of products such as AudioMoth and the decreasing cost of digitial storage and processing as by novel ideas.
+
+Visualizations of acoustic data however are not going away - we are a predominantly visual species, and as ways of summarising acoustic data - or making the ultrasound tangible, they are powerful tools in the hands of the acoustician.
 
