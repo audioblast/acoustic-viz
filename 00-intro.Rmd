@@ -4,5 +4,8 @@
 >
 > `r tufte::quote_footer('--- @schafer1977')`
 
-While Murray Schafer's _Tuning of the World_ [@schafer1977] inspired many soundscape scientists, this view is of an earlier time, where the concept of multiple simultaneous streams of acoustic data being processed by a single individual was still an idea over the horizon. Individual sounds could be isolated and studied (as today they still are by bioacousticians interested in the behaviour of individual species). The scale of many contemporary ecoacoustics projects precludes an individual from listening to every minute that is recorded, this task no longer being delegated to students but machines. 
+While Murray Schafer's _Tuning of the World_ [@schafer1977] inspired many soundscape scientists, this view is of an earlier time, where the concept of multiple simultaneous streams of acoustic data being processed by a single individual was still an idea beyond the horizon. Individual sounds could be isolated and studied (as today they still are by bioacousticians interested in the behaviour of individual species). The scale of many contemporary ecoacoustics projects precludes an individual from listening to every minute that is recorded, the task no longer delegated to students but networks of machines. 
 
+Additionally, it is now useful to distinguish between two concepts that Schafer bought together under the concept of _notation_. Schafer used this term to bring together what is more typically known as notation -- phonetics and musical notation -- alongside visual representations of the physical properties of acoustic waves (amplitude, frequency, etc).
+
+Historically both musical notation and phonemes have been used to describe the songs of various animals, however these methods do not scale to the entirety of the biological soundscape.
