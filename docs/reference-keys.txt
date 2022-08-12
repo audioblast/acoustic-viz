@@ -1,4 +1,3 @@
-about
 intro
 history
 musical
