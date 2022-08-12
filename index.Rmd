@@ -1,6 +1,6 @@
 --- 
 title: "Visualisation for bioacoustics and ecoacoustics"
-author: "John Doe"
+author: "Ed Baker"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
