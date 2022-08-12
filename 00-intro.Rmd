@@ -1,1 +1,5 @@
 # Introduction {#intro}
+
+> "...while we take it for granted that sounds may be described visually, the convention is recent, is by no means universal and, as I will show, is in many ways dangerous and inappropriate."
+>
+> `r tufte::quote_footer('--- R. Murray Schafer')`
