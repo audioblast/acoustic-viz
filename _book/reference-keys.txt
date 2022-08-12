@@ -1,6 +1,0 @@
-about
-intro
-intro-history
-musical
-descriptive
-early-viz

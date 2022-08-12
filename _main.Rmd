@@ -1,0 +1,44 @@
+--- 
+title: "Visualisation for bioacoustics and ecoacoustics"
+author: "John Doe"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+url: https://acoustic-viz.ebaker.me.uk
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  All about acoustic visualisation for bioacoustics and ecoacoustics.
+link-citations: yes
+github-repo: audioblast/acoustic-viz
+---
+
+# About
+
+Why this book?
+
+
+<!--chapter:end:index.Rmd-->
+
+# Introduction {#intro}
+
+## History {#intro-history}
+
+### Musical
+
+### Descriptive
+
+<!--chapter:end:01-intro.Rmd-->
+
+# Early visualisations {#early-viz}
+
+CRTs and print outs.
+
+<!--chapter:end:02-early-viz.Rmd-->
+
+`r if (knitr::is_html_output()) '
+# References {-}
+'`
+
+<!--chapter:end:07-references.Rmd-->
+
