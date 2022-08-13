@@ -1,8 +1,13 @@
 intro
 history
-descriptive-bioacoustics
+descriptive-acoustics
 phonemes-and-onomatopoeia
 musical-notation
+analytic-acoustics
+the-big-three
+amplitude-vs-time
+ampltiude-vs-frequency
+frequency-vs-time
 early-viz
 crts
 print-outs

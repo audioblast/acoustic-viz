@@ -1,8 +1,18 @@
 # History {#history}
 
-## Descriptive bioacoustics
+## Descriptive acoustics
 
 ### Phonemes and onomatopoeia
 
 ### Musical notation
 Typical musical notation shows broad similarities with a typical audio visualisation familiar to all bioacousticians and ecoacousticians - the frequency against time plot. Time proceeds in a strictly linear fashion from left to right, and frequency is represented rising from bottom to top.
+
+## Analytic acoustics
+
+### The 'big-three'
+
+#### Amplitude vs Time
+
+#### Ampltiude vs Frequency
+
+#### Frequency vs Time
