@@ -21,6 +21,7 @@ patterns-of-activity
 diel-plots
 the-types-of-twilight
 diel-plots-1
+alternate-forms
 yearly-plots
 lunar-phases
 interactive-plots

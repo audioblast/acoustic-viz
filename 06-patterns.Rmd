@@ -4,14 +4,21 @@ Lots of organismal activities are tied to the cycles of the day, and particularl
 These plots are created using the SonicScrewdriver package [@sonicscrewdriver] which in turn uses the suncalc package [@suncalc] to perform the required sun and moon position calculations.
 
 ## Diel plots
-The use of the term _diel_ for daily cycles has been contested by @broughton1963 as being an incorrectly formed unnecessary neologism, it sees greater use (according to the online Oxford English Dictionary) than his suggested _nycthemeral_. 
+The use of the term _diel_ for daily cycles has been contested by @broughton1963 as being an incorrectly formed unnecessary neologism, it sees greater use (according to the online Oxford English Dictionary) than his suggested _nycthemeral_.
+
+The design for these plots came from a desire to compare the dawn chorus at various locations around the UK, although they also offer great potential for comparing locations with greater longitudinal and/or latitudinal separation.
 
 ### The Types of Twilight
 
 ### Diel Plots
+
+#### Alternate forms
 
 ## Yearly Plots
 
 ## Lunar Phases
 
 ## Interactive Plots
+These plots can be used to create Shiny apps
+
+* [shiny-diel](https://shiny.ebaker.me.uk/shiny-diel/) is an example that shows diel plots for a number of locations, and can be animated using the play button under the date slider.
