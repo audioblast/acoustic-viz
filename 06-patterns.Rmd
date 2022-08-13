@@ -1,7 +1,10 @@
 # Patterns of activity
 Lots of organismal activities are tied to the cycles of the day, and particularly in temperate zones, cycles of the year. These cycles bring regular fluctuations in light levels, day lengths, temperatures, and a host of other influences. Often these cycles interact, with the dawn chorus peaking in the early daylight hours, and it's timing and intensity fluctuating on a yearly cycle. This chapter looks at visualising these cycles, and additionally the effects of lunar cycles.
 
+These plots are created using the SonicScrewdriver package [@sonicscrewdriver] which in turn uses the suncalc package [@suncalc] to perform the required sun and moon position calculations.
+
 ## Diel plots
+The use of the term _diel_ for daily cycles has been contested by @broughton1963 as being an incorrectly formed unnecessary neologism, it sees greater use (according to the online Oxford English Dictionary) than his suggested _nycthemeral_. 
 
 ### The Types of Twilight
 
@@ -10,3 +13,5 @@ Lots of organismal activities are tied to the cycles of the day, and particularl
 ## Yearly Plots
 
 ## Lunar Phases
+
+## Interactive Plots

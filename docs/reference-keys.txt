@@ -23,5 +23,6 @@ the-types-of-twilight
 diel-plots-1
 yearly-plots
 lunar-phases
+interactive-plots
 the-future
 acknowledgements
