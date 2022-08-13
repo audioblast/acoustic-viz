@@ -18,5 +18,10 @@ zcjs-r
 representing-soundscapes
 false-colour-index-spectrograms
 patterns-of-activity
+diel-plots
+the-types-of-twilight
+diel-plots-1
+yearly-plots
+lunar-phases
 the-future
 acknowledgements
