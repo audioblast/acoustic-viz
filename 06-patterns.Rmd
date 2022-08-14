@@ -7,16 +7,20 @@ These plots are created using the SonicScrewdriver package [@sonicscrewdriver] w
 library(sonicscrewdriver)
 ```
 
-## Daily Cycles
+## Daily Cycles { #daily-cycles }
 The use of the term _diel_ for daily cycles has been contested by @broughton1963 as being an incorrectly formed unnecessary neologism, it sees greater use (according to the online Oxford English Dictionary) than his suggested _nycthemeral_.
 
-The design for these plots came from a desire to compare the dawn chorus at various locations around the UK, although they also offer great potential for comparing locations with greater longitudinal and/or latitudinal separation.
+The design for these plots came from a desire to compare the dawn chorus at various locations around the UK, although they also offer great potential for comparing locations with greater longitudinal and/or latitudinal separation. The plots show the times of day, night, twilight (\@ref(twilight-types)), sunrise, sunset, nadir and solar noon. The day part of the plot shows the altitude (angle of the sun above the horizon) throughout the day, with the maximum value representing the sun being directly overhead.
 
-### The Types of Twilight
+### The Types of Twilight { #twilight-types }
 
+#### Civil Twilight
 
-### Diel Plots
+#### Nautical Twilight
 
+#### Astronomical Twilight
+
+### Diel Plots {#diel-plots }
 
 As the times of the solar day are dependent both on the date and location these must be passed to the `dielPlot()` function.
 

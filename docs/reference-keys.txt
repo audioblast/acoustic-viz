@@ -20,7 +20,7 @@ representing-soundscapes
 false-colour-index-spectrograms
 patterns-of-activity
 daily-cycles
-the-types-of-twilight
+twilight-types
 diel-plots
 alternate-forms
 yearly-cycles
@@ -28,3 +28,6 @@ lunar-cycles
 interactive-plots
 the-future
 acknowledgements
+civil-twilight
+nautical-twilight
+astronomical-twilight
