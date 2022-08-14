@@ -21,6 +21,9 @@ false-colour-index-spectrograms
 patterns-of-activity
 daily-cycles
 twilight-types
+civil-twilight
+nautical-twilight
+astronomical-twilight
 diel-plots
 alternate-forms
 yearly-cycles
@@ -28,6 +31,3 @@ lunar-cycles
 interactive-plots
 the-future
 acknowledgements
-civil-twilight
-nautical-twilight
-astronomical-twilight
