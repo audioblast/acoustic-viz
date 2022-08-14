@@ -1,7 +1,13 @@
 # Patterns of activity
 Lots of organismal activities are tied to the cycles of the day, and particularly in temperate zones, cycles of the year. These cycles bring regular fluctuations in light levels, day lengths, temperatures, and a host of other influences. Often these cycles interact, with the dawn chorus peaking in the early daylight hours, and it's timing and intensity fluctuating on a yearly cycle. This chapter looks at visualising these cycles, and additionally the effects of lunar cycles.
 
-These plots are created using the SonicScrewdriver package [@sonicscrewdriver] which in turn uses the suncalc package [@suncalc] to perform the required sun and moon position calculations.
+These plots are created using the SonicScrewdriver package [@sonicscrewdriver] which in turn uses the suncalc package [@suncalc] to perform the required sun and moon position calculations. The Plotrix package [@plotrix] is used for creating the visualisation. These packages can be installed as shown below.
+
+```{r eval=FALSE}
+install.packages(c("plotrix", "sonicscrewdriver"))
+```
+
+The SonicScrewdriver package must be loaded before constructing a visual.
 
 ```{r message=FALSE}
 library(sonicscrewdriver)
