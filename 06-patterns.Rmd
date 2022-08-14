@@ -47,13 +47,15 @@ for (i in 1:length(sunset_y)) {
 ```
 
 #### Civil Twilight
+Civil twilight occurs when the geometric centre of the sun (as seen from Earth) passes between 0° and 6° below the horizon. During this time it is normal for humans not to need the assistance of artifical light for everyday tasks.
 
 #### Nautical Twilight
+Nautical twilight occurs when the sun is between 6° and 12° below the horizon. During this time there is sufficient light to distinguish the horizon even without illumination from the moon (allowing determination of position at sea through star sightings).
 
 #### Astronomical Twilight
+When the sun is between 12° and 18° below the horizon many astronomical observations are possible even though some light from the sun is visible through the atmosphere. In urban areas with light pollution this is often considered to be a dark sky.
 
 ### Diel Plots {#diel-plots }
-
 As the times of the solar day are dependent both on the date and location these must be passed to the `dielPlot()` function.
 
 
