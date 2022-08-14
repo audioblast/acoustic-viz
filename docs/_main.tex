@@ -274,14 +274,45 @@ As the times of the solar day are dependent both on the date and location these 
 \caption{Example of a diel plot}\label{fig:diel-plot-1}
 \end{figure}
 
-\hypertarget{alternate-forms}{%
-\subsubsection{Alternate forms}\label{alternate-forms}}
+\hypertarget{customising-a-dielplot}{%
+\subsubsection{Customising a `dielPlot()}\label{customising-a-dielplot}}
+
+In addition to the \texttt{date}, \texttt{lat} and \texttt{lon} parameters to \texttt{dielPlot()} it is possible to make additional customisations to how the information is presented.
+
+\textbf{Legend}
+
+A legend can be added to the plot by setting \texttt{legend=TRUE}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dielPlot}\NormalTok{(}\StringTok{"2022{-}08{-}08"}\NormalTok{, }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\FloatTok{0.1}\NormalTok{, }\AttributeTok{legend=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/diel-plot-legend-1} 
+
+}
+
+\caption{Example adding a legend to a diel plot}\label{fig:diel-plot-legend}
+\end{figure}
+
+\textbf{Plotting Components}
 
 \hypertarget{yearly-cycles}{%
 \section{Yearly Cycles}\label{yearly-cycles}}
 
 \hypertarget{lunar-cycles}{%
 \section{Lunar Cycles}\label{lunar-cycles}}
+
+\hypertarget{core-and-ring-plots}{%
+\section{Core and ring plots}\label{core-and-ring-plots}}
+
+These functions for cyclical data plot their information onto a circle with radius two units. It is possible to limit the plot either to the centre of the circle (a `core' plot) or to the edge (a `ring plot'). These alternative forms may be more useful when these plots are used to visualise addition variables (\ref{adding-to-cyclical}).
+
+\hypertarget{adding-to-cyclical}{%
+\section{Adding data to the visualisation}\label{adding-to-cyclical}}
 
 \hypertarget{interactive-plots}{%
 \section{Interactive Plots}\label{interactive-plots}}

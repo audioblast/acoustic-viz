@@ -1,5 +1,6 @@
 fig:twilights
 fig:diel-plot-1
+fig:diel-plot-legend
 intro
 history
 descriptive-acoustics
@@ -26,12 +27,11 @@ civil-twilight
 nautical-twilight
 astronomical-twilight
 diel-plots
-alternate-forms
+customising-a-dielplot
 yearly-cycles
 lunar-cycles
+core-and-ring-plots
+adding-to-cyclical
 interactive-plots
 the-future
 acknowledgements
-customising-a-dielplot
-fig:diel-plot-legend
-customising-a-dielplot-in-addition-to-thedatelatandlonparameters-todieplplot-it-is-possible-to-make-additional-customisations-to-how-the-information-is-presented.

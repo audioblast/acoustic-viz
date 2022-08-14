@@ -196,7 +196,9 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#yearly-cycles"><i class="fa fa-check"></i><b>7.2</b> Yearly Cycles</a></li>
 <li class="chapter" data-level="7.3" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#lunar-cycles"><i class="fa fa-check"></i><b>7.3</b> Lunar Cycles</a></li>
-<li class="chapter" data-level="7.4" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#interactive-plots"><i class="fa fa-check"></i><b>7.4</b> Interactive Plots</a></li>
+<li class="chapter" data-level="7.4" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#core-and-ring-plots"><i class="fa fa-check"></i><b>7.4</b> Core and ring plots</a></li>
+<li class="chapter" data-level="7.5" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#adding-to-cyclical"><i class="fa fa-check"></i><b>7.5</b> Adding data to the visualisation</a></li>
+<li class="chapter" data-level="7.6" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#interactive-plots"><i class="fa fa-check"></i><b>7.6</b> Interactive Plots</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="the-future.html"><a href="the-future.html"><i class="fa fa-check"></i><b>8</b> The Future</a></li>
 <li class="chapter" data-level="9" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i><b>9</b> Acknowledgements</a></li>
@@ -263,7 +265,7 @@ Figure 7.2: Example of a diel plot
 </div>
 <div id="customising-a-dielplot" class="section level4 hasAnchor" number="7.1.2.1">
 <h4><span class="header-section-number">7.1.2.1</span> Customising a `dielPlot()<a href="patterns-of-activity.html#customising-a-dielplot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>In addition to the <code>date</code>, <code>lat</code> and <code>lon</code> parameters to <code>dieplPlot()</code> it is possible to make additional customisations to how the information is presented.</p>
+<p>In addition to the <code>date</code>, <code>lat</code> and <code>lon</code> parameters to <code>dielPlot()</code> it is possible to make additional customisations to how the information is presented.</p>
 <p><strong>Legend</strong></p>
 <p>A legend can be added to the plot by setting <code>legend=TRUE</code>.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="patterns-of-activity.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">legend=</span><span class="cn">TRUE</span>)</span></code></pre></div>
@@ -273,6 +275,7 @@ Figure 7.2: Example of a diel plot
 Figure 7.3: Example adding a legend to a diel plot
 </p>
 </div>
+<p><strong>Plotting Components</strong></p>
 </div>
 </div>
 </div>
@@ -282,8 +285,15 @@ Figure 7.3: Example adding a legend to a diel plot
 <div id="lunar-cycles" class="section level2 hasAnchor" number="7.3">
 <h2><span class="header-section-number">7.3</span> Lunar Cycles<a href="patterns-of-activity.html#lunar-cycles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="interactive-plots" class="section level2 hasAnchor" number="7.4">
-<h2><span class="header-section-number">7.4</span> Interactive Plots<a href="patterns-of-activity.html#interactive-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="core-and-ring-plots" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Core and ring plots<a href="patterns-of-activity.html#core-and-ring-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>These functions for cyclical data plot their information onto a circle with radius two units. It is possible to limit the plot either to the centre of the circle (a ‘core’ plot) or to the edge (a ‘ring plot’). These alternative forms may be more useful when these plots are used to visualise addition variables (<a href="patterns-of-activity.html#adding-to-cyclical">7.5</a>).</p>
+</div>
+<div id="adding-to-cyclical" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Adding data to the visualisation<a href="patterns-of-activity.html#adding-to-cyclical" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="interactive-plots" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Interactive Plots<a href="patterns-of-activity.html#interactive-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>These plots can be used to create Shiny apps</p>
 <ul>
 <li><a href="https://shiny.ebaker.me.uk/shiny-diel/">shiny-diel</a> is an example that shows diel plots for a number of locations, and can be animated using the play button under the date slider.</li>

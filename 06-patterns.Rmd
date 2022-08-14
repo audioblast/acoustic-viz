@@ -14,7 +14,7 @@ The design for these plots came from a desire to compare the dawn chorus at vari
 
 ### The Types of Twilight { #twilight-types }
 
-```{r, twilights, fig.asp=0.6875, fig.width=6, fig.cap='Different types of twilight as the sun sets below the horizon', fig.align='center', out.width='90%', echo=FALSE}
+```{r, twilights, fig.asp=0.6875, fig.width=9, fig.cap='Different types of twilight as the sun sets below the horizon', fig.align='center', out.width='90%', echo=FALSE}
 plot.default(
   NULL, 
   NULL, 
@@ -65,7 +65,7 @@ dielPlot("2022-08-08", lat=53, lon=0.1)
 
 #### Customising a `dielPlot()
 
-In addition to the `date`, `lat` and `lon` parameters to `dieplPlot()` it is possible to make additional customisations to how the information is presented.
+In addition to the `date`, `lat` and `lon` parameters to `dielPlot()` it is possible to make additional customisations to how the information is presented.
 
 __Legend__
 
@@ -76,13 +76,17 @@ dielPlot("2022-08-08", lat=53, lon=0.1, legend=TRUE)
 ```
 
 
-
-
-
+__Plotting Components__
 
 ## Yearly Cycles
 
 ## Lunar Cycles
+
+## Core and ring plots
+
+These functions for  cyclical data plot their information onto a circle with radius two units. It is possible to limit the plot either to the centre of the circle (a 'core' plot) or to the edge (a 'ring plot'). These alternative forms may be more useful when these plots are used to visualise addition variables (\@ref(adding-to-cyclical)).
+
+## Adding data to the visualisation { #adding-to-cyclical }
 
 ## Interactive Plots
 These plots can be used to create Shiny apps
