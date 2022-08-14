@@ -1,0 +1,145 @@
+--- 
+title: "Visualisation for bioacoustics and ecoacoustics"
+author: "Ed Baker"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+url: https://av.ebaker.me.uk
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  All about acoustic visualisation for bioacoustics and ecoacoustics.
+link-citations: yes
+github-repo: audioblast/acoustic-viz
+---
+
+# About {-}
+Bioacoustics and ecoacoustics are rapidly advancing multi-disciplinary fields of study that focus on how organisms communicate using sound, and the overall sound of a landscape (the soundscape). Despite the focus on sound, much of the communication of ideas, and even sounds, between researchers is done using graphical representations.
+
+This should not come as a surprise, the printing press came centuries before the radio as a means for long distance communication, and ink on paper has a permanence that sounds would not achieve for a long time after the invention of writing. The current flourishing of these disciplines is driven as much by the low cost and ease of use of products such as AudioMoth and the decreasing cost of digitial storage and processing as by novel ideas.
+
+Visualizations of acoustic data however are not going away - we are a predominantly visual species, and as ways of summarising acoustic data - or making the ultrasound tangible, they are powerful tools in the hands of the acoustician.
+
+
+<!--chapter:end:index.Rmd-->
+
+# Introduction {#intro}
+
+> "...while we take it for granted that sounds may be described visually, the convention is recent, is by no means universal and, as I will show, is in many ways dangerous and inappropriate."
+>
+> `r tufte::quote_footer('--- @schafer1977')`
+
+While Murray Schafer's _Tuning of the World_ [@schafer1977] inspired many soundscape scientists, this view is of an earlier time, where the concept of multiple simultaneous streams of acoustic data being processed by a single individual was still an idea beyond the horizon. Individual sounds could be isolated and studied (as today they still are by bioacousticians interested in the behaviour of individual species). The scale of many contemporary ecoacoustics projects precludes an individual from listening to every minute that is recorded, the task no longer delegated to students but networks of machines. 
+
+Additionally, it is now useful to distinguish between two concepts that Schafer bought together under the concept of _notation_. Schafer used this term to bring together what is more typically known as notation -- phonetics and musical notation -- alongside visual representations of the physical properties of acoustic waves (amplitude, frequency, etc).
+
+Historically both musical notation and phonemes have been used to describe the songs of various animals, however these methods do not scale to the entirety of the biological soundscape. There is after all, a great deal of the soundscape that is beyond the limits of human hearing, the infrasound, the ultrasound, and the quiet. All manner of information is gathered and shared by other species beyond the limits of our perception, and visualisation is the main tool by which we are able to interpret the entire soundscape. For all species that share it.
+
+<!--chapter:end:00-intro.Rmd-->
+
+# History {#history}
+
+## Descriptive acoustics
+
+### Phonemes and onomatopoeia
+
+### Musical notation
+Typical musical notation shows broad similarities with a typical audio visualisation familiar to all bioacousticians and ecoacousticians - the frequency against time plot. Time proceeds in a strictly linear fashion from left to right, and frequency is represented rising from bottom to top.
+
+## Analytic acoustics
+
+### The 'big-three'
+
+#### Amplitude vs Time
+
+#### Ampltiude vs Frequency
+
+#### Frequency vs Time
+
+<!--chapter:end:01-history.Rmd-->
+
+# Early visualisations - the analog years {#early-viz}
+
+## CRTs
+
+## Print outs
+
+<!--chapter:end:02-early-viz.Rmd-->
+
+# Static digital images
+
+<!--chapter:end:03-static-digital.Rmd-->
+
+# Dynamic digital visualisations
+
+## Video spectrograms
+
+## zcjs-r
+
+<!--chapter:end:04-dynamic-digital.Rmd-->
+
+# Representing Soundscapes
+
+## False Colour Index Spectrograms
+
+<!--chapter:end:05-soundscapes.Rmd-->
+
+# Patterns of activity
+Lots of organismal activities are tied to the cycles of the day, and particularly in temperate zones, cycles of the year. These cycles bring regular fluctuations in light levels, day lengths, temperatures, and a host of other influences. Often these cycles interact, with the dawn chorus peaking in the early daylight hours, and it's timing and intensity fluctuating on a yearly cycle. This chapter looks at visualising these cycles, and additionally the effects of lunar cycles.
+
+These plots are created using the SonicScrewdriver package [@sonicscrewdriver] which in turn uses the suncalc package [@suncalc] to perform the required sun and moon position calculations.
+
+```{r message=FALSE}
+library(sonicscrewdriver)
+```
+
+## Diel plots
+The use of the term _diel_ for daily cycles has been contested by @broughton1963 as being an incorrectly formed unnecessary neologism, it sees greater use (according to the online Oxford English Dictionary) than his suggested _nycthemeral_.
+
+The design for these plots came from a desire to compare the dawn chorus at various locations around the UK, although they also offer great potential for comparing locations with greater longitudinal and/or latitudinal separation.
+
+### The Types of Twilight
+
+
+### Diel Plots
+
+
+As the times of the solar day are dependent both on the date and location these must be passed to the `dielPlot()` function.
+
+
+```{r diel-plot-1, fig.asp=1, fig.width=6, fig.cap='Example of a diel plot', fig.align='center', out.width='90%'}
+dielPlot("2022-08-08", lat=53, lon=0.1)
+```
+
+#### Alternate forms
+
+## Yearly Plots
+
+## Lunar Phases
+
+## Interactive Plots
+These plots can be used to create Shiny apps
+
+* [shiny-diel](https://shiny.ebaker.me.uk/shiny-diel/) is an example that shows diel plots for a number of locations, and can be animated using the play button under the date slider.
+
+<!--chapter:end:06-patterns.Rmd-->
+
+
+<!--chapter:end:07-annotations.Rmd-->
+
+# The Future
+
+<!--chapter:end:08-the-future.Rmd-->
+
+# Acknowledgements
+
+For discussions around visualisation as part of the Urban Nature Project: Chris Raper, John Tweddle.
+
+<!--chapter:end:09-acknowledgements.Rmd-->
+
+`r if (knitr::is_html_output()) '
+# References {-}
+'`
+
+<!--chapter:end:10-references.Rmd-->
+
