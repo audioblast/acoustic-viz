@@ -19,12 +19,12 @@ zcjs-r
 representing-soundscapes
 false-colour-index-spectrograms
 patterns-of-activity
-diel-plots
+daily-cycles
 the-types-of-twilight
-diel-plots-1
+diel-plots
 alternate-forms
-yearly-plots
-lunar-phases
+yearly-cycles
+lunar-cycles
 interactive-plots
 the-future
 acknowledgements

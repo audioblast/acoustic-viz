@@ -7,7 +7,7 @@ These plots are created using the SonicScrewdriver package [@sonicscrewdriver] w
 library(sonicscrewdriver)
 ```
 
-## Diel plots
+## Daily Cycles
 The use of the term _diel_ for daily cycles has been contested by @broughton1963 as being an incorrectly formed unnecessary neologism, it sees greater use (according to the online Oxford English Dictionary) than his suggested _nycthemeral_.
 
 The design for these plots came from a desire to compare the dawn chorus at various locations around the UK, although they also offer great potential for comparing locations with greater longitudinal and/or latitudinal separation.
@@ -27,9 +27,9 @@ dielPlot("2022-08-08", lat=53, lon=0.1)
 
 #### Alternate forms
 
-## Yearly Plots
+## Yearly Cycles
 
-## Lunar Phases
+## Lunar Cycles
 
 ## Interactive Plots
 These plots can be used to create Shiny apps

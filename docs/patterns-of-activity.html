@@ -189,13 +189,13 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html"><i class="fa fa-check"></i><b>7</b> Patterns of activity</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#diel-plots"><i class="fa fa-check"></i><b>7.1</b> Diel plots</a>
+<li class="chapter" data-level="7.1" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#daily-cycles"><i class="fa fa-check"></i><b>7.1</b> Daily Cycles</a>
 <ul>
 <li class="chapter" data-level="7.1.1" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#the-types-of-twilight"><i class="fa fa-check"></i><b>7.1.1</b> The Types of Twilight</a></li>
-<li class="chapter" data-level="7.1.2" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#diel-plots-1"><i class="fa fa-check"></i><b>7.1.2</b> Diel Plots</a></li>
+<li class="chapter" data-level="7.1.2" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#diel-plots"><i class="fa fa-check"></i><b>7.1.2</b> Diel Plots</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#yearly-plots"><i class="fa fa-check"></i><b>7.2</b> Yearly Plots</a></li>
-<li class="chapter" data-level="7.3" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#lunar-phases"><i class="fa fa-check"></i><b>7.3</b> Lunar Phases</a></li>
+<li class="chapter" data-level="7.2" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#yearly-cycles"><i class="fa fa-check"></i><b>7.2</b> Yearly Cycles</a></li>
+<li class="chapter" data-level="7.3" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#lunar-cycles"><i class="fa fa-check"></i><b>7.3</b> Lunar Cycles</a></li>
 <li class="chapter" data-level="7.4" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#interactive-plots"><i class="fa fa-check"></i><b>7.4</b> Interactive Plots</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="the-future.html"><a href="the-future.html"><i class="fa fa-check"></i><b>8</b> The Future</a></li>
@@ -226,15 +226,15 @@ div.csl-indent {
 <p>Lots of organismal activities are tied to the cycles of the day, and particularly in temperate zones, cycles of the year. These cycles bring regular fluctuations in light levels, day lengths, temperatures, and a host of other influences. Often these cycles interact, with the dawn chorus peaking in the early daylight hours, and it’s timing and intensity fluctuating on a yearly cycle. This chapter looks at visualising these cycles, and additionally the effects of lunar cycles.</p>
 <p>These plots are created using the SonicScrewdriver package <span class="citation">(<a href="#ref-sonicscrewdriver" role="doc-biblioref">Baker 2021</a>)</span> which in turn uses the suncalc package <span class="citation">(<a href="#ref-suncalc" role="doc-biblioref">Thieurmel and Elmarhraoui 2019</a>)</span> to perform the required sun and moon position calculations.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="patterns-of-activity.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sonicscrewdriver)</span></code></pre></div>
-<div id="diel-plots" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Diel plots<a href="patterns-of-activity.html#diel-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="daily-cycles" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Daily Cycles<a href="patterns-of-activity.html#daily-cycles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The use of the term <em>diel</em> for daily cycles has been contested by <span class="citation">Broughton (<a href="#ref-broughton1963" role="doc-biblioref">1963</a>)</span> as being an incorrectly formed unnecessary neologism, it sees greater use (according to the online Oxford English Dictionary) than his suggested <em>nycthemeral</em>.</p>
 <p>The design for these plots came from a desire to compare the dawn chorus at various locations around the UK, although they also offer great potential for comparing locations with greater longitudinal and/or latitudinal separation.</p>
 <div id="the-types-of-twilight" class="section level3 hasAnchor" number="7.1.1">
 <h3><span class="header-section-number">7.1.1</span> The Types of Twilight<a href="patterns-of-activity.html#the-types-of-twilight" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="diel-plots-1" class="section level3 hasAnchor" number="7.1.2">
-<h3><span class="header-section-number">7.1.2</span> Diel Plots<a href="patterns-of-activity.html#diel-plots-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="diel-plots" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Diel Plots<a href="patterns-of-activity.html#diel-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As the times of the solar day are dependent both on the date and location these must be passed to the <code>dielPlot()</code> function.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="patterns-of-activity.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:diel-plot-1"></span>
@@ -248,11 +248,11 @@ Figure 7.1: Example of a diel plot
 </div>
 </div>
 </div>
-<div id="yearly-plots" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> Yearly Plots<a href="patterns-of-activity.html#yearly-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="yearly-cycles" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Yearly Cycles<a href="patterns-of-activity.html#yearly-cycles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="lunar-phases" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> Lunar Phases<a href="patterns-of-activity.html#lunar-phases" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="lunar-cycles" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Lunar Cycles<a href="patterns-of-activity.html#lunar-cycles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
 <div id="interactive-plots" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> Interactive Plots<a href="patterns-of-activity.html#interactive-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
