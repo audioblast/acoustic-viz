@@ -14,6 +14,38 @@ The design for these plots came from a desire to compare the dawn chorus at vari
 
 ### The Types of Twilight { #twilight-types }
 
+```{r, twilights, fig.asp=0.6875, fig.width=6, fig.cap='Different types of twilight as the sun sets below the horizon', fig.align='center', out.width='90%', echo=FALSE}
+plot.default(
+  NULL, 
+  NULL, 
+  xlim=c(-0.2,1.4),
+  ylim=c(-1,0.1),
+  axes=FALSE,
+  xlab="",
+  ylab=""
+)
+
+# Horizon
+lines(c(0,1), c(0,0))
+
+text(0,0,"horizon",cex=0.8,adj=c(1,0))
+
+degs <- c(18,12,6)
+rads <- degs*2*pi/360
+labs <- c("astronomical", "nautical", "civil")
+fills <- c(rgb(0.4,0.4,0.4,1), rgb(0.6,0.6,0.6,1), rgb(0.8,0.8,0.8,1))
+labs <- paste0("-",degs,"°: ",labs)
+
+sunset_y <- -tan(rads)
+
+for (i in 1:length(sunset_y)) {
+  x <- c(0,1,1)
+  y <- c(0,0,sunset_y[i])
+  polygon(x,y, col=fills[i])
+  text(1.01,sunset_y[i], labs[i], adj=c(0,0), cex=0.8)
+}
+```
+
 #### Civil Twilight
 
 #### Nautical Twilight
