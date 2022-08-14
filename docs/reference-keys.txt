@@ -1,3 +1,4 @@
+fig:diel-plot-1
 intro
 history
 descriptive-acoustics
