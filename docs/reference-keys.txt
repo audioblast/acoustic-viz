@@ -32,3 +32,6 @@ lunar-cycles
 interactive-plots
 the-future
 acknowledgements
+customising-a-dielplot
+fig:diel-plot-legend
+customising-a-dielplot-in-addition-to-thedatelatandlonparameters-todieplplot-it-is-possible-to-make-additional-customisations-to-how-the-information-is-presented.

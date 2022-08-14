@@ -59,11 +59,26 @@ When the sun is between 12° and 18° below the horizon many astronomical observ
 As the times of the solar day are dependent both on the date and location these must be passed to the `dielPlot()` function.
 
 
-```{r diel-plot-1, fig.asp=1, fig.width=6, fig.cap='Example of a diel plot', fig.align='center', out.width='90%'}
+```{r diel-plot-1, fig.height=7, fig.width=9, fig.cap='Example of a diel plot', fig.align='center', out.width='90%'}
 dielPlot("2022-08-08", lat=53, lon=0.1)
 ```
 
-#### Alternate forms
+#### Customising a `dielPlot()
+
+In addition to the `date`, `lat` and `lon` parameters to `dieplPlot()` it is possible to make additional customisations to how the information is presented.
+
+__Legend__
+
+A legend can be added to the plot by setting `legend=TRUE`.
+
+```{r diel-plot-legend, fig.height=7, fig.width=9, fig.cap='Example adding a legend to a diel plot', fig.align='center', out.width='90%'}
+dielPlot("2022-08-08", lat=53, lon=0.1, legend=TRUE)
+```
+
+
+
+
+
 
 ## Yearly Cycles
 
