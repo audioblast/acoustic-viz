@@ -1,6 +1,7 @@
 fig:twilights
 fig:diel-plot-1
 fig:diel-plot-legend
+fig:diel-plot-components
 fig:diel-plot-core
 fig:diel-plot-ring
 intro
@@ -36,6 +37,6 @@ core-and-ring-plots
 adding-to-cyclical
 interactive-plots
 displaying-annotations
+shiny-interactive-web-apps
 the-future
 acknowledgements
-fig:diel-plot-components

@@ -308,6 +308,41 @@ A legend can be added to the plot by setting \texttt{legend=TRUE}.
 
 \textbf{Plotting Components}
 
+The components that can be plotted are listed below. By default all are plotted except for \texttt{Solar\ Noon} and \texttt{Nadir}.
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule()
+Name & Notes \\
+\midrule()
+\endhead
+Astronomical Twilight & \\
+Nautical Twilight & \\
+Civil Twilight & \\
+Sunrise & \\
+Solar Noon & The time when the sun is highest in the sky \\
+Sunset & \\
+Nadir & \\
+\bottomrule()
+\end{longtable}
+
+The components that are plotted can be specified using the \texttt{plot} parameter.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{components }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Sunrise"}\NormalTok{, }\StringTok{"Sunset"}\NormalTok{, }\StringTok{"Solar Noon"}\NormalTok{, }\StringTok{"Nadir"}\NormalTok{)}
+\FunctionTok{dielPlot}\NormalTok{(}\StringTok{"2022{-}08{-}08"}\NormalTok{, }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\FloatTok{0.1}\NormalTok{, }\AttributeTok{plot=}\NormalTok{components)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/diel-plot-components-1} 
+
+}
+
+\caption{Example adding a legend to a diel plot}\label{fig:diel-plot-components}
+\end{figure}
+
 \hypertarget{yearly-cycles}{%
 \section{Yearly Cycles}\label{yearly-cycles}}
 
@@ -365,6 +400,9 @@ These plots can be used to create Shiny apps
 
 \hypertarget{displaying-annotations}{%
 \chapter{Displaying annotations}\label{displaying-annotations}}
+
+\hypertarget{shiny-interactive-web-apps}{%
+\chapter{Shiny: Interactive Web Apps}\label{shiny-interactive-web-apps}}
 
 \hypertarget{the-future}{%
 \chapter{The Future}\label{the-future}}
