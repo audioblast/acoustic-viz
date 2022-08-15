@@ -409,6 +409,58 @@ These visualisations for cyclical data plot their information onto a circle with
 \hypertarget{adding-to-cyclical}{%
 \section{Adding data to the visualisation}\label{adding-to-cyclical}}
 
+\hypertarget{rings}{%
+\subsection{Rings}\label{rings}}
+
+The ring functions (\texttt{dielRing()},\ldots) plot ring segments on top of a base cyclical plot. These rings are useful for showing typical periods of activity for a species, or events that happen continuously for a specified period of time.
+
+By defaults the limits for the rings are \texttt{1,2} for use with a \emph{core} type plot, but this can be changed by specifying the \texttt{limits} parameter to the ring function. Similarly, the plot legend may be removed with the paramater \texttt{legend=FALSE}.
+
+\hypertarget{dielrings}{%
+\subsubsection{\texorpdfstring{\texttt{dielRings()}}{dielRings()}}\label{dielrings}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{names }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"activity 1"}\NormalTok{, }\StringTok{"activity 2"}\NormalTok{, }\StringTok{"activity 3"}\NormalTok{)}
+\NormalTok{starts }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"0600"}\NormalTok{, }\StringTok{"0900"}\NormalTok{, }\StringTok{"1500"}\NormalTok{)}
+\NormalTok{ends }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"1200"}\NormalTok{, }\StringTok{"1700"}\NormalTok{, }\StringTok{"1900"}\NormalTok{)}
+\NormalTok{cols }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"green"}\NormalTok{, }\StringTok{"blue"}\NormalTok{)}
+
+\FunctionTok{dielPlot}\NormalTok{(}\StringTok{"2022{-}08{-}08"}\NormalTok{, }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\FloatTok{0.1}\NormalTok{, }\AttributeTok{limits=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\FunctionTok{dielRings}\NormalTok{(names, starts, ends, }\AttributeTok{cols=}\NormalTok{cols)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/diel-plot-rings-1-1} 
+
+}
+
+\caption{A 'core' diel plot with diel rings.}\label{fig:diel-plot-rings-1}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{names }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"activity 1"}\NormalTok{, }\StringTok{"activity 2"}\NormalTok{, }\StringTok{"activity 3"}\NormalTok{)}
+\NormalTok{starts }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"0600"}\NormalTok{, }\StringTok{"0900"}\NormalTok{, }\StringTok{"1500"}\NormalTok{)}
+\NormalTok{ends }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"1200"}\NormalTok{, }\StringTok{"1700"}\NormalTok{, }\StringTok{"1900"}\NormalTok{)}
+\NormalTok{cols }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"green"}\NormalTok{, }\StringTok{"blue"}\NormalTok{)}
+
+\FunctionTok{dielPlot}\NormalTok{(}\StringTok{"2022{-}08{-}08"}\NormalTok{, }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\FloatTok{0.1}\NormalTok{, }\AttributeTok{limits=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+\FunctionTok{dielRings}\NormalTok{(names, starts, ends, }\AttributeTok{cols=}\NormalTok{cols, }\AttributeTok{limits=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/diel-plot-rings-2-1} 
+
+}
+
+\caption{A 'ring' diel plot with diel rings.}\label{fig:diel-plot-rings-2}
+\end{figure}
+
 \hypertarget{interactive-plots}{%
 \section{Interactive Plots}\label{interactive-plots}}
 

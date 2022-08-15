@@ -4,6 +4,8 @@ fig:diel-plot-legend
 fig:diel-plot-components
 fig:diel-plot-core
 fig:diel-plot-ring
+fig:diel-plot-rings-1
+fig:diel-plot-rings-2
 intro
 basic-acoustic-terminology
 types-of-files
@@ -39,6 +41,8 @@ yearly-cycles
 lunar-cycles
 core-and-ring-plots
 adding-to-cyclical
+rings
+dielrings
 interactive-plots
 displaying-annotations
 shiny-interactive-web-apps

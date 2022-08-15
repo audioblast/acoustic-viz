@@ -115,11 +115,39 @@ These visualisations for cyclical data plot their information onto a circle with
 dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(0,1))
 ```
 
-```{r diel-plot-ring, fig.height=7, fig.width=9, fig.cap='A \'ring\' diel plot.', fig.align='center', out.width='90%'}
+```{r diel-plot-ring, fig.height=7, fig.width=9, fig.cap='A \'ring\' diel plot.', fig.align='center', out.width='90%', cache=TRUE}
 dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(1,2))
 ```
 
 ## Adding data to the visualisation { #adding-to-cyclical }
+
+### Rings
+
+The ring functions (`dielRing()`,...) plot ring segments on top of a base cyclical plot. These rings are useful for showing typical periods of activity for a species, or events that happen continuously for a specified period of time.
+
+By defaults the limits for the rings are `1,2` for use with a _core_ type plot, but this can be changed by specifying the `limits` parameter to the ring function. Similarly, the plot legend may be removed with the paramater `legend=FALSE`.
+
+#### `dielRings()`
+
+```{r diel-plot-rings-1, fig.height=7, fig.width=10, fig.cap='A \'core\' diel plot with diel rings.', fig.align='center', out.width='90%'}
+names <- c("activity 1", "activity 2", "activity 3")
+starts <- c("0600", "0900", "1500")
+ends <- c("1200", "1700", "1900")
+cols <- c("red", "green", "blue")
+
+dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(0,1))
+dielRings(names, starts, ends, cols=cols)
+```
+
+```{r diel-plot-rings-2, fig.height=7, fig.width=10, fig.cap='A \'ring\' diel plot with diel rings.', fig.align='center', out.width='90%', cache=TRUE}
+names <- c("activity 1", "activity 2", "activity 3")
+starts <- c("0600", "0900", "1500")
+ends <- c("1200", "1700", "1900")
+cols <- c("red", "green", "blue")
+
+dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(1,2))
+dielRings(names, starts, ends, cols=cols, limits=c(0,1))
+```
 
 ## Interactive Plots
 These plots can be used to create Shiny apps
