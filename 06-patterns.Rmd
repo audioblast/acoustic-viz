@@ -69,7 +69,7 @@ As the times of the solar day are dependent both on the date and location these 
 dielPlot("2022-08-08", lat=53, lon=0.1)
 ```
 
-#### Customising a `dielPlot()
+#### Customising a `dielPlot()`
 
 In addition to the `date`, `lat` and `lon` parameters to `dielPlot()` it is possible to make additional customisations to how the information is presented.
 

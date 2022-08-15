@@ -33,5 +33,6 @@ lunar-cycles
 core-and-ring-plots
 adding-to-cyclical
 interactive-plots
+displaying-annotations
 the-future
 acknowledgements

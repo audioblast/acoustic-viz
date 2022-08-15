@@ -212,7 +212,15 @@ Typical musical notation shows broad similarities with a typical audio visualisa
 
 Lots of organismal activities are tied to the cycles of the day, and particularly in temperate zones, cycles of the year. These cycles bring regular fluctuations in light levels, day lengths, temperatures, and a host of other influences. Often these cycles interact, with the dawn chorus peaking in the early daylight hours, and it's timing and intensity fluctuating on a yearly cycle. This chapter looks at visualising these cycles, and additionally the effects of lunar cycles.
 
-These plots are created using the SonicScrewdriver package \citep{sonicscrewdriver} which in turn uses the suncalc package \citep{suncalc} to perform the required sun and moon position calculations.
+These plots are created using the SonicScrewdriver package \citep{sonicscrewdriver} which in turn uses the suncalc package \citep{suncalc} to perform the required sun and moon position calculations. The Plotrix package \citep{plotrix} is used for creating the visualisation. These packages can be installed as shown below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"plotrix"}\NormalTok{, }\StringTok{"sonicscrewdriver"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+The SonicScrewdriver package must be loaded before constructing a visual.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -275,7 +283,7 @@ As the times of the solar day are dependent both on the date and location these 
 \end{figure}
 
 \hypertarget{customising-a-dielplot}{%
-\subsubsection{Customising a `dielPlot()}\label{customising-a-dielplot}}
+\subsubsection{\texorpdfstring{Customising a \texttt{dielPlot()}}{Customising a dielPlot()}}\label{customising-a-dielplot}}
 
 In addition to the \texttt{date}, \texttt{lat} and \texttt{lon} parameters to \texttt{dielPlot()} it is possible to make additional customisations to how the information is presented.
 
@@ -324,6 +332,9 @@ These plots can be used to create Shiny apps
 \item
   \href{https://shiny.ebaker.me.uk/shiny-diel/}{shiny-diel} is an example that shows diel plots for a number of locations, and can be animated using the play button under the date slider.
 \end{itemize}
+
+\hypertarget{displaying-annotations}{%
+\chapter{Displaying annotations}\label{displaying-annotations}}
 
 \hypertarget{the-future}{%
 \chapter{The Future}\label{the-future}}
