@@ -24,9 +24,10 @@ early-viz
 crts
 print-outs
 static-digital-images
+zcjs-zero-crossing-file-visualisation
+customising-a-zcjs-plot
 dynamic-digital-visualisations
 video-spectrograms
-zcjs-zero-crossing-file-visualisation
 representing-soundscapes
 false-colour-index-spectrograms
 patterns-of-activity

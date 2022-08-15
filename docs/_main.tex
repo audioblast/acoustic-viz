@@ -204,24 +204,40 @@ Typical musical notation shows broad similarities with a typical audio visualisa
 \hypertarget{static-digital-images}{%
 \chapter{Static digital images}\label{static-digital-images}}
 
-\hypertarget{dynamic-digital-visualisations}{%
-\chapter{Dynamic digital visualisations}\label{dynamic-digital-visualisations}}
-
-\hypertarget{video-spectrograms}{%
-\section{Video spectrograms}\label{video-spectrograms}}
-
 \hypertarget{zcjs-zero-crossing-file-visualisation}{%
 \section{zcjs: Zero-crossing File Visualisation}\label{zcjs-zero-crossing-file-visualisation}}
 
 The zcjs JavaScript library was originally developed for displaying zero-crossing audio files (\ref{zero-crossing-files}) on the web as part of the BioAcoustica project (\url{https://bio.acousti.ca}; \citet{baker2015bioacoustica}). The \texttt{zcjs} package \citep{zcjsr} imports this visualisation functionality into R.
 
+The following code installs the \texttt{zcjs} package.
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{install.packages}\NormalTok{(}\StringTok{"devtools"}\NormalTok{)}
 \NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"bioacoustica/zcjs{-}r"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+To load the package:
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(zcjs)}
 \end{Highlighting}
 \end{Shaded}
+
+The package comes with a demonstration file for testing the package's functionality.
+
+\hypertarget{customising-a-zcjs-plot}{%
+\subsection{Customising a zcjs plot}\label{customising-a-zcjs-plot}}
+
+\textbf{x-compress}
+
+\hypertarget{dynamic-digital-visualisations}{%
+\chapter{Dynamic digital visualisations}\label{dynamic-digital-visualisations}}
+
+\hypertarget{video-spectrograms}{%
+\section{Video spectrograms}\label{video-spectrograms}}
 
 \hypertarget{representing-soundscapes}{%
 \chapter{Representing Soundscapes}\label{representing-soundscapes}}

@@ -2,12 +2,3 @@
 
 ## Video spectrograms
 
-## zcjs: Zero-crossing File Visualisation
-
-The zcjs JavaScript library was originally developed for displaying zero-crossing audio files (\@ref(zero-crossing-files)) on the web as part of the BioAcoustica project ([https://bio.acousti.ca](https://bio.acousti.ca); @baker2015bioacoustica). The `zcjs` package [@zcjsr] imports this visualisation functionality into R.
-
-```{r eval=FALSE}
-install.packages("devtools")
-devtools::install_github("bioacoustica/zcjs-r")
-library(zcjs)
-```
