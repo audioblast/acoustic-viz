@@ -1,6 +1,8 @@
 fig:twilights
 fig:diel-plot-1
 fig:diel-plot-legend
+fig:diel-plot-core
+fig:diel-plot-ring
 intro
 history
 descriptive-acoustics
@@ -36,3 +38,4 @@ interactive-plots
 displaying-annotations
 the-future
 acknowledgements
+fig:diel-plot-components

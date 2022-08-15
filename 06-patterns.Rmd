@@ -84,13 +84,40 @@ dielPlot("2022-08-08", lat=53, lon=0.1, legend=TRUE)
 
 __Plotting Components__
 
+The components that can be plotted are listed below. By default all are plotted except for `Solar Noon` and `Nadir`. 
+
+Name |Notes
+-----|------
+Astronomical Twilight |
+Nautical Twilight |
+Civil Twilight |
+Sunrise |
+Solar Noon | The time when the sun is highest in the sky
+Sunset |
+Nadir |
+
+The components that are plotted can be specified using the `plot` parameter.
+
+```{r diel-plot-components, fig.height=7, fig.width=9, fig.cap='Example adding a legend to a diel plot', fig.align='center', out.width='90%'}
+components <- c("Sunrise", "Sunset", "Solar Noon", "Nadir")
+dielPlot("2022-08-08", lat=53, lon=0.1, plot=components)
+```
+
 ## Yearly Cycles
 
 ## Lunar Cycles
 
 ## Core and ring plots
 
-These functions for  cyclical data plot their information onto a circle with radius two units. It is possible to limit the plot either to the centre of the circle (a 'core' plot) or to the edge (a 'ring plot'). These alternative forms may be more useful when these plots are used to visualise addition variables (\@ref(adding-to-cyclical)).
+These visualisations for cyclical data plot their information onto a circle with radius of two units. It is possible to limit the plot either to the centre of the circle (a 'core' plot) or to the edge (a 'ring plot'). These alternative forms may be more useful when these plots are used to visualise addition variables (\@ref(adding-to-cyclical)).
+
+```{r diel-plot-core, fig.height=7, fig.width=9, fig.cap='A \'core\' diel plot.', fig.align='center', out.width='90%'}
+dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(0,1))
+```
+
+```{r diel-plot-ring, fig.height=7, fig.width=9, fig.cap='A \'ring\' diel plot.', fig.align='center', out.width='90%'}
+dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(1,2))
+```
 
 ## Adding data to the visualisation { #adding-to-cyclical }
 

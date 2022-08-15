@@ -117,7 +117,7 @@
 
 \title{Visualisation for bioacoustics and ecoacoustics}
 \author{Ed Baker}
-\date{2022-08-14}
+\date{2022-08-15}
 
 \begin{document}
 \maketitle
@@ -317,7 +317,37 @@ A legend can be added to the plot by setting \texttt{legend=TRUE}.
 \hypertarget{core-and-ring-plots}{%
 \section{Core and ring plots}\label{core-and-ring-plots}}
 
-These functions for cyclical data plot their information onto a circle with radius two units. It is possible to limit the plot either to the centre of the circle (a `core' plot) or to the edge (a `ring plot'). These alternative forms may be more useful when these plots are used to visualise addition variables (\ref{adding-to-cyclical}).
+These visualisations for cyclical data plot their information onto a circle with radius of two units. It is possible to limit the plot either to the centre of the circle (a `core' plot) or to the edge (a `ring plot'). These alternative forms may be more useful when these plots are used to visualise addition variables (\ref{adding-to-cyclical}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dielPlot}\NormalTok{(}\StringTok{"2022{-}08{-}08"}\NormalTok{, }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\FloatTok{0.1}\NormalTok{, }\AttributeTok{limits=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/diel-plot-core-1} 
+
+}
+
+\caption{A 'core' diel plot.}\label{fig:diel-plot-core}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dielPlot}\NormalTok{(}\StringTok{"2022{-}08{-}08"}\NormalTok{, }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\FloatTok{0.1}\NormalTok{, }\AttributeTok{limits=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/diel-plot-ring-1} 
+
+}
+
+\caption{A 'ring' diel plot.}\label{fig:diel-plot-ring}
+\end{figure}
 
 \hypertarget{adding-to-cyclical}{%
 \section{Adding data to the visualisation}\label{adding-to-cyclical}}

@@ -23,7 +23,7 @@
 <meta name="author" content="Ed Baker" />
 
 
-<meta name="date" content="2022-08-14" />
+<meta name="date" content="2022-08-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -279,6 +279,54 @@ Figure 7.3: Example adding a legend to a diel plot
 </p>
 </div>
 <p><strong>Plotting Components</strong></p>
+<p>The components that can be plotted are listed below. By default all are plotted except for <code>Solar Noon</code> and <code>Nadir</code>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Astronomical Twilight</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Nautical Twilight</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Civil Twilight</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Sunrise</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Solar Noon</td>
+<td>The time when the sun is highest in the sky</td>
+</tr>
+<tr class="even">
+<td>Sunset</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Nadir</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The components that are plotted can be specified using the <code>plot</code> parameter.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="patterns-of-activity.html#cb5-1" aria-hidden="true" tabindex="-1"></a>components <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Sunrise&quot;</span>, <span class="st">&quot;Sunset&quot;</span>, <span class="st">&quot;Solar Noon&quot;</span>, <span class="st">&quot;Nadir&quot;</span>)</span>
+<span id="cb5-2"><a href="patterns-of-activity.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">plot=</span>components)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:diel-plot-components"></span>
+<img src="_main_files/figure-html/diel-plot-components-1.png" alt="Example adding a legend to a diel plot" width="90%" />
+<p class="caption">
+Figure 7.4: Example adding a legend to a diel plot
+</p>
+</div>
 </div>
 </div>
 </div>
@@ -290,7 +338,21 @@ Figure 7.3: Example adding a legend to a diel plot
 </div>
 <div id="core-and-ring-plots" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> Core and ring plots<a href="patterns-of-activity.html#core-and-ring-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>These functions for cyclical data plot their information onto a circle with radius two units. It is possible to limit the plot either to the centre of the circle (a ‘core’ plot) or to the edge (a ‘ring plot’). These alternative forms may be more useful when these plots are used to visualise addition variables (<a href="patterns-of-activity.html#adding-to-cyclical">7.5</a>).</p>
+<p>These visualisations for cyclical data plot their information onto a circle with radius of two units. It is possible to limit the plot either to the centre of the circle (a ‘core’ plot) or to the edge (a ‘ring plot’). These alternative forms may be more useful when these plots are used to visualise addition variables (<a href="patterns-of-activity.html#adding-to-cyclical">7.5</a>).</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="patterns-of-activity.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:diel-plot-core"></span>
+<img src="_main_files/figure-html/diel-plot-core-1.png" alt="A 'core' diel plot." width="90%" />
+<p class="caption">
+Figure 7.5: A ‘core’ diel plot.
+</p>
+</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="patterns-of-activity.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:diel-plot-ring"></span>
+<img src="_main_files/figure-html/diel-plot-ring-1.png" alt="A 'ring' diel plot." width="90%" />
+<p class="caption">
+Figure 7.6: A ‘ring’ diel plot.
+</p>
+</div>
 </div>
 <div id="adding-to-cyclical" class="section level2 hasAnchor" number="7.5">
 <h2><span class="header-section-number">7.5</span> Adding data to the visualisation<a href="patterns-of-activity.html#adding-to-cyclical" class="anchor-section" aria-label="Anchor link to header"></a></h2>
