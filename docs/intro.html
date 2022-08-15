@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Introduction | Visualisation for bioacoustics and ecoacoustics</title>
+  <title>Chapter 1 Introduction | Visualisation for bioacoustics and ecoacoustics in R</title>
   <meta name="description" content="All about acoustic visualisation for bioacoustics and ecoacoustics." />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Introduction | Visualisation for bioacoustics and ecoacoustics" />
+  <meta property="og:title" content="Chapter 1 Introduction | Visualisation for bioacoustics and ecoacoustics in R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="All about acoustic visualisation for bioacoustics and ecoacoustics." />
   <meta name="github-repo" content="audioblast/acoustic-viz" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Introduction | Visualisation for bioacoustics and ecoacoustics" />
+  <meta name="twitter:title" content="Chapter 1 Introduction | Visualisation for bioacoustics and ecoacoustics in R" />
   
   <meta name="twitter:description" content="All about acoustic visualisation for bioacoustics and ecoacoustics." />
   
@@ -159,7 +159,15 @@ div.csl-indent {
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#basic-acoustic-terminology"><i class="fa fa-check"></i><b>1.1</b> Basic acoustic terminology</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#types-of-files"><i class="fa fa-check"></i><b>1.2</b> Types of files</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#waveform-files"><i class="fa fa-check"></i><b>1.2.1</b> Waveform files</a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#zero-crossing-files"><i class="fa fa-check"></i><b>1.2.2</b> zero-crossing</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="history.html"><a href="history.html"><i class="fa fa-check"></i><b>2</b> History</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="history.html"><a href="history.html#descriptive-acoustics"><i class="fa fa-check"></i><b>2.1</b> Descriptive acoustics</a>
@@ -181,7 +189,7 @@ div.csl-indent {
 <li class="chapter" data-level="5" data-path="dynamic-digital-visualisations.html"><a href="dynamic-digital-visualisations.html"><i class="fa fa-check"></i><b>5</b> Dynamic digital visualisations</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="dynamic-digital-visualisations.html"><a href="dynamic-digital-visualisations.html#video-spectrograms"><i class="fa fa-check"></i><b>5.1</b> Video spectrograms</a></li>
-<li class="chapter" data-level="5.2" data-path="dynamic-digital-visualisations.html"><a href="dynamic-digital-visualisations.html#zcjs-r"><i class="fa fa-check"></i><b>5.2</b> zcjs-r</a></li>
+<li class="chapter" data-level="5.2" data-path="dynamic-digital-visualisations.html"><a href="dynamic-digital-visualisations.html#zcjs-zero-crossing-file-visualisation"><i class="fa fa-check"></i><b>5.2</b> zcjs: Zero-crossing File Visualisation</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="representing-soundscapes.html"><a href="representing-soundscapes.html"><i class="fa fa-check"></i><b>6</b> Representing Soundscapes</a>
 <ul>
@@ -217,7 +225,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Visualisation for bioacoustics and ecoacoustics</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Visualisation for bioacoustics and ecoacoustics in R</a>
           </h1>
         </div>
 
@@ -236,7 +244,19 @@ div.csl-indent {
 <p>While Murray Schafer’s <em>Tuning of the World</em> <span class="citation">(<a href="#ref-schafer1977" role="doc-biblioref">Schafer 1977</a>)</span> inspired many soundscape scientists, this view is of an earlier time, where the concept of multiple simultaneous streams of acoustic data being processed by a single individual was still an idea beyond the horizon. Individual sounds could be isolated and studied (as today they still are by bioacousticians interested in the behaviour of individual species). The scale of many contemporary ecoacoustics projects precludes an individual from listening to every minute that is recorded, the task no longer delegated to students but networks of machines.</p>
 <p>Additionally, it is now useful to distinguish between two concepts that Schafer bought together under the concept of <em>notation</em>. Schafer used this term to bring together what is more typically known as notation – phonetics and musical notation – alongside visual representations of the physical properties of acoustic waves (amplitude, frequency, etc).</p>
 <p>Historically both musical notation and phonemes have been used to describe the songs of various animals, however these methods do not scale to the entirety of the biological soundscape. There is after all, a great deal of the soundscape that is beyond the limits of human hearing, the infrasound, the ultrasound, and the quiet. All manner of information is gathered and shared by other species beyond the limits of our perception, and visualisation is the main tool by which we are able to interpret the entire soundscape. For all species that share it.</p>
+<div id="basic-acoustic-terminology" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Basic acoustic terminology<a href="intro.html#basic-acoustic-terminology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="types-of-files" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Types of files<a href="intro.html#types-of-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="waveform-files" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Waveform files<a href="intro.html#waveform-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="zero-crossing-files" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> zero-crossing<a href="intro.html#zero-crossing-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
+</div>
+</div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">

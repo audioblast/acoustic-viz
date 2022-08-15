@@ -5,6 +5,10 @@ fig:diel-plot-components
 fig:diel-plot-core
 fig:diel-plot-ring
 intro
+basic-acoustic-terminology
+types-of-files
+waveform-files
+zero-crossing-files
 history
 descriptive-acoustics
 phonemes-and-onomatopoeia
@@ -20,7 +24,7 @@ print-outs
 static-digital-images
 dynamic-digital-visualisations
 video-spectrograms
-zcjs-r
+zcjs-zero-crossing-file-visualisation
 representing-soundscapes
 false-colour-index-spectrograms
 patterns-of-activity

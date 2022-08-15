@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Patterns of activity | Visualisation for bioacoustics and ecoacoustics</title>
+  <title>Chapter 7 Patterns of activity | Visualisation for bioacoustics and ecoacoustics in R</title>
   <meta name="description" content="All about acoustic visualisation for bioacoustics and ecoacoustics." />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Patterns of activity | Visualisation for bioacoustics and ecoacoustics" />
+  <meta property="og:title" content="Chapter 7 Patterns of activity | Visualisation for bioacoustics and ecoacoustics in R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="All about acoustic visualisation for bioacoustics and ecoacoustics." />
   <meta name="github-repo" content="audioblast/acoustic-viz" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Patterns of activity | Visualisation for bioacoustics and ecoacoustics" />
+  <meta name="twitter:title" content="Chapter 7 Patterns of activity | Visualisation for bioacoustics and ecoacoustics in R" />
   
   <meta name="twitter:description" content="All about acoustic visualisation for bioacoustics and ecoacoustics." />
   
@@ -159,7 +159,15 @@ div.csl-indent {
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#basic-acoustic-terminology"><i class="fa fa-check"></i><b>1.1</b> Basic acoustic terminology</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#types-of-files"><i class="fa fa-check"></i><b>1.2</b> Types of files</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#waveform-files"><i class="fa fa-check"></i><b>1.2.1</b> Waveform files</a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#zero-crossing-files"><i class="fa fa-check"></i><b>1.2.2</b> zero-crossing</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="history.html"><a href="history.html"><i class="fa fa-check"></i><b>2</b> History</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="history.html"><a href="history.html#descriptive-acoustics"><i class="fa fa-check"></i><b>2.1</b> Descriptive acoustics</a>
@@ -181,7 +189,7 @@ div.csl-indent {
 <li class="chapter" data-level="5" data-path="dynamic-digital-visualisations.html"><a href="dynamic-digital-visualisations.html"><i class="fa fa-check"></i><b>5</b> Dynamic digital visualisations</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="dynamic-digital-visualisations.html"><a href="dynamic-digital-visualisations.html#video-spectrograms"><i class="fa fa-check"></i><b>5.1</b> Video spectrograms</a></li>
-<li class="chapter" data-level="5.2" data-path="dynamic-digital-visualisations.html"><a href="dynamic-digital-visualisations.html#zcjs-r"><i class="fa fa-check"></i><b>5.2</b> zcjs-r</a></li>
+<li class="chapter" data-level="5.2" data-path="dynamic-digital-visualisations.html"><a href="dynamic-digital-visualisations.html#zcjs-zero-crossing-file-visualisation"><i class="fa fa-check"></i><b>5.2</b> zcjs: Zero-crossing File Visualisation</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="representing-soundscapes.html"><a href="representing-soundscapes.html"><i class="fa fa-check"></i><b>6</b> Representing Soundscapes</a>
 <ul>
@@ -217,7 +225,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Visualisation for bioacoustics and ecoacoustics</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Visualisation for bioacoustics and ecoacoustics in R</a>
           </h1>
         </div>
 
@@ -228,10 +236,10 @@ div.csl-indent {
 <div id="patterns-of-activity" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">Chapter 7</span> Patterns of activity<a href="patterns-of-activity.html#patterns-of-activity" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Lots of organismal activities are tied to the cycles of the day, and particularly in temperate zones, cycles of the year. These cycles bring regular fluctuations in light levels, day lengths, temperatures, and a host of other influences. Often these cycles interact, with the dawn chorus peaking in the early daylight hours, and it’s timing and intensity fluctuating on a yearly cycle. This chapter looks at visualising these cycles, and additionally the effects of lunar cycles.</p>
-<p>These plots are created using the SonicScrewdriver package <span class="citation">(<a href="#ref-sonicscrewdriver" role="doc-biblioref">Baker 2021</a>)</span> which in turn uses the suncalc package <span class="citation">(<a href="#ref-suncalc" role="doc-biblioref">Thieurmel and Elmarhraoui 2019</a>)</span> to perform the required sun and moon position calculations. The Plotrix package <span class="citation">(<a href="#ref-plotrix" role="doc-biblioref">Lemon 2006</a>)</span> is used for creating the visualisation. These packages can be installed as shown below.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="patterns-of-activity.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;plotrix&quot;</span>, <span class="st">&quot;sonicscrewdriver&quot;</span>))</span></code></pre></div>
+<p>These plots are created using the SonicScrewdriver package <span class="citation">(<a href="#ref-sonicscrewdriver" role="doc-biblioref">E. Baker 2021</a>)</span> which in turn uses the suncalc package <span class="citation">(<a href="#ref-suncalc" role="doc-biblioref">Thieurmel and Elmarhraoui 2019</a>)</span> to perform the required sun and moon position calculations. The Plotrix package <span class="citation">(<a href="#ref-plotrix" role="doc-biblioref">Lemon 2006</a>)</span> is used for creating the visualisation. These packages can be installed as shown below.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="patterns-of-activity.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;plotrix&quot;</span>, <span class="st">&quot;sonicscrewdriver&quot;</span>))</span></code></pre></div>
 <p>The SonicScrewdriver package must be loaded before constructing a visual.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="patterns-of-activity.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sonicscrewdriver)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="patterns-of-activity.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sonicscrewdriver)</span></code></pre></div>
 <div id="daily-cycles" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Daily Cycles<a href="patterns-of-activity.html#daily-cycles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The use of the term <em>diel</em> for daily cycles has been contested by <span class="citation">Broughton (<a href="#ref-broughton1963" role="doc-biblioref">1963</a>)</span> as being an incorrectly formed unnecessary neologism, it sees greater use (according to the online Oxford English Dictionary) than his suggested <em>nycthemeral</em>.</p>
@@ -260,7 +268,7 @@ Figure 7.1: Different types of twilight as the sun sets below the horizon
 <div id="diel-plots" class="section level3 hasAnchor" number="7.1.2">
 <h3><span class="header-section-number">7.1.2</span> Diel Plots<a href="patterns-of-activity.html#diel-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As the times of the solar day are dependent both on the date and location these must be passed to the <code>dielPlot()</code> function.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="patterns-of-activity.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="patterns-of-activity.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:diel-plot-1"></span>
 <img src="_main_files/figure-html/diel-plot-1-1.png" alt="Example of a diel plot" width="90%" />
 <p class="caption">
@@ -272,7 +280,7 @@ Figure 7.2: Example of a diel plot
 <p>In addition to the <code>date</code>, <code>lat</code> and <code>lon</code> parameters to <code>dielPlot()</code> it is possible to make additional customisations to how the information is presented.</p>
 <p><strong>Legend</strong></p>
 <p>A legend can be added to the plot by setting <code>legend=TRUE</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="patterns-of-activity.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">legend=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="patterns-of-activity.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">legend=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:diel-plot-legend"></span>
 <img src="_main_files/figure-html/diel-plot-legend-1.png" alt="Example adding a legend to a diel plot" width="90%" />
 <p class="caption">
@@ -320,8 +328,8 @@ Figure 7.3: Example adding a legend to a diel plot
 </tbody>
 </table>
 <p>The components that are plotted can be specified using the <code>plot</code> parameter.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="patterns-of-activity.html#cb5-1" aria-hidden="true" tabindex="-1"></a>components <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Sunrise&quot;</span>, <span class="st">&quot;Sunset&quot;</span>, <span class="st">&quot;Solar Noon&quot;</span>, <span class="st">&quot;Nadir&quot;</span>)</span>
-<span id="cb5-2"><a href="patterns-of-activity.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">plot=</span>components)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="patterns-of-activity.html#cb6-1" aria-hidden="true" tabindex="-1"></a>components <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Sunrise&quot;</span>, <span class="st">&quot;Sunset&quot;</span>, <span class="st">&quot;Solar Noon&quot;</span>, <span class="st">&quot;Nadir&quot;</span>)</span>
+<span id="cb6-2"><a href="patterns-of-activity.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">plot=</span>components)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:diel-plot-components"></span>
 <img src="_main_files/figure-html/diel-plot-components-1.png" alt="Example adding a legend to a diel plot" width="90%" />
 <p class="caption">
@@ -340,14 +348,14 @@ Figure 7.4: Example adding a legend to a diel plot
 <div id="core-and-ring-plots" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> Core and ring plots<a href="patterns-of-activity.html#core-and-ring-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>These visualisations for cyclical data plot their information onto a circle with radius of two units. It is possible to limit the plot either to the centre of the circle (a ‘core’ plot) or to the edge (a ‘ring plot’). These alternative forms may be more useful when these plots are used to visualise addition variables (<a href="patterns-of-activity.html#adding-to-cyclical">7.5</a>).</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="patterns-of-activity.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="patterns-of-activity.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:diel-plot-core"></span>
 <img src="_main_files/figure-html/diel-plot-core-1.png" alt="A 'core' diel plot." width="90%" />
 <p class="caption">
 Figure 7.5: A ‘core’ diel plot.
 </p>
 </div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="patterns-of-activity.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="patterns-of-activity.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:diel-plot-ring"></span>
 <img src="_main_files/figure-html/diel-plot-ring-1.png" alt="A 'ring' diel plot." width="90%" />
 <p class="caption">

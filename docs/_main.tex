@@ -110,12 +110,12 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={Visualisation for bioacoustics and ecoacoustics},
+  pdftitle={Visualisation for bioacoustics and ecoacoustics in R},
   pdfauthor={Ed Baker},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{Visualisation for bioacoustics and ecoacoustics}
+\title{Visualisation for bioacoustics and ecoacoustics in R}
 \author{Ed Baker}
 \date{2022-08-15}
 
@@ -150,6 +150,18 @@ While Murray Schafer's \emph{Tuning of the World} \citep{schafer1977} inspired m
 Additionally, it is now useful to distinguish between two concepts that Schafer bought together under the concept of \emph{notation}. Schafer used this term to bring together what is more typically known as notation -- phonetics and musical notation -- alongside visual representations of the physical properties of acoustic waves (amplitude, frequency, etc).
 
 Historically both musical notation and phonemes have been used to describe the songs of various animals, however these methods do not scale to the entirety of the biological soundscape. There is after all, a great deal of the soundscape that is beyond the limits of human hearing, the infrasound, the ultrasound, and the quiet. All manner of information is gathered and shared by other species beyond the limits of our perception, and visualisation is the main tool by which we are able to interpret the entire soundscape. For all species that share it.
+
+\hypertarget{basic-acoustic-terminology}{%
+\section{Basic acoustic terminology}\label{basic-acoustic-terminology}}
+
+\hypertarget{types-of-files}{%
+\section{Types of files}\label{types-of-files}}
+
+\hypertarget{waveform-files}{%
+\subsection{Waveform files}\label{waveform-files}}
+
+\hypertarget{zero-crossing-files}{%
+\subsection{zero-crossing}\label{zero-crossing-files}}
 
 \hypertarget{history}{%
 \chapter{History}\label{history}}
@@ -198,8 +210,18 @@ Typical musical notation shows broad similarities with a typical audio visualisa
 \hypertarget{video-spectrograms}{%
 \section{Video spectrograms}\label{video-spectrograms}}
 
-\hypertarget{zcjs-r}{%
-\section{zcjs-r}\label{zcjs-r}}
+\hypertarget{zcjs-zero-crossing-file-visualisation}{%
+\section{zcjs: Zero-crossing File Visualisation}\label{zcjs-zero-crossing-file-visualisation}}
+
+The zcjs JavaScript library was originally developed for displaying zero-crossing audio files (\ref{zero-crossing-files}) on the web as part of the BioAcoustica project (\url{https://bio.acousti.ca}; \citet{baker2015bioacoustica}). The \texttt{zcjs} package \citep{zcjsr} imports this visualisation functionality into R.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"devtools"}\NormalTok{)}
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"bioacoustica/zcjs{-}r"}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(zcjs)}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{representing-soundscapes}{%
 \chapter{Representing Soundscapes}\label{representing-soundscapes}}

@@ -1,5 +1,5 @@
 --- 
-title: "Visualisation for bioacoustics and ecoacoustics"
+title: "Visualisation for bioacoustics and ecoacoustics in R"
 author: "Ed Baker"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
