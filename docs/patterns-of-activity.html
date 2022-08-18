@@ -23,7 +23,7 @@
 <meta name="author" content="Ed Baker" />
 
 
-<meta name="date" content="2022-08-15" />
+<meta name="date" content="2022-08-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -347,6 +347,14 @@ Figure 7.4: Example adding a legend to a diel plot
 </div>
 <div id="yearly-cycles" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Yearly Cycles<a href="patterns-of-activity.html#yearly-cycles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <code>yearlyPlot()</code> function from the SonicScrewdriver package shows daylight changes throughout a year. It behaves in a very similar fashion to <code>dielPlot</code> but takes a single year rather a date as input.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="patterns-of-activity.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">yearlyPlot</span>(<span class="dv">2022</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:yearly-plot-1"></span>
+<img src="_main_files/figure-html/yearly-plot-1-1.png" alt="Example of a yearly plot" width="90%" />
+<p class="caption">
+Figure 7.5: Example of a yearly plot
+</p>
+</div>
 </div>
 <div id="lunar-cycles" class="section level2 hasAnchor" number="7.3">
 <h2><span class="header-section-number">7.3</span> Lunar Cycles<a href="patterns-of-activity.html#lunar-cycles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -354,18 +362,18 @@ Figure 7.4: Example adding a legend to a diel plot
 <div id="core-and-ring-plots" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> Core and ring plots<a href="patterns-of-activity.html#core-and-ring-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>These visualisations for cyclical data plot their information onto a circle with radius of two units. It is possible to limit the plot either to the centre of the circle (a ‘core’ plot) or to the edge (a ‘ring plot’). These alternative forms may be more useful when these plots are used to visualise addition variables (<a href="patterns-of-activity.html#adding-to-cyclical">7.5</a>).</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="patterns-of-activity.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="patterns-of-activity.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:diel-plot-core"></span>
 <img src="_main_files/figure-html/diel-plot-core-1.png" alt="A 'core' diel plot." width="90%" />
 <p class="caption">
-Figure 7.5: A ‘core’ diel plot.
+Figure 7.6: A ‘core’ diel plot.
 </p>
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="patterns-of-activity.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="patterns-of-activity.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:diel-plot-ring"></span>
 <img src="_main_files/figure-html/diel-plot-ring-1.png" alt="A 'ring' diel plot." width="90%" />
 <p class="caption">
-Figure 7.6: A ‘ring’ diel plot.
+Figure 7.7: A ‘ring’ diel plot.
 </p>
 </div>
 </div>
@@ -377,30 +385,30 @@ Figure 7.6: A ‘ring’ diel plot.
 <p>By defaults the limits for the rings are <code>1,2</code> for use with a <em>core</em> type plot, but this can be changed by specifying the <code>limits</code> parameter to the ring function. Similarly, the plot legend may be removed with the paramater <code>legend=FALSE</code>.</p>
 <div id="dielrings" class="section level4 hasAnchor" number="7.5.1.1">
 <h4><span class="header-section-number">7.5.1.1</span> <code>dielRings()</code><a href="patterns-of-activity.html#dielrings" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="patterns-of-activity.html#cb10-1" aria-hidden="true" tabindex="-1"></a>names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;activity 1&quot;</span>, <span class="st">&quot;activity 2&quot;</span>, <span class="st">&quot;activity 3&quot;</span>)</span>
-<span id="cb10-2"><a href="patterns-of-activity.html#cb10-2" aria-hidden="true" tabindex="-1"></a>starts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;0600&quot;</span>, <span class="st">&quot;0900&quot;</span>, <span class="st">&quot;1500&quot;</span>)</span>
-<span id="cb10-3"><a href="patterns-of-activity.html#cb10-3" aria-hidden="true" tabindex="-1"></a>ends <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1200&quot;</span>, <span class="st">&quot;1700&quot;</span>, <span class="st">&quot;1900&quot;</span>)</span>
-<span id="cb10-4"><a href="patterns-of-activity.html#cb10-4" aria-hidden="true" tabindex="-1"></a>cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb10-5"><a href="patterns-of-activity.html#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="patterns-of-activity.html#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
-<span id="cb10-7"><a href="patterns-of-activity.html#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dielRings</span>(names, starts, ends, <span class="at">cols=</span>cols)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:diel-plot-rings-1"></span>
-<img src="_main_files/figure-html/diel-plot-rings-1-1.png" alt="A 'core' diel plot with diel rings." width="90%" />
-<p class="caption">
-Figure 7.7: A ‘core’ diel plot with diel rings.
-</p>
-</div>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="patterns-of-activity.html#cb11-1" aria-hidden="true" tabindex="-1"></a>names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;activity 1&quot;</span>, <span class="st">&quot;activity 2&quot;</span>, <span class="st">&quot;activity 3&quot;</span>)</span>
 <span id="cb11-2"><a href="patterns-of-activity.html#cb11-2" aria-hidden="true" tabindex="-1"></a>starts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;0600&quot;</span>, <span class="st">&quot;0900&quot;</span>, <span class="st">&quot;1500&quot;</span>)</span>
 <span id="cb11-3"><a href="patterns-of-activity.html#cb11-3" aria-hidden="true" tabindex="-1"></a>ends <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1200&quot;</span>, <span class="st">&quot;1700&quot;</span>, <span class="st">&quot;1900&quot;</span>)</span>
 <span id="cb11-4"><a href="patterns-of-activity.html#cb11-4" aria-hidden="true" tabindex="-1"></a>cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>)</span>
 <span id="cb11-5"><a href="patterns-of-activity.html#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="patterns-of-activity.html#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb11-7"><a href="patterns-of-activity.html#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dielRings</span>(names, starts, ends, <span class="at">cols=</span>cols, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span></code></pre></div>
+<span id="cb11-6"><a href="patterns-of-activity.html#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb11-7"><a href="patterns-of-activity.html#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dielRings</span>(names, starts, ends, <span class="at">cols=</span>cols)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:diel-plot-rings-1"></span>
+<img src="_main_files/figure-html/diel-plot-rings-1-1.png" alt="A 'core' diel plot with diel rings." width="90%" />
+<p class="caption">
+Figure 7.8: A ‘core’ diel plot with diel rings.
+</p>
+</div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="patterns-of-activity.html#cb12-1" aria-hidden="true" tabindex="-1"></a>names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;activity 1&quot;</span>, <span class="st">&quot;activity 2&quot;</span>, <span class="st">&quot;activity 3&quot;</span>)</span>
+<span id="cb12-2"><a href="patterns-of-activity.html#cb12-2" aria-hidden="true" tabindex="-1"></a>starts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;0600&quot;</span>, <span class="st">&quot;0900&quot;</span>, <span class="st">&quot;1500&quot;</span>)</span>
+<span id="cb12-3"><a href="patterns-of-activity.html#cb12-3" aria-hidden="true" tabindex="-1"></a>ends <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1200&quot;</span>, <span class="st">&quot;1700&quot;</span>, <span class="st">&quot;1900&quot;</span>)</span>
+<span id="cb12-4"><a href="patterns-of-activity.html#cb12-4" aria-hidden="true" tabindex="-1"></a>cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb12-5"><a href="patterns-of-activity.html#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="patterns-of-activity.html#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dielPlot</span>(<span class="st">&quot;2022-08-08&quot;</span>, <span class="at">lat=</span><span class="dv">53</span>, <span class="at">lon=</span><span class="fl">0.1</span>, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb12-7"><a href="patterns-of-activity.html#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dielRings</span>(names, starts, ends, <span class="at">cols=</span>cols, <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:diel-plot-rings-2"></span>
 <img src="_main_files/figure-html/diel-plot-rings-2-1.png" alt="A 'ring' diel plot with diel rings." width="90%" />
 <p class="caption">
-Figure 7.8: A ‘ring’ diel plot with diel rings.
+Figure 7.9: A ‘ring’ diel plot with diel rings.
 </p>
 </div>
 </div>

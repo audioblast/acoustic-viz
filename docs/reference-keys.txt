@@ -49,3 +49,4 @@ displaying-annotations
 shiny-interactive-web-apps
 the-future
 acknowledgements
+fig:yearly-plot-1
