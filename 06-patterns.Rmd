@@ -121,7 +121,7 @@ These visualisations for cyclical data plot their information onto a circle with
 dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(0,1))
 ```
 
-```{r diel-plot-ring, fig.height=7, fig.width=9, fig.cap='A \'ring\' diel plot.', fig.align='center', out.width='90%', cache=TRUE}
+```{r diel-plot-ring, fig.height=7, fig.width=9, fig.cap='A \'ring\' diel plot.', fig.align='center', out.width='90%'}
 dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(1,2))
 ```
 
