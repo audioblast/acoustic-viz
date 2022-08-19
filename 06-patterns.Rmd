@@ -157,9 +157,11 @@ dielRings(names, starts, ends, cols=cols, limits=c(0,1))
 
 ## Behind the scenes
 
-The majority of the plotting performed for cyclical plots in `SonicScrewdriver` is performed by the `radialPolygon()` function. This function can be used to plot sectors, annuli, horizon plots and irregular polygons. If you wish to customise cyclical plots beyond what the helper functions such as `dielRings()` allow then it is likely that `radialPolygon()` is the tool you need.
+### `radialPolygon()`
 
-```{r radialPolygon-types, fig.height=7, fig.width=9, fig.cap='Types of radial polygon plot', fig.align='center', out.width='90%'}
+The majority of the plotting performed for cyclical plots in `SonicScrewdriver` is performed by the `radialPolygon()` function. This function can be used to plot sectors, annuli, horizon plots and irregular polygons. If you wish to customise cyclical plots beyond what the provided functions such as `dielRings()` allow then it is likely that `radialPolygon()` is the tool you need.
+
+```{r radialPolygon-types, fig.height=7, fig.width=9, fig.cap='Types of radial polygon plot', fig.align='center', out.width='90%', echo=FALSE}
 plotrix::radial.plot(
   lengths=0,
   radial.pos=0,
@@ -191,6 +193,20 @@ legend(
   bty = "n",
   cex = 1)
 ```
+
+#### Sectors
+
+#### Annuli
+
+#### Horizons
+
+#### Polygons
+
+### Helper functions
+
+#### `dielFraction()`
+
+#### `dielLabels()` and `yearlyLabels()`
 
 ## Interactive Plots
 These plots can be used to create Shiny apps
