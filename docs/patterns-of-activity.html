@@ -23,7 +23,7 @@
 <meta name="author" content="Ed Baker" />
 
 
-<meta name="date" content="2022-08-18" />
+<meta name="date" content="2022-08-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -212,7 +212,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.5.1" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#rings"><i class="fa fa-check"></i><b>7.5.1</b> Rings</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#interactive-plots"><i class="fa fa-check"></i><b>7.6</b> Interactive Plots</a></li>
+<li class="chapter" data-level="7.6" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#behind-the-scenes"><i class="fa fa-check"></i><b>7.6</b> Behind the scenes</a></li>
+<li class="chapter" data-level="7.7" data-path="patterns-of-activity.html"><a href="patterns-of-activity.html#interactive-plots"><i class="fa fa-check"></i><b>7.7</b> Interactive Plots</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="displaying-annotations.html"><a href="displaying-annotations.html"><i class="fa fa-check"></i><b>8</b> Displaying annotations</a></li>
 <li class="chapter" data-level="9" data-path="shiny-interactive-web-apps.html"><a href="shiny-interactive-web-apps.html"><i class="fa fa-check"></i><b>9</b> Shiny: Interactive Web Apps</a></li>
@@ -414,8 +415,48 @@ Figure 7.9: A ‘ring’ diel plot with diel rings.
 </div>
 </div>
 </div>
-<div id="interactive-plots" class="section level2 hasAnchor" number="7.6">
-<h2><span class="header-section-number">7.6</span> Interactive Plots<a href="patterns-of-activity.html#interactive-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="behind-the-scenes" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Behind the scenes<a href="patterns-of-activity.html#behind-the-scenes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The majority of the plotting performed for cyclical plots in <code>SonicScrewdriver</code> is performed by the <code>radialPolygon()</code> function. This function can be used to plot sectors, annuli, horizon plots and irregular polygons. If you wish to customise cyclical plots beyond what the helper functions such as <code>dielRings()</code> allow then it is likely that <code>radialPolygon()</code> is the tool you need.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="patterns-of-activity.html#cb13-1" aria-hidden="true" tabindex="-1"></a>plotrix<span class="sc">::</span><span class="fu">radial.plot</span>(</span>
+<span id="cb13-2"><a href="patterns-of-activity.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">lengths=</span><span class="dv">0</span>,</span>
+<span id="cb13-3"><a href="patterns-of-activity.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">radial.pos=</span><span class="dv">0</span>,</span>
+<span id="cb13-4"><a href="patterns-of-activity.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">rp.type=</span><span class="st">&quot;p&quot;</span>,</span>
+<span id="cb13-5"><a href="patterns-of-activity.html#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">radial.lim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>),</span>
+<span id="cb13-6"><a href="patterns-of-activity.html#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">start=</span>pi,</span>
+<span id="cb13-7"><a href="patterns-of-activity.html#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">label.pos =</span> <span class="fu">dielLabels</span>(<span class="at">pos=</span><span class="st">&#39;pos&#39;</span>)<span class="sc">*</span>pi<span class="sc">/</span><span class="dv">180</span>,</span>
+<span id="cb13-8"><a href="patterns-of-activity.html#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">labels=</span><span class="fu">dielLabels</span>(),</span>
+<span id="cb13-9"><a href="patterns-of-activity.html#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">clockwise=</span>T,</span>
+<span id="cb13-10"><a href="patterns-of-activity.html#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">poly.col=</span><span class="fu">rgb</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="fl">0.6</span>),</span>
+<span id="cb13-11"><a href="patterns-of-activity.html#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">lty=</span><span class="dv">0</span>,</span>
+<span id="cb13-12"><a href="patterns-of-activity.html#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">show.grid.labels =</span> F)</span>
+<span id="cb13-13"><a href="patterns-of-activity.html#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="patterns-of-activity.html#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="fu">radialPolygon</span>(pi<span class="sc">/</span><span class="dv">6</span>,pi<span class="sc">/</span><span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">2</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb13-15"><a href="patterns-of-activity.html#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="fu">radialPolygon</span>(pi<span class="sc">/</span><span class="dv">2</span>,pi,<span class="fl">1.75</span>,<span class="dv">2</span>, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb13-16"><a href="patterns-of-activity.html#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="patterns-of-activity.html#cb13-17" aria-hidden="true" tabindex="-1"></a>wave <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.25</span>,<span class="dv">0</span>,<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.25</span>)</span>
+<span id="cb13-18"><a href="patterns-of-activity.html#cb13-18" aria-hidden="true" tabindex="-1"></a>angs <span class="ot">&lt;-</span> pi <span class="sc">+</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span> <span class="sc">*</span> pi<span class="sc">/</span><span class="dv">16</span></span>
+<span id="cb13-19"><a href="patterns-of-activity.html#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="fu">radialPolygon</span>(<span class="cn">NA</span>,angs,<span class="dv">1</span>,<span class="fl">1.25</span><span class="sc">+</span>wave, <span class="at">col=</span><span class="st">&quot;orange&quot;</span>)</span>
+<span id="cb13-20"><a href="patterns-of-activity.html#cb13-20" aria-hidden="true" tabindex="-1"></a>angs <span class="ot">&lt;-</span> angs<span class="sc">+</span> pi<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb13-21"><a href="patterns-of-activity.html#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="fu">radialPolygon</span>(angs,angs,<span class="dv">1</span><span class="sc">+</span><span class="fu">rev</span>(wave), <span class="fl">1.25</span><span class="sc">+</span>wave, <span class="at">col=</span><span class="st">&quot;green&quot;</span>)</span>
+<span id="cb13-22"><a href="patterns-of-activity.html#cb13-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-23"><a href="patterns-of-activity.html#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(</span>
+<span id="cb13-24"><a href="patterns-of-activity.html#cb13-24" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span><span class="dv">3</span>,<span class="fl">2.5</span>,</span>
+<span id="cb13-25"><a href="patterns-of-activity.html#cb13-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">&quot;sector&quot;</span>, <span class="st">&quot;annulus&quot;</span>, <span class="st">&quot;horizon&quot;</span>, <span class="st">&quot;polygon&quot;</span>),</span>
+<span id="cb13-26"><a href="patterns-of-activity.html#cb13-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;green&quot;</span>),</span>
+<span id="cb13-27"><a href="patterns-of-activity.html#cb13-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">lty=</span><span class="dv">1</span>,</span>
+<span id="cb13-28"><a href="patterns-of-activity.html#cb13-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">lwd=</span><span class="dv">5</span>,</span>
+<span id="cb13-29"><a href="patterns-of-activity.html#cb13-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>,</span>
+<span id="cb13-30"><a href="patterns-of-activity.html#cb13-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">cex =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:radialPolygon-types"></span>
+<img src="_main_files/figure-html/radialPolygon-types-1.png" alt="Types of radial polygon plot" width="90%" />
+<p class="caption">
+Figure 7.10: Types of radial polygon plot
+</p>
+</div>
+</div>
+<div id="interactive-plots" class="section level2 hasAnchor" number="7.7">
+<h2><span class="header-section-number">7.7</span> Interactive Plots<a href="patterns-of-activity.html#interactive-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>These plots can be used to create Shiny apps</p>
 <ul>
 <li><a href="https://shiny.ebaker.me.uk/shiny-diel/">shiny-diel</a> is an example that shows diel plots for a number of locations, and can be animated using the play button under the date slider.</li>

@@ -50,3 +50,5 @@ shiny-interactive-web-apps
 the-future
 acknowledgements
 fig:yearly-plot-1
+behind-the-scenes
+fig:radialPolygon-types
