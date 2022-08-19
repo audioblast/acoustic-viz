@@ -439,6 +439,12 @@ These visualisations for cyclical data plot their information onto a circle with
 \caption{A 'ring' diel plot.}\label{fig:diel-plot-ring}
 \end{figure}
 
+\hypertarget{empty-plots}{%
+\section{Empty plots}\label{empty-plots}}
+
+\hypertarget{emptydiel}{%
+\subsection{\texorpdfstring{\texttt{emptyDiel()}}{emptyDiel()}}\label{emptydiel}}
+
 \hypertarget{adding-to-cyclical}{%
 \section{Adding data to the visualisation}\label{adding-to-cyclical}}
 
@@ -494,45 +500,19 @@ By defaults the limits for the rings are \texttt{1,2} for use with a \emph{core}
 \caption{A 'ring' diel plot with diel rings.}\label{fig:diel-plot-rings-2}
 \end{figure}
 
+\hypertarget{circularise}{%
+\subsection{Circularise}\label{circularise}}
+
+\hypertarget{using-formatmid-month}{%
+\subsection{\texorpdfstring{Using \texttt{format="mid-month"}}{Using format="mid-month"}}\label{using-formatmid-month}}
+
 \hypertarget{behind-the-scenes}{%
 \section{Behind the scenes}\label{behind-the-scenes}}
 
-The majority of the plotting performed for cyclical plots in \texttt{SonicScrewdriver} is performed by the \texttt{radialPolygon()} function. This function can be used to plot sectors, annuli, horizon plots and irregular polygons. If you wish to customise cyclical plots beyond what the helper functions such as \texttt{dielRings()} allow then it is likely that \texttt{radialPolygon()} is the tool you need.
+\hypertarget{radialpolygon}{%
+\subsection{\texorpdfstring{\texttt{radialPolygon()}}{radialPolygon()}}\label{radialpolygon}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{plotrix}\SpecialCharTok{::}\FunctionTok{radial.plot}\NormalTok{(}
-  \AttributeTok{lengths=}\DecValTok{0}\NormalTok{,}
-  \AttributeTok{radial.pos=}\DecValTok{0}\NormalTok{,}
-  \AttributeTok{rp.type=}\StringTok{"p"}\NormalTok{,}
-  \AttributeTok{radial.lim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{),}
-  \AttributeTok{start=}\NormalTok{pi,}
-  \AttributeTok{label.pos =} \FunctionTok{dielLabels}\NormalTok{(}\AttributeTok{pos=}\StringTok{\textquotesingle{}pos\textquotesingle{}}\NormalTok{)}\SpecialCharTok{*}\NormalTok{pi}\SpecialCharTok{/}\DecValTok{180}\NormalTok{,}
-  \AttributeTok{labels=}\FunctionTok{dielLabels}\NormalTok{(),}
-  \AttributeTok{clockwise=}\NormalTok{T,}
-  \AttributeTok{poly.col=}\FunctionTok{rgb}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{, }\FloatTok{0.6}\NormalTok{),}
-  \AttributeTok{lty=}\DecValTok{0}\NormalTok{,}
-  \AttributeTok{show.grid.labels =}\NormalTok{ F)}
-
-\FunctionTok{radialPolygon}\NormalTok{(pi}\SpecialCharTok{/}\DecValTok{6}\NormalTok{,pi}\SpecialCharTok{/}\DecValTok{3}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{,}\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
-\FunctionTok{radialPolygon}\NormalTok{(pi}\SpecialCharTok{/}\DecValTok{2}\NormalTok{,pi,}\FloatTok{1.75}\NormalTok{,}\DecValTok{2}\NormalTok{, }\AttributeTok{col=}\StringTok{"blue"}\NormalTok{)}
-
-\NormalTok{wave }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.25}\NormalTok{,}\FloatTok{0.5}\NormalTok{,}\FloatTok{0.25}\NormalTok{,}\DecValTok{0}\NormalTok{,}\FloatTok{0.25}\NormalTok{,}\FloatTok{0.5}\NormalTok{,}\FloatTok{0.25}\NormalTok{)}
-\NormalTok{angs }\OtherTok{\textless{}{-}}\NormalTok{ pi }\SpecialCharTok{+} \DecValTok{1}\SpecialCharTok{:}\DecValTok{8} \SpecialCharTok{*}\NormalTok{ pi}\SpecialCharTok{/}\DecValTok{16}
-\FunctionTok{radialPolygon}\NormalTok{(}\ConstantTok{NA}\NormalTok{,angs,}\DecValTok{1}\NormalTok{,}\FloatTok{1.25}\SpecialCharTok{+}\NormalTok{wave, }\AttributeTok{col=}\StringTok{"orange"}\NormalTok{)}
-\NormalTok{angs }\OtherTok{\textless{}{-}}\NormalTok{ angs}\SpecialCharTok{+}\NormalTok{ pi}\SpecialCharTok{/}\DecValTok{2}
-\FunctionTok{radialPolygon}\NormalTok{(angs,angs,}\DecValTok{1}\SpecialCharTok{+}\FunctionTok{rev}\NormalTok{(wave), }\FloatTok{1.25}\SpecialCharTok{+}\NormalTok{wave, }\AttributeTok{col=}\StringTok{"green"}\NormalTok{)}
-
-\FunctionTok{legend}\NormalTok{(}
-  \SpecialCharTok{{-}}\DecValTok{3}\NormalTok{,}\FloatTok{2.5}\NormalTok{,}
-  \FunctionTok{c}\NormalTok{(}\StringTok{"sector"}\NormalTok{, }\StringTok{"annulus"}\NormalTok{, }\StringTok{"horizon"}\NormalTok{, }\StringTok{"polygon"}\NormalTok{),}
-  \AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"blue"}\NormalTok{, }\StringTok{"orange"}\NormalTok{, }\StringTok{"green"}\NormalTok{),}
-  \AttributeTok{lty=}\DecValTok{1}\NormalTok{,}
-  \AttributeTok{lwd=}\DecValTok{5}\NormalTok{,}
-  \AttributeTok{bty =} \StringTok{"n"}\NormalTok{,}
-  \AttributeTok{cex =} \DecValTok{1}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+The majority of the plotting performed for cyclical plots in \texttt{SonicScrewdriver} is performed by the \texttt{radialPolygon()} function. This function can be used to plot sectors, annuli, horizon plots and irregular polygons. If you wish to customise cyclical plots beyond what the provided functions such as \texttt{dielRings()} allow then it is likely that \texttt{radialPolygon()} is the tool you need.
 
 \begin{figure}
 
@@ -542,6 +522,158 @@ The majority of the plotting performed for cyclical plots in \texttt{SonicScrewd
 
 \caption{Types of radial polygon plot}\label{fig:radialPolygon-types}
 \end{figure}
+
+The various types of plots are created by changing the angle and radius parameters to \texttt{radialPolygon().}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{radialPolygon}\NormalTok{(angle1, angle2, radius1, radius2, col)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{orientation}{%
+\subsubsection{Orientation}\label{orientation}}
+
+Unlike traditional polar plots, diel and yearly plots start their periods on the left hand horizontal, and proceed clockwise. This orientation is assumed by \texttt{radialPolygon()}, although it may be modified (e.g.~the parameters \texttt{reverse=FALSE} and \texttt{rot=0} will plot using the standard conventions for polar coordinate systems.)
+
+\hypertarget{sectors}{%
+\subsubsection{Sectors}\label{sectors}}
+
+A sector is a section of a circle defined by two radii and an arc between them. Sectors are used widely in the default settings of \texttt{dielPlot()} to plot the times of night and twilight.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{emptyDiel}\NormalTok{()}
+\FunctionTok{radialPolygon}\NormalTok{(pi}\SpecialCharTok{/}\DecValTok{6}\NormalTok{, }\DecValTok{2}\SpecialCharTok{*}\NormalTok{pi}\SpecialCharTok{/}\DecValTok{3}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{, }\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/radialPolygon-sector-1} 
+
+}
+
+\caption{Plotting a sector}\label{fig:radialPolygon-sector}
+\end{figure}
+
+Reversing the angle arguments allows the complementary sector to be drawn.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{emptyDiel}\NormalTok{()}
+\FunctionTok{radialPolygon}\NormalTok{(}\DecValTok{2}\SpecialCharTok{*}\NormalTok{pi}\SpecialCharTok{/}\DecValTok{3}\NormalTok{, pi}\SpecialCharTok{/}\DecValTok{6}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{, }\AttributeTok{col=}\StringTok{"blue"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/radialPolygon-sector2-1} 
+
+}
+
+\caption{Plotting a sector}\label{fig:radialPolygon-sector2}
+\end{figure}
+
+\hypertarget{annuli}{%
+\subsubsection{Annuli}\label{annuli}}
+
+An annulus is the region between two concentric circles. Annuli and annular sectors are generated by \texttt{radialPolygon()} when the parameter \texttt{radius} is greater than zero.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{emptyDiel}\NormalTok{()}
+\FunctionTok{radialPolygon}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{2}\SpecialCharTok{*}\NormalTok{pi, }\FloatTok{1.75}\NormalTok{, }\DecValTok{2}\NormalTok{, }\AttributeTok{col=}\StringTok{"blue"}\NormalTok{)}
+\FunctionTok{radialPolygon}\NormalTok{(pi, }\DecValTok{4}\SpecialCharTok{*}\NormalTok{pi}\SpecialCharTok{/}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{, }\FloatTok{1.5}\NormalTok{, }\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
+\FunctionTok{legend}\NormalTok{(}
+  \SpecialCharTok{{-}}\DecValTok{3}\NormalTok{,}\FloatTok{2.5}\NormalTok{,}
+  \FunctionTok{c}\NormalTok{(}\StringTok{"annulus"}\NormalTok{, }\StringTok{"annuluar sector"}\NormalTok{),}
+  \AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{, }\StringTok{"red"}\NormalTok{),}
+  \AttributeTok{lty=}\DecValTok{1}\NormalTok{,}
+  \AttributeTok{lwd=}\DecValTok{5}\NormalTok{,}
+  \AttributeTok{bty =} \StringTok{"n"}\NormalTok{,}
+  \AttributeTok{cex =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/radialPolygon-annuli-1} 
+
+}
+
+\caption{Plotting an annulus and an annular sector}\label{fig:radialPolygon-annuli}
+\end{figure}
+
+\hypertarget{horizons}{%
+\subsubsection{Horizons}\label{horizons}}
+
+Horizons have one circular edge, and one that represents data, they are named as they often resemble a landscape or cityscape horizon. The example below uses a generated sine pattern to form the data edge.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tuneR)}
+
+\NormalTok{angles }\OtherTok{\textless{}{-}}\NormalTok{ (}\DecValTok{0}\SpecialCharTok{:}\DecValTok{200}\NormalTok{)}\SpecialCharTok{*}\NormalTok{pi}\SpecialCharTok{/}\DecValTok{200} \SpecialCharTok{+}\NormalTok{ pi}\SpecialCharTok{/}\DecValTok{2}
+\NormalTok{values }\OtherTok{\textless{}{-}} \FloatTok{0.05}\SpecialCharTok{*}\FunctionTok{sine}\NormalTok{(}\DecValTok{10}\NormalTok{, }\AttributeTok{samp.rate=}\DecValTok{201}\NormalTok{)}\SpecialCharTok{@}\NormalTok{left}
+
+\FunctionTok{emptyDiel}\NormalTok{()}
+\FunctionTok{radialPolygon}\NormalTok{(}\ConstantTok{NA}\NormalTok{,angles,}\FloatTok{0.5}\NormalTok{,}\DecValTok{1}\SpecialCharTok{+}\NormalTok{values)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/radialPolygon-horizon-1} 
+
+}
+
+\caption{Plotting a horizon polygon.}\label{fig:radialPolygon-horizon}
+\end{figure}
+
+Setting the first angle parameter to \texttt{NA} uses the range of the second to calculate the inner edge.
+
+The inner edge can be used to show data by swapping the order of the angle and radius parameters.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tuneR)}
+
+\NormalTok{angles }\OtherTok{\textless{}{-}}\NormalTok{ (}\DecValTok{0}\SpecialCharTok{:}\DecValTok{200}\NormalTok{)}\SpecialCharTok{*}\NormalTok{pi}\SpecialCharTok{/}\DecValTok{200} \SpecialCharTok{+}\NormalTok{ pi}\SpecialCharTok{/}\DecValTok{2}
+\NormalTok{values }\OtherTok{\textless{}{-}} \FloatTok{0.05}\SpecialCharTok{*}\FunctionTok{sine}\NormalTok{(}\DecValTok{10}\NormalTok{, }\AttributeTok{samp.rate=}\DecValTok{201}\NormalTok{)}\SpecialCharTok{@}\NormalTok{left}
+
+\FunctionTok{emptyDiel}\NormalTok{()}
+\FunctionTok{radialPolygon}\NormalTok{(angles,}\ConstantTok{NA}\NormalTok{,}\DecValTok{1}\SpecialCharTok{+}\NormalTok{values,}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/radialPolygon-horizon2-1} 
+
+}
+
+\caption{Plotting a horizon polygon.}\label{fig:radialPolygon-horizon2}
+\end{figure}
+
+The \texttt{yearlyPlot()} function uses two horizon plots, with a shared data edge.
+
+\hypertarget{polygons}{%
+\subsubsection{Polygons}\label{polygons}}
+
+\hypertarget{circularise-1}{%
+\subsection{\texorpdfstring{\texttt{circularise()}}{circularise()}}\label{circularise-1}}
+
+The circularise function is used internally to form a closed loop from linear datasets.
+
+\hypertarget{helper-functions}{%
+\subsection{Helper functions}\label{helper-functions}}
+
+\hypertarget{dielfraction}{%
+\subsubsection{\texorpdfstring{\texttt{dielFraction()}}{dielFraction()}}\label{dielfraction}}
+
+\hypertarget{diellabels-and-yearlylabels}{%
+\subsubsection{\texorpdfstring{\texttt{dielLabels()} and \texttt{yearlyLabels()}}{dielLabels() and yearlyLabels()}}\label{diellabels-and-yearlylabels}}
 
 \hypertarget{interactive-plots}{%
 \section{Interactive Plots}\label{interactive-plots}}
