@@ -117,7 +117,7 @@
 
 \title{Visualisation for bioacoustics and ecoacoustics in R}
 \author{Ed Baker}
-\date{2022-08-19}
+\date{2022-08-20}
 
 \begin{document}
 \maketitle
@@ -439,80 +439,15 @@ These visualisations for cyclical data plot their information onto a circle with
 \caption{A 'ring' diel plot.}\label{fig:diel-plot-ring}
 \end{figure}
 
-\hypertarget{empty-plots}{%
-\section{Empty plots}\label{empty-plots}}
-
-\hypertarget{emptydiel}{%
-\subsection{\texorpdfstring{\texttt{emptyDiel()}}{emptyDiel()}}\label{emptydiel}}
-
-\hypertarget{adding-to-cyclical}{%
-\section{Adding data to the visualisation}\label{adding-to-cyclical}}
-
-\hypertarget{rings}{%
-\subsection{Rings}\label{rings}}
-
-The ring functions (\texttt{dielRing()},\ldots) plot ring segments on top of a base cyclical plot. These rings are useful for showing typical periods of activity for a species, or events that happen continuously for a specified period of time.
-
-By defaults the limits for the rings are \texttt{1,2} for use with a \emph{core} type plot, but this can be changed by specifying the \texttt{limits} parameter to the ring function. Similarly, the plot legend may be removed with the paramater \texttt{legend=FALSE}.
-
-\hypertarget{dielrings}{%
-\subsubsection{\texorpdfstring{\texttt{dielRings()}}{dielRings()}}\label{dielrings}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{names }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"activity 1"}\NormalTok{, }\StringTok{"activity 2"}\NormalTok{, }\StringTok{"activity 3"}\NormalTok{)}
-\NormalTok{starts }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"0600"}\NormalTok{, }\StringTok{"0900"}\NormalTok{, }\StringTok{"1500"}\NormalTok{)}
-\NormalTok{ends }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"1200"}\NormalTok{, }\StringTok{"1700"}\NormalTok{, }\StringTok{"1900"}\NormalTok{)}
-\NormalTok{cols }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"green"}\NormalTok{, }\StringTok{"blue"}\NormalTok{)}
-
-\FunctionTok{dielPlot}\NormalTok{(}\StringTok{"2022{-}08{-}08"}\NormalTok{, }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\FloatTok{0.1}\NormalTok{, }\AttributeTok{limits=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{))}
-\FunctionTok{dielRings}\NormalTok{(names, starts, ends, }\AttributeTok{cols=}\NormalTok{cols)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/diel-plot-rings-1-1} 
-
-}
-
-\caption{A 'core' diel plot with diel rings.}\label{fig:diel-plot-rings-1}
-\end{figure}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{names }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"activity 1"}\NormalTok{, }\StringTok{"activity 2"}\NormalTok{, }\StringTok{"activity 3"}\NormalTok{)}
-\NormalTok{starts }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"0600"}\NormalTok{, }\StringTok{"0900"}\NormalTok{, }\StringTok{"1500"}\NormalTok{)}
-\NormalTok{ends }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"1200"}\NormalTok{, }\StringTok{"1700"}\NormalTok{, }\StringTok{"1900"}\NormalTok{)}
-\NormalTok{cols }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"green"}\NormalTok{, }\StringTok{"blue"}\NormalTok{)}
-
-\FunctionTok{dielPlot}\NormalTok{(}\StringTok{"2022{-}08{-}08"}\NormalTok{, }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\FloatTok{0.1}\NormalTok{, }\AttributeTok{limits=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
-\FunctionTok{dielRings}\NormalTok{(names, starts, ends, }\AttributeTok{cols=}\NormalTok{cols, }\AttributeTok{limits=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/diel-plot-rings-2-1} 
-
-}
-
-\caption{A 'ring' diel plot with diel rings.}\label{fig:diel-plot-rings-2}
-\end{figure}
-
-\hypertarget{circularise}{%
-\subsection{Circularise}\label{circularise}}
-
-\hypertarget{using-formatmid-month}{%
-\subsection{\texorpdfstring{Using \texttt{format="mid-month"}}{Using format="mid-month"}}\label{using-formatmid-month}}
-
 \hypertarget{behind-the-scenes}{%
 \section{Behind the scenes}\label{behind-the-scenes}}
 
 \hypertarget{radialpolygon}{%
 \subsection{\texorpdfstring{\texttt{radialPolygon()}}{radialPolygon()}}\label{radialpolygon}}
 
-The majority of the plotting performed for cyclical plots in \texttt{SonicScrewdriver} is performed by the \texttt{radialPolygon()} function. This function can be used to plot sectors, annuli, horizon plots and irregular polygons. If you wish to customise cyclical plots beyond what the provided functions such as \texttt{dielRings()} allow then it is likely that \texttt{radialPolygon()} is the tool you need.
+The majority of the plotting performed for cyclical plots in \texttt{SonicScrewdriver} is performed by the \texttt{radialPolygon()} function. This function can be used to plot sectors, annuli, horizon plots and irregular polygons. It is used by the plotting functions such as \texttt{dielPlot()} as well as helper functions such as \texttt{dielRings()} to add data to cyclical plots.
+
+For simple use cases, knowledge of the operation of \texttt{radialPolygon()} may not be needed. A number of helper functions cover the most common uses. However, an understanding of how this function works will allow for far greater customisation of cyclical plots than would otherwise be possible.
 
 \begin{figure}
 
@@ -661,19 +596,217 @@ The \texttt{yearlyPlot()} function uses two horizon plots, with a shared data ed
 \hypertarget{polygons}{%
 \subsubsection{Polygons}\label{polygons}}
 
-\hypertarget{circularise-1}{%
-\subsection{\texorpdfstring{\texttt{circularise()}}{circularise()}}\label{circularise-1}}
+\hypertarget{empty-plots}{%
+\section{Empty plots}\label{empty-plots}}
 
-The circularise function is used internally to form a closed loop from linear datasets.
+The uses of daily and yearly plots extend beyond linking data to earthly cycles. The following functions provide the basic coordinate system without any data plotted (these functions are used intenally by \texttt{dielPlot()} and \texttt{yearlyPlot()} to establish their coordinate system).
+
+\hypertarget{emptydiel}{%
+\subsection{\texorpdfstring{\texttt{emptyDiel()}}{emptyDiel()}}\label{emptydiel}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{emptyDiel}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/emptyDiel-1} 
+
+}
+
+\caption{An empty dielPlot().}\label{fig:emptyDiel}
+\end{figure}
+
+\hypertarget{emptyyearly}{%
+\subsection{\texorpdfstring{\texttt{emptyYearly()}}{emptyYearly()}}\label{emptyyearly}}
+
+The \texttt{emptyYearly()} function takes an option \texttt{year} parameter that automatically adjusts the grid positions for leap years, although the visual effect is marginal.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{emptyYearly}\NormalTok{(}\AttributeTok{year=}\DecValTok{2000}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/emptyYearly-1} 
+
+}
+
+\caption{An empty yearlyPlot().}\label{fig:emptyYearly}
+\end{figure}
+
+\hypertarget{adding-to-cyclical}{%
+\section{Adding data to the visualisation}\label{adding-to-cyclical}}
+
+\hypertarget{periodic-data-rings}{%
+\subsection{Periodic data: rings}\label{periodic-data-rings}}
+
+The ring functions (\texttt{dielRing()},\ldots) plot ring segments on top of a base cyclical plot. These rings are useful for showing typical periods of activity for a species, or events that happen continuously for a specified period of time.
+
+By defaults the limits for the rings are \texttt{1,2} for use with a \emph{core} type plot, but this can be changed by specifying the \texttt{limits} parameter to the ring function. Similarly, the plot legend may be removed with the paramater \texttt{legend=FALSE}.
+
+\hypertarget{dielrings}{%
+\subsubsection{\texorpdfstring{\texttt{dielRings()}}{dielRings()}}\label{dielrings}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{names }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"activity 1"}\NormalTok{, }\StringTok{"activity 2"}\NormalTok{, }\StringTok{"activity 3"}\NormalTok{)}
+\NormalTok{starts }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"0600"}\NormalTok{, }\StringTok{"0900"}\NormalTok{, }\StringTok{"1500"}\NormalTok{)}
+\NormalTok{ends }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"1200"}\NormalTok{, }\StringTok{"1700"}\NormalTok{, }\StringTok{"1900"}\NormalTok{)}
+\NormalTok{cols }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"green"}\NormalTok{, }\StringTok{"blue"}\NormalTok{)}
+
+\FunctionTok{dielPlot}\NormalTok{(}\StringTok{"2022{-}08{-}08"}\NormalTok{, }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\FloatTok{0.1}\NormalTok{, }\AttributeTok{limits=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\FunctionTok{dielRings}\NormalTok{(names, starts, ends, }\AttributeTok{cols=}\NormalTok{cols)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/diel-plot-rings-1-1} 
+
+}
+
+\caption{A 'core' diel plot with diel rings.}\label{fig:diel-plot-rings-1}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{names }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"activity 1"}\NormalTok{, }\StringTok{"activity 2"}\NormalTok{, }\StringTok{"activity 3"}\NormalTok{)}
+\NormalTok{starts }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"0600"}\NormalTok{, }\StringTok{"0900"}\NormalTok{, }\StringTok{"1500"}\NormalTok{)}
+\NormalTok{ends }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"1200"}\NormalTok{, }\StringTok{"1700"}\NormalTok{, }\StringTok{"1900"}\NormalTok{)}
+\NormalTok{cols }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"green"}\NormalTok{, }\StringTok{"blue"}\NormalTok{)}
+
+\FunctionTok{dielPlot}\NormalTok{(}\StringTok{"2022{-}08{-}08"}\NormalTok{, }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\FloatTok{0.1}\NormalTok{, }\AttributeTok{limits=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+\FunctionTok{dielRings}\NormalTok{(names, starts, ends, }\AttributeTok{cols=}\NormalTok{cols, }\AttributeTok{limits=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/diel-plot-rings-2-1} 
+
+}
+
+\caption{A 'ring' diel plot with diel rings.}\label{fig:diel-plot-rings-2}
+\end{figure}
+
+\hypertarget{periodic-data-horizons}{%
+\subsection{Periodic data: horizons}\label{periodic-data-horizons}}
+
+In this example we will plot the average monthly minimum and maximum temperatures for Lyme Regis, UK onto a \texttt{yearlyPlot()}. This example introduces two helper functions; \texttt{yearlyLabels()} and \texttt{circularise()}.
+
+\hypertarget{yearlylabels-and-yearlypositions}{%
+\subsubsection{\texorpdfstring{\texttt{yearlyLabels()} and \texttt{yearlyPositions}}{yearlyLabels() and yearlyPositions}}\label{yearlylabels-and-yearlypositions}}
+
+These two functions are closely related, and used internally by \texttt{SonicScrewdriveR} to label a yearly plot.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{yearlyLabels}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+The optional \texttt{pos} parameter when set to \texttt{TRUE} returns a vector of positions for the labels around the plot (in radians).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{yearlyPositions}\NormalTok{(}\AttributeTok{year=}\DecValTok{2022}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 0.0000000 0.5336404 1.0156382 1.5492786 2.0657048 2.5993452 3.1157713
+##  [8] 3.6494117 4.1830521 4.6994783 5.2331187 5.7495449
+\end{verbatim}
+
+The temperature data we have for Lyme Regis is monthly, however we would like to plot the values at the middle of the respective month. For this we add the parameter \texttt{format="mid-month"} to get the appropriate radial angles.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{yearlyPositions}\NormalTok{(}\AttributeTok{year=}\DecValTok{2022}\NormalTok{, }\AttributeTok{format=}\StringTok{"mid{-}months"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 0.2668202 0.7746393 1.2824584 1.8074917 2.3325250 2.8575582 3.3825915
+##  [8] 3.9162319 4.4412652 4.9662985 5.4913318 5.9733296
+\end{verbatim}
+
+If we now plot this data we see that the output is not quite a complete ring or horizon data as we might have expected.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Temperature data for Lyme Regis}
+\NormalTok{t\_min }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\FloatTok{2.7}\NormalTok{, }\FloatTok{3.4}\NormalTok{, }\FloatTok{5.2}\NormalTok{, }\FloatTok{8.2}\NormalTok{, }\FloatTok{11.2}\NormalTok{, }\FloatTok{13.1}\NormalTok{, }\DecValTok{13}\NormalTok{, }\FloatTok{14.4}\NormalTok{, }\FloatTok{9.2}\NormalTok{, }\FloatTok{5.8}\NormalTok{, }\FloatTok{3.8}\NormalTok{)}
+\NormalTok{t\_max }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{7.9}\NormalTok{,}\DecValTok{8}\NormalTok{, }\FloatTok{9.8}\NormalTok{, }\FloatTok{12.4}\NormalTok{, }\FloatTok{15.4}\NormalTok{, }\FloatTok{18.2}\NormalTok{, }\FloatTok{20.1}\NormalTok{, }\FloatTok{19.5}\NormalTok{, }\FloatTok{17.8}\NormalTok{, }\FloatTok{14.4}\NormalTok{, }\FloatTok{10.6}\NormalTok{, }\FloatTok{8.4}\NormalTok{)}
+
+\CommentTok{\# Scale the data}
+\NormalTok{sf }\OtherTok{\textless{}{-}} \FunctionTok{max}\NormalTok{(t\_max)}
+\NormalTok{t\_min }\OtherTok{\textless{}{-}}\NormalTok{ t\_min}\SpecialCharTok{/}\NormalTok{sf}
+\NormalTok{t\_max }\OtherTok{\textless{}{-}}\NormalTok{ t\_max}\SpecialCharTok{/}\NormalTok{sf}
+
+\NormalTok{angles }\OtherTok{\textless{}{-}} \FunctionTok{yearlyPositions}\NormalTok{(}\AttributeTok{format=}\StringTok{"mid{-}months"}\NormalTok{)}
+
+\FunctionTok{yearlyPlot}\NormalTok{(}\AttributeTok{lat=}\FloatTok{50.7}\NormalTok{, }\AttributeTok{lon=}\SpecialCharTok{{-}}\FloatTok{2.9}\NormalTok{)}
+\FunctionTok{radialPolygon}\NormalTok{(angles, angles, t\_min, t\_max, }\AttributeTok{col=}\StringTok{"orange"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/lyme-temp-1-1} 
+
+}
+
+\caption{Horizon data plot without circularise().}\label{fig:lyme-temp-1}
+\end{figure}
+
+\hypertarget{circularise}{%
+\subsubsection{\texorpdfstring{\texttt{circularise()}}{circularise()}}\label{circularise}}
+
+In order to join the horizons into a complete ring we can use the \texttt{circularise()} function on the angle and temperature vectors.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Temperature data for Lyme Regis}
+\NormalTok{t\_min }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\FloatTok{2.7}\NormalTok{, }\FloatTok{3.4}\NormalTok{, }\FloatTok{5.2}\NormalTok{, }\FloatTok{8.2}\NormalTok{, }\FloatTok{11.2}\NormalTok{, }\FloatTok{13.1}\NormalTok{, }\DecValTok{13}\NormalTok{, }\FloatTok{14.4}\NormalTok{, }\FloatTok{9.2}\NormalTok{, }\FloatTok{5.8}\NormalTok{, }\FloatTok{3.8}\NormalTok{)}
+\NormalTok{t\_max }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{7.9}\NormalTok{,}\DecValTok{8}\NormalTok{, }\FloatTok{9.8}\NormalTok{, }\FloatTok{12.4}\NormalTok{, }\FloatTok{15.4}\NormalTok{, }\FloatTok{18.2}\NormalTok{, }\FloatTok{20.1}\NormalTok{, }\FloatTok{19.5}\NormalTok{, }\FloatTok{17.8}\NormalTok{, }\FloatTok{14.4}\NormalTok{, }\FloatTok{10.6}\NormalTok{, }\FloatTok{8.4}\NormalTok{)}
+
+\CommentTok{\# Scale the data}
+\NormalTok{sf }\OtherTok{\textless{}{-}} \FunctionTok{max}\NormalTok{(t\_max)}
+\NormalTok{t\_min }\OtherTok{\textless{}{-}}\NormalTok{ t\_min}\SpecialCharTok{/}\NormalTok{sf}
+\NormalTok{t\_max }\OtherTok{\textless{}{-}}\NormalTok{ t\_max}\SpecialCharTok{/}\NormalTok{sf}
+
+\NormalTok{angles }\OtherTok{\textless{}{-}} \FunctionTok{yearlyPositions}\NormalTok{(}\AttributeTok{format=}\StringTok{"mid{-}months"}\NormalTok{)}
+
+\CommentTok{\# Circularise}
+\NormalTok{t\_min }\OtherTok{\textless{}{-}} \FunctionTok{circularise}\NormalTok{(t\_min)}
+\NormalTok{t\_max }\OtherTok{\textless{}{-}} \FunctionTok{circularise}\NormalTok{(t\_max)}
+\NormalTok{angles }\OtherTok{\textless{}{-}} \FunctionTok{circularise}\NormalTok{(angles)}
+
+\FunctionTok{yearlyPlot}\NormalTok{(}\AttributeTok{lat=}\FloatTok{50.7}\NormalTok{, }\AttributeTok{lon=}\SpecialCharTok{{-}}\FloatTok{2.9}\NormalTok{)}
+\FunctionTok{radialPolygon}\NormalTok{(angles, angles, t\_min, t\_max, }\AttributeTok{col=}\StringTok{"orange"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/lyme-temp-2-1} 
+
+}
+
+\caption{Horizon data plot with circularise().}\label{fig:lyme-temp-2}
+\end{figure}
 
 \hypertarget{helper-functions}{%
 \subsection{Helper functions}\label{helper-functions}}
 
 \hypertarget{dielfraction}{%
 \subsubsection{\texorpdfstring{\texttt{dielFraction()}}{dielFraction()}}\label{dielfraction}}
-
-\hypertarget{diellabels-and-yearlylabels}{%
-\subsubsection{\texorpdfstring{\texttt{dielLabels()} and \texttt{yearlyLabels()}}{dielLabels() and yearlyLabels()}}\label{diellabels-and-yearlylabels}}
 
 \hypertarget{interactive-plots}{%
 \section{Interactive Plots}\label{interactive-plots}}

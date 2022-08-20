@@ -20,7 +20,7 @@ The design for these plots came from a desire to compare the dawn chorus at vari
 
 ### The Types of Twilight { #twilight-types }
 
-```{r, twilights, fig.asp=0.6875, fig.width=9, fig.cap='Different types of twilight as the sun sets below the horizon', fig.align='center', out.width='90%', echo=FALSE}
+```{r, twilights, fig.asp=0.6875, fig.width=9, fig.cap='Different types of twilight as the sun sets below the horizon', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
 plot.default(
   NULL, 
   NULL, 
@@ -65,7 +65,7 @@ When the sun is between 12° and 18° below the horizon many astronomical observ
 As the times of the solar day are dependent both on the date and location these must be passed to the `dielPlot()` function.
 
 
-```{r diel-plot-1, fig.height=7, fig.width=9, fig.cap='Example of a diel plot', fig.align='center', out.width='90%'}
+```{r diel-plot-1, fig.height=7, fig.width=9, fig.cap='Example of a diel plot', fig.align='center', out.width='90%', cache=TRUE}
 dielPlot("2022-08-08", lat=53, lon=0.1)
 ```
 
@@ -77,7 +77,7 @@ __Legend__
 
 A legend can be added to the plot by setting `legend=TRUE`.
 
-```{r diel-plot-legend, fig.height=7, fig.width=9, fig.cap='Example adding a legend to a diel plot', fig.align='center', out.width='90%'}
+```{r diel-plot-legend, fig.height=7, fig.width=9, fig.cap='Example adding a legend to a diel plot', fig.align='center', out.width='90%', cache=TRUE}
 dielPlot("2022-08-08", lat=53, lon=0.1, legend=TRUE)
 ```
 
@@ -98,7 +98,7 @@ Nadir |
 
 The components that are plotted can be specified using the `plot` parameter.
 
-```{r diel-plot-components, fig.height=7, fig.width=9, fig.cap='Example adding a legend to a diel plot', fig.align='center', out.width='90%'}
+```{r diel-plot-components, fig.height=7, fig.width=9, fig.cap='Example adding a legend to a diel plot', fig.align='center', out.width='90%', cache=TRUE}
 components <- c("Sunrise", "Sunset", "Solar Noon", "Nadir")
 dielPlot("2022-08-08", lat=53, lon=0.1, plot=components)
 ```
@@ -107,7 +107,7 @@ dielPlot("2022-08-08", lat=53, lon=0.1, plot=components)
 
 The `yearlyPlot()` function from the SonicScrewdriver package shows daylight changes throughout a year. It behaves in a very similar fashion to `dielPlot` but takes a single year rather a date as input.
 
-```{r yearly-plot-1, fig.height=7, fig.width=9, fig.cap='Example of a yearly plot', fig.align='center', out.width='90%'}
+```{r yearly-plot-1, fig.height=7, fig.width=9, fig.cap='Example of a yearly plot', fig.align='center', out.width='90%', cache=TRUE}
 yearlyPlot(2022, lat=53, lon=0.1)
 ```
 
@@ -117,11 +117,11 @@ yearlyPlot(2022, lat=53, lon=0.1)
 
 These visualisations for cyclical data plot their information onto a circle with radius of two units. It is possible to limit the plot either to the centre of the circle (a 'core' plot) or to the edge (a 'ring plot'). These alternative forms may be more useful when these plots are used to visualise addition variables (\@ref(adding-to-cyclical)).
 
-```{r diel-plot-core, fig.height=7, fig.width=9, fig.cap='A \'core\' diel plot.', fig.align='center', out.width='90%'}
+```{r diel-plot-core, fig.height=7, fig.width=9, fig.cap='A \'core\' diel plot.', fig.align='center', out.width='90%', cache=TRUE}
 dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(0,1))
 ```
 
-```{r diel-plot-ring, fig.height=7, fig.width=9, fig.cap='A \'ring\' diel plot.', fig.align='center', out.width='90%'}
+```{r diel-plot-ring, fig.height=7, fig.width=9, fig.cap='A \'ring\' diel plot.', fig.align='center', out.width='90%', cache=TRUE}
 dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(1,2))
 ```
 
@@ -133,7 +133,7 @@ The majority of the plotting performed for cyclical plots in `SonicScrewdriver` 
 
 For simple use cases, knowledge of the operation of `radialPolygon()` may not be needed. A number of helper functions cover the most common uses. However, an understanding of how this function works will allow for far greater customisation of cyclical plots than would otherwise be possible.
 
-```{r radialPolygon-types, fig.height=7, fig.width=9, fig.cap='Types of radial polygon plot', fig.align='center', out.width='90%', echo=FALSE}
+```{r radialPolygon-types, fig.height=7, fig.width=9, fig.cap='Types of radial polygon plot', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
 emptyDiel()
 
 radialPolygon(pi/6,pi/3, 0, 2,col="red")
@@ -169,14 +169,14 @@ Unlike traditional polar plots, diel and yearly plots start their periods on the
 
 A sector is a section of a circle defined by two radii and an arc between them. Sectors are used widely in the default settings of `dielPlot()` to plot the times of night and twilight.
 
-```{r radialPolygon-sector, fig.height=7, fig.width=9, fig.cap='Plotting a sector', fig.align='center', out.width='90%'}
+```{r radialPolygon-sector, fig.height=7, fig.width=9, fig.cap='Plotting a sector', fig.align='center', out.width='90%', cache=TRUE}
 emptyDiel()
 radialPolygon(pi/6, 2*pi/3, 0, 2, col="red")
 ```
 
 Reversing the angle arguments allows the complementary sector to be drawn.
 
-```{r radialPolygon-sector2, fig.height=7, fig.width=9, fig.cap='Plotting a sector', fig.align='center', out.width='90%'}
+```{r radialPolygon-sector2, fig.height=7, fig.width=9, fig.cap='Plotting a sector', fig.align='center', out.width='90%', cache=TRUE}
 emptyDiel()
 radialPolygon(2*pi/3, pi/6, 0, 2, col="blue")
 ```
@@ -185,7 +185,7 @@ radialPolygon(2*pi/3, pi/6, 0, 2, col="blue")
 
 An annulus is the region between two concentric circles. Annuli and annular sectors are generated by `radialPolygon()` when the parameter `radius` is greater than zero.
 
-```{r radialPolygon-annuli, fig.height=7, fig.width=9, fig.cap='Plotting an annulus and an annular sector', fig.align='center', out.width='90%'}
+```{r radialPolygon-annuli, fig.height=7, fig.width=9, fig.cap='Plotting an annulus and an annular sector', fig.align='center', out.width='90%', cache=TRUE}
 emptyDiel()
 radialPolygon(0, 2*pi, 1.75, 2, col="blue")
 radialPolygon(pi, 4*pi/3, 1, 1.5, col="red")
@@ -203,7 +203,7 @@ legend(
 
 Horizons have one circular edge, and one that represents data, they are named as they often resemble a landscape or cityscape horizon. The example below uses a generated sine pattern to form the data edge.
 
-```{r radialPolygon-horizon, fig.height=7, fig.width=9, fig.cap='Plotting a horizon polygon.', fig.align='center', out.width='90%'}
+```{r radialPolygon-horizon, fig.height=7, fig.width=9, fig.cap='Plotting a horizon polygon.', fig.align='center', out.width='90%', cache=TRUE}
 library(tuneR)
 
 angles <- (0:200)*pi/200 + pi/2
@@ -217,7 +217,7 @@ Setting the first angle parameter to `NA` uses the range of the second to calcul
 
 The inner edge can be used to show data by swapping the order of the angle and radius parameters.
 
-```{r radialPolygon-horizon2, fig.height=7, fig.width=9, fig.cap='Plotting a horizon polygon.', fig.align='center', out.width='90%'}
+```{r radialPolygon-horizon2, fig.height=7, fig.width=9, fig.cap='Plotting a horizon polygon.', fig.align='center', out.width='90%', cache=TRUE}
 library(tuneR)
 
 angles <- (0:200)*pi/200 + pi/2
@@ -245,7 +245,7 @@ emptyDiel()
 
 The `emptyYearly()` function takes an option `year` parameter that automatically adjusts the grid positions for leap years, although the visual effect is marginal.
 
-```{r emptyYearly, fig.height=7, fig.width=9, fig.cap='An empty yearlyPlot().', fig.align='center', out.width='90%'}
+```{r emptyYearly, fig.height=7, fig.width=9, fig.cap='An empty yearlyPlot().', fig.align='center', out.width='90%', cache=TRUE}
 emptyYearly(year=2000)
 ```
 
@@ -259,7 +259,7 @@ By defaults the limits for the rings are `1,2` for use with a _core_ type plot, 
 
 #### `dielRings()`
 
-```{r diel-plot-rings-1, fig.height=7, fig.width=10, fig.cap='A \'core\' diel plot with diel rings.', fig.align='center', out.width='90%'}
+```{r diel-plot-rings-1, fig.height=7, fig.width=10, fig.cap='A \'core\' diel plot with diel rings.', fig.align='center', out.width='90%', cache=TRUE}
 names <- c("activity 1", "activity 2", "activity 3")
 starts <- c("0600", "0900", "1500")
 ends <- c("1200", "1700", "1900")
