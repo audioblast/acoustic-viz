@@ -320,6 +320,69 @@ As the times of the solar day are dependent both on the date and location these 
 \caption{Example of a diel plot}\label{fig:diel-plot-1}
 \end{figure}
 
+\hypertarget{rotations-of-a-dielplot}{%
+\subsubsection{\texorpdfstring{Rotations of a \texttt{dielPlot()}}{Rotations of a dielPlot()}}\label{rotations-of-a-dielplot}}
+
+By default the information is plotted in the UTC timezone, so locations in other timezones will have an overall rotation.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\FunctionTok{dielPlot}\NormalTok{(}\FunctionTok{Sys.Date}\NormalTok{(), }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\SpecialCharTok{{-}}\DecValTok{50}\NormalTok{)}
+\FunctionTok{dielPlot}\NormalTok{(}\FunctionTok{Sys.Date}\NormalTok{(), }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\SpecialCharTok{{-}}\DecValTok{0}\NormalTok{)}
+\FunctionTok{dielPlot}\NormalTok{(}\FunctionTok{Sys.Date}\NormalTok{(), }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\DecValTok{50}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/diel-plot-no-tz-1} 
+
+}
+
+\caption{Diel plots in UTC.}\label{fig:diel-plot-no-tz}
+\end{figure}
+
+Plots can be made in any timezone by using the \texttt{rot} parameter to \texttt{dielPlot()} and the \texttt{tz()} function.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\FunctionTok{dielPlot}\NormalTok{(}\FunctionTok{Sys.Date}\NormalTok{(), }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\SpecialCharTok{{-}}\DecValTok{50}\NormalTok{, }\AttributeTok{rot=}\FunctionTok{tz}\NormalTok{(}\DecValTok{3}\NormalTok{))}
+\FunctionTok{dielPlot}\NormalTok{(}\FunctionTok{Sys.Date}\NormalTok{(), }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\SpecialCharTok{{-}}\DecValTok{0}\NormalTok{, }\AttributeTok{rot=}\FunctionTok{tz}\NormalTok{(}\DecValTok{3}\NormalTok{))}
+\FunctionTok{dielPlot}\NormalTok{(}\FunctionTok{Sys.Date}\NormalTok{(), }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\DecValTok{50}\NormalTok{, }\AttributeTok{rot=}\FunctionTok{tz}\NormalTok{(}\DecValTok{3}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/diel-plot-tz-1} 
+
+}
+
+\caption{The same diel plots in UTC +3}\label{fig:diel-plot-tz}
+\end{figure}
+
+By setting the \texttt{rot} parameter to \texttt{Solar\ Noon} it is possible to align the plots to solar noon. Notice that this rotates the plot labels.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\FunctionTok{dielPlot}\NormalTok{(}\FunctionTok{Sys.Date}\NormalTok{(), }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\SpecialCharTok{{-}}\DecValTok{50}\NormalTok{, }\AttributeTok{rot=}\StringTok{"Solar Noon"}\NormalTok{)}
+\FunctionTok{dielPlot}\NormalTok{(}\FunctionTok{Sys.Date}\NormalTok{(), }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\SpecialCharTok{{-}}\DecValTok{0}\NormalTok{, }\AttributeTok{rot=}\StringTok{"Solar Noon"}\NormalTok{)}
+\FunctionTok{dielPlot}\NormalTok{(}\FunctionTok{Sys.Date}\NormalTok{(), }\AttributeTok{lat=}\DecValTok{53}\NormalTok{, }\AttributeTok{lon=}\DecValTok{50}\NormalTok{, }\AttributeTok{rot=}\StringTok{"Solar Noon"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/diel-plot-sn-1} 
+
+}
+
+\caption{The same diel plots aligned to solar noon}\label{fig:diel-plot-sn}
+\end{figure}
+
 \hypertarget{customising-a-dielplot}{%
 \subsubsection{\texorpdfstring{Customising a \texttt{dielPlot()}}{Customising a dielPlot()}}\label{customising-a-dielplot}}
 
@@ -378,7 +441,7 @@ The components that are plotted can be specified using the \texttt{plot} paramet
 
 }
 
-\caption{Example adding a legend to a diel plot}\label{fig:diel-plot-components}
+\caption{Selecting the components to plot}\label{fig:diel-plot-components}
 \end{figure}
 
 \hypertarget{yearly-cycles}{%
@@ -807,6 +870,54 @@ In order to join the horizons into a complete ring we can use the \texttt{circul
 
 \hypertarget{dielfraction}{%
 \subsubsection{\texorpdfstring{\texttt{dielFraction()}}{dielFraction()}}\label{dielfraction}}
+
+The \texttt{dielFraction()} function is used to convert a POSIX time, or a time in \texttt{HHMM} string format, into a radial fraction. This function is called by \texttt{dielPlot()} and \texttt{dielRings()}. By default the output is multiplied by 2π to output a position round a circle.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{time }\OtherTok{\textless{}{-}} \FunctionTok{Sys.time}\NormalTok{()}
+\FunctionTok{print}\NormalTok{(time)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "2022-08-20 17:57:51 BST"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{frac }\OtherTok{\textless{}{-}} \FunctionTok{dielFraction}\NormalTok{(time)}
+\FunctionTok{print}\NormalTok{(frac)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4.703024
+\end{verbatim}
+
+The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{time }\OtherTok{\textless{}{-}} \FunctionTok{Sys.time}\NormalTok{()}
+\FunctionTok{print}\NormalTok{(time)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "2022-08-20 17:57:51 BST"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{frac }\OtherTok{\textless{}{-}} \FunctionTok{dielFraction}\NormalTok{(time, }\AttributeTok{unit=}\StringTok{"fraction"}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(frac)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.7485097
+\end{verbatim}
 
 \hypertarget{interactive-plots}{%
 \section{Interactive Plots}\label{interactive-plots}}

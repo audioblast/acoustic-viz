@@ -1,5 +1,8 @@
 fig:twilights
 fig:diel-plot-1
+fig:diel-plot-no-tz
+fig:diel-plot-tz
+fig:diel-plot-sn
 fig:diel-plot-legend
 fig:diel-plot-components
 fig:yearly-plot-1
@@ -48,6 +51,7 @@ civil-twilight
 nautical-twilight
 astronomical-twilight
 diel-plots
+rotations-of-a-dielplot
 customising-a-dielplot
 yearly-cycles
 lunar-cycles
