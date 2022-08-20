@@ -125,49 +125,13 @@ dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(0,1))
 dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(1,2))
 ```
 
-## Empty plots
-
-### `emptyDiel()`
-
-## Adding data to the visualisation { #adding-to-cyclical }
-
-### Rings
-
-The ring functions (`dielRing()`,...) plot ring segments on top of a base cyclical plot. These rings are useful for showing typical periods of activity for a species, or events that happen continuously for a specified period of time.
-
-By defaults the limits for the rings are `1,2` for use with a _core_ type plot, but this can be changed by specifying the `limits` parameter to the ring function. Similarly, the plot legend may be removed with the paramater `legend=FALSE`.
-
-#### `dielRings()`
-
-```{r diel-plot-rings-1, fig.height=7, fig.width=10, fig.cap='A \'core\' diel plot with diel rings.', fig.align='center', out.width='90%'}
-names <- c("activity 1", "activity 2", "activity 3")
-starts <- c("0600", "0900", "1500")
-ends <- c("1200", "1700", "1900")
-cols <- c("red", "green", "blue")
-
-dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(0,1))
-dielRings(names, starts, ends, cols=cols)
-```
-
-```{r diel-plot-rings-2, fig.height=7, fig.width=10, fig.cap='A \'ring\' diel plot with diel rings.', fig.align='center', out.width='90%', cache=TRUE}
-names <- c("activity 1", "activity 2", "activity 3")
-starts <- c("0600", "0900", "1500")
-ends <- c("1200", "1700", "1900")
-cols <- c("red", "green", "blue")
-
-dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(1,2))
-dielRings(names, starts, ends, cols=cols, limits=c(0,1))
-```
-
-### Circularise
-
-### Using `format="mid-month"`
-
 ## Behind the scenes
 
 ### `radialPolygon()`
 
-The majority of the plotting performed for cyclical plots in `SonicScrewdriver` is performed by the `radialPolygon()` function. This function can be used to plot sectors, annuli, horizon plots and irregular polygons. If you wish to customise cyclical plots beyond what the provided functions such as `dielRings()` allow then it is likely that `radialPolygon()` is the tool you need.
+The majority of the plotting performed for cyclical plots in `SonicScrewdriver` is performed by the `radialPolygon()` function. This function can be used to plot sectors, annuli, horizon plots and irregular polygons. It is used by the plotting functions such as `dielPlot()` as well as helper functions such as `dielRings()` to add data to cyclical plots.
+
+For simple use cases, knowledge of the operation of `radialPolygon()` may not be needed. A number of helper functions cover the most common uses. However, an understanding of how this function works will allow for far greater customisation of cyclical plots than would otherwise be possible.
 
 ```{r radialPolygon-types, fig.height=7, fig.width=9, fig.cap='Types of radial polygon plot', fig.align='center', out.width='90%', echo=FALSE}
 emptyDiel()
@@ -267,15 +231,124 @@ The `yearlyPlot()` function uses two horizon plots, with a shared data edge.
 
 #### Polygons
 
-### `circularise()`
+## Empty plots
 
-The circularise function is used internally to form a closed loop from linear datasets.
+The uses of daily and yearly plots extend beyond linking data to earthly cycles. The following functions provide the basic coordinate system without any data plotted (these functions are used intenally by `dielPlot()` and `yearlyPlot()` to establish their coordinate system).
+
+### `emptyDiel()`
+
+```{r emptyDiel, fig.height=7, fig.width=9, fig.cap='An empty dielPlot().', fig.align='center', out.width='90%'}
+emptyDiel()
+```
+
+### `emptyYearly()`
+
+The `emptyYearly()` function takes an option `year` parameter that automatically adjusts the grid positions for leap years, although the visual effect is marginal.
+
+```{r emptyYearly, fig.height=7, fig.width=9, fig.cap='An empty yearlyPlot().', fig.align='center', out.width='90%'}
+emptyYearly(year=2000)
+```
+
+## Adding data to the visualisation { #adding-to-cyclical }
+
+### Periodic data: rings
+
+The ring functions (`dielRing()`,...) plot ring segments on top of a base cyclical plot. These rings are useful for showing typical periods of activity for a species, or events that happen continuously for a specified period of time.
+
+By defaults the limits for the rings are `1,2` for use with a _core_ type plot, but this can be changed by specifying the `limits` parameter to the ring function. Similarly, the plot legend may be removed with the paramater `legend=FALSE`.
+
+#### `dielRings()`
+
+```{r diel-plot-rings-1, fig.height=7, fig.width=10, fig.cap='A \'core\' diel plot with diel rings.', fig.align='center', out.width='90%'}
+names <- c("activity 1", "activity 2", "activity 3")
+starts <- c("0600", "0900", "1500")
+ends <- c("1200", "1700", "1900")
+cols <- c("red", "green", "blue")
+
+dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(0,1))
+dielRings(names, starts, ends, cols=cols)
+```
+
+```{r diel-plot-rings-2, fig.height=7, fig.width=10, fig.cap='A \'ring\' diel plot with diel rings.', fig.align='center', out.width='90%', cache=TRUE}
+names <- c("activity 1", "activity 2", "activity 3")
+starts <- c("0600", "0900", "1500")
+ends <- c("1200", "1700", "1900")
+cols <- c("red", "green", "blue")
+
+dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(1,2))
+dielRings(names, starts, ends, cols=cols, limits=c(0,1))
+```
+
+### Periodic data: horizons
+
+In this example we will plot the average monthly minimum and maximum temperatures for Lyme Regis, UK onto a `yearlyPlot()`. This example introduces two helper functions; `yearlyLabels()` and `circularise()`.
+
+#### `yearlyLabels()` and `yearlyPositions`
+
+These two functions are closely related, and used internally by `SonicScrewdriveR` to label a yearly plot.
+
+```{r}
+yearlyLabels()
+```
+
+The optional `pos` parameter when set to `TRUE` returns a vector of positions for the labels around the plot (in radians).
+
+```{r}
+yearlyPositions(year=2022)
+```
+
+The temperature data we have for Lyme Regis is monthly, however we would like to plot the values at the middle of the respective month. For this we add the parameter `format="mid-month"` to get the appropriate radial angles.
+
+```{r}
+yearlyPositions(year=2022, format="mid-months")
+```
+
+If we now plot this data we see that the output is not quite a complete ring or horizon data as we might have expected.
+
+```{r lyme-temp-1, fig.height=7, fig.width=10, fig.cap='Horizon data plot without circularise().', fig.align='center', out.width='90%', cache=TRUE}
+# Temperature data for Lyme Regis
+t_min <- c(3, 2.7, 3.4, 5.2, 8.2, 11.2, 13.1, 13, 14.4, 9.2, 5.8, 3.8)
+t_max <- c(7.9,8, 9.8, 12.4, 15.4, 18.2, 20.1, 19.5, 17.8, 14.4, 10.6, 8.4)
+
+# Scale the data
+sf <- max(t_max)
+t_min <- t_min/sf
+t_max <- t_max/sf
+
+angles <- yearlyPositions(format="mid-months")
+
+yearlyPlot(lat=50.7, lon=-2.9)
+radialPolygon(angles, angles, t_min, t_max, col="orange")
+```
+
+#### `circularise()`
+
+In order to join the horizons into a complete ring we can use the `circularise()` function on the angle and temperature vectors.
+
+```{r lyme-temp-2, fig.height=7, fig.width=10, fig.cap='Horizon data plot with circularise().', fig.align='center', out.width='90%', cache=TRUE}
+# Temperature data for Lyme Regis
+t_min <- c(3, 2.7, 3.4, 5.2, 8.2, 11.2, 13.1, 13, 14.4, 9.2, 5.8, 3.8)
+t_max <- c(7.9,8, 9.8, 12.4, 15.4, 18.2, 20.1, 19.5, 17.8, 14.4, 10.6, 8.4)
+
+# Scale the data
+sf <- max(t_max)
+t_min <- t_min/sf
+t_max <- t_max/sf
+
+angles <- yearlyPositions(format="mid-months")
+
+# Circularise
+t_min <- circularise(t_min)
+t_max <- circularise(t_max)
+angles <- circularise(angles)
+
+yearlyPlot(lat=50.7, lon=-2.9)
+radialPolygon(angles, angles, t_min, t_max, col="orange")
+```
 
 ### Helper functions
 
 #### `dielFraction()`
-
-#### `dielLabels()` and `yearlyLabels()`
 
 ## Interactive Plots
 These plots can be used to create Shiny apps
