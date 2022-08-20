@@ -350,6 +350,23 @@ radialPolygon(angles, angles, t_min, t_max, col="orange")
 
 #### `dielFraction()`
 
+The `dielFraction()` function is used to convert a POSIX time, or a time in `HHMM` string format, into a radial fraction. This function is called by `dielPlot()` and `dielRings()`. By default the output is multiplied by 2π to output a position round a circle.
+
+```{r}
+time <- Sys.time()
+print(time)
+frac <- dielFraction(time)
+print(frac)
+```
+The raw fraction can be specified using the parameter `unit="fraction"`.
+
+```{r}
+time <- Sys.time()
+print(time)
+frac <- dielFraction(time, unit="fraction")
+print(frac)
+```
+
 ## Interactive Plots
 These plots can be used to create Shiny apps
 

@@ -616,6 +616,20 @@ Figure 7.19: Horizon data plot with circularise().
 <h3><span class="header-section-number">7.7.3</span> Helper functions<a href="patterns-of-activity.html#helper-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="dielfraction" class="section level4 hasAnchor" number="7.7.3.1">
 <h4><span class="header-section-number">7.7.3.1</span> <code>dielFraction()</code><a href="patterns-of-activity.html#dielfraction" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The <code>dielFraction()</code> function is used to convert a POSIX time, or a time in <code>HHMM</code> string format, into a radial fraction. This function is called by <code>dielPlot()</code> and <code>dielRings()</code>. By default the output is multiplied by 2π to output a position round a circle.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="patterns-of-activity.html#cb28-1" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb28-2"><a href="patterns-of-activity.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(time)</span></code></pre></div>
+<pre><code>## [1] &quot;2022-08-20 15:48:55 BST&quot;</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="patterns-of-activity.html#cb30-1" aria-hidden="true" tabindex="-1"></a>frac <span class="ot">&lt;-</span> <span class="fu">dielFraction</span>(time)</span>
+<span id="cb30-2"><a href="patterns-of-activity.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(frac)</span></code></pre></div>
+<pre><code>## [1] 4.140465</code></pre>
+<p>The raw fraction can be specified using the parameter <code>unit="fraction"</code>.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="patterns-of-activity.html#cb32-1" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb32-2"><a href="patterns-of-activity.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(time)</span></code></pre></div>
+<pre><code>## [1] &quot;2022-08-20 15:48:55 BST&quot;</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="patterns-of-activity.html#cb34-1" aria-hidden="true" tabindex="-1"></a>frac <span class="ot">&lt;-</span> <span class="fu">dielFraction</span>(time, <span class="at">unit=</span><span class="st">&quot;fraction&quot;</span>)</span>
+<span id="cb34-2"><a href="patterns-of-activity.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(frac)</span></code></pre></div>
+<pre><code>## [1] 0.6589776</code></pre>
 </div>
 </div>
 </div>
