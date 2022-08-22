@@ -74,6 +74,7 @@ yearlylabels-and-yearlypositions
 circularise
 helper-functions
 dielfraction
+yearlyfraction
 interactive-plots
 displaying-annotations
 shiny-interactive-web-apps

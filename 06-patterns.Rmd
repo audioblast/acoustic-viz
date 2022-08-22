@@ -396,6 +396,22 @@ frac <- dielFraction(time, unit="fraction")
 print(frac)
 ```
 
+#### `yearlyFraction()`
+
+Similarly to `dielFraction()`, `yearlyFraction()` by default returns a fraction of a cycle. It can take either a number representing a day of the year, or an object that can be coerced into `POSIXlt` format.
+
+```{r}
+frac <- yearlyFraction(31, input="day")
+print(frac)
+```
+
+```{r}
+date <- Sys.Date()
+print(date)
+frac <- yearlyFraction(date, input="POSIXlt")
+print(frac)
+```
+
 ## Interactive Plots
 These plots can be used to create Shiny apps
 

@@ -117,7 +117,7 @@
 
 \title{Visualisation for bioacoustics and ecoacoustics in R}
 \author{Ed Baker}
-\date{2022-08-20}
+\date{2022-08-22}
 
 \begin{document}
 \maketitle
@@ -881,7 +881,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-08-20 17:57:51 BST"
+## [1] "2022-08-22 18:05:51 BST"
 \end{verbatim}
 
 \begin{Shaded}
@@ -892,7 +892,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.703024
+## [1] 4.737967
 \end{verbatim}
 
 The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
@@ -905,7 +905,7 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-08-20 17:57:51 BST"
+## [1] "2022-08-22 18:05:51 BST"
 \end{verbatim}
 
 \begin{Shaded}
@@ -916,7 +916,45 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.7485097
+## [1] 0.7540717
+\end{verbatim}
+
+\hypertarget{yearlyfraction}{%
+\subsubsection{\texorpdfstring{\texttt{yearlyFraction()}}{yearlyFraction()}}\label{yearlyfraction}}
+
+Similarly to \texttt{dielFraction()}, \texttt{yearlyFraction()} by default returns a fraction of a cycle. It can take either a number representing a day of the year, or an object that can be coerced into \texttt{POSIXlt} format.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{frac }\OtherTok{\textless{}{-}} \FunctionTok{yearlyFraction}\NormalTok{(}\DecValTok{31}\NormalTok{, }\AttributeTok{input=}\StringTok{"day"}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(frac)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.5336404
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{date }\OtherTok{\textless{}{-}} \FunctionTok{Sys.Date}\NormalTok{()}
+\FunctionTok{print}\NormalTok{(date)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "2022-08-22"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{frac }\OtherTok{\textless{}{-}} \FunctionTok{yearlyFraction}\NormalTok{(date, }\AttributeTok{input=}\StringTok{"POSIXlt"}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(frac)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4.01091
 \end{verbatim}
 
 \hypertarget{interactive-plots}{%
