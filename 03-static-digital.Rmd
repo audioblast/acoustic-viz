@@ -1,2 +1,32 @@
 # Static digital images
 
+```{r}
+library(seewave)
+```
+
+```{r}
+data(sheep, package="seewave")
+```
+
+## The time domain
+
+### Oscillograms
+
+```{r, oscillo,  fig.width=9, fig.cap='Oscillogram', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
+oscillo(sheep)
+```
+
+## The frequency domain
+
+### Plotting a spectrum
+
+```{r, spectrum,  fig.width=9, fig.cap='Spectrum', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
+spec(sheep)
+```
+
+### Plotting a spectrogram
+
+
+```{r, spectrogram,  fig.width=9, fig.cap='Spectrogram', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
+spectro(sheep)
+```

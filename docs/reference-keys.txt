@@ -1,3 +1,6 @@
+fig:oscillo
+fig:spectrum
+fig:spectrogram
 fig:twilights
 fig:diel-plot-1
 fig:diel-plot-no-tz
@@ -38,6 +41,11 @@ early-viz
 crts
 print-outs
 static-digital-images
+the-time-domain
+oscillograms
+the-frequency-domain
+plotting-a-spectrum
+plotting-a-spectrogram
 dynamic-digital-visualisations
 video-spectrograms
 zcjs-zero-crossing-file-visualisation

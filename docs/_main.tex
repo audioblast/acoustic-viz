@@ -117,7 +117,7 @@
 
 \title{Visualisation for bioacoustics and ecoacoustics in R}
 \author{Ed Baker}
-\date{2022-08-22}
+\date{2022-08-27}
 
 \begin{document}
 \maketitle
@@ -203,6 +203,60 @@ Typical musical notation shows broad similarities with a typical audio visualisa
 
 \hypertarget{static-digital-images}{%
 \chapter{Static digital images}\label{static-digital-images}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(seewave)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{data}\NormalTok{(sheep, }\AttributeTok{package=}\StringTok{"seewave"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{the-time-domain}{%
+\section{The time domain}\label{the-time-domain}}
+
+\hypertarget{oscillograms}{%
+\subsection{Oscillograms}\label{oscillograms}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/oscillo-1} 
+
+}
+
+\caption{Oscillogram}\label{fig:oscillo}
+\end{figure}
+
+\hypertarget{the-frequency-domain}{%
+\section{The frequency domain}\label{the-frequency-domain}}
+
+\hypertarget{plotting-a-spectrum}{%
+\subsection{Plotting a spectrum}\label{plotting-a-spectrum}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/spectrum-1} 
+
+}
+
+\caption{Spectrum}\label{fig:spectrum}
+\end{figure}
+
+\hypertarget{plotting-a-spectrogram}{%
+\subsection{Plotting a spectrogram}\label{plotting-a-spectrogram}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/spectrogram-1} 
+
+}
+
+\caption{Spectrogram}\label{fig:spectrogram}
+\end{figure}
 
 \hypertarget{dynamic-digital-visualisations}{%
 \chapter{Dynamic digital visualisations}\label{dynamic-digital-visualisations}}
@@ -881,7 +935,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-08-22 18:05:51 BST"
+## [1] "2022-08-27 10:53:37 BST"
 \end{verbatim}
 
 \begin{Shaded}
@@ -892,7 +946,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.737967
+## [1] 2.851977
 \end{verbatim}
 
 The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
@@ -905,7 +959,7 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-08-22 18:05:51 BST"
+## [1] "2022-08-27 10:53:37 BST"
 \end{verbatim}
 
 \begin{Shaded}
@@ -916,7 +970,7 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.7540717
+## [1] 0.4539064
 \end{verbatim}
 
 \hypertarget{yearlyfraction}{%
@@ -943,7 +997,7 @@ Similarly to \texttt{dielFraction()}, \texttt{yearlyFraction()} by default retur
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-08-22"
+## [1] "2022-08-27"
 \end{verbatim}
 
 \begin{Shaded}
@@ -954,7 +1008,7 @@ Similarly to \texttt{dielFraction()}, \texttt{yearlyFraction()} by default retur
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.01091
+## [1] 4.096981
 \end{verbatim}
 
 \hypertarget{interactive-plots}{%

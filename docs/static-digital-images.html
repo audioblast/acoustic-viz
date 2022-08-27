@@ -23,7 +23,7 @@
 <meta name="author" content="Ed Baker" />
 
 
-<meta name="date" content="2022-08-22" />
+<meta name="date" content="2022-08-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -185,7 +185,18 @@ div.csl-indent {
 <li class="chapter" data-level="3.1" data-path="early-viz.html"><a href="early-viz.html#crts"><i class="fa fa-check"></i><b>3.1</b> CRTs</a></li>
 <li class="chapter" data-level="3.2" data-path="early-viz.html"><a href="early-viz.html#print-outs"><i class="fa fa-check"></i><b>3.2</b> Print outs</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="static-digital-images.html"><a href="static-digital-images.html"><i class="fa fa-check"></i><b>4</b> Static digital images</a></li>
+<li class="chapter" data-level="4" data-path="static-digital-images.html"><a href="static-digital-images.html"><i class="fa fa-check"></i><b>4</b> Static digital images</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="static-digital-images.html"><a href="static-digital-images.html#the-time-domain"><i class="fa fa-check"></i><b>4.1</b> The time domain</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="static-digital-images.html"><a href="static-digital-images.html#oscillograms"><i class="fa fa-check"></i><b>4.1.1</b> Oscillograms</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="static-digital-images.html"><a href="static-digital-images.html#the-frequency-domain"><i class="fa fa-check"></i><b>4.2</b> The frequency domain</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="static-digital-images.html"><a href="static-digital-images.html#plotting-a-spectrum"><i class="fa fa-check"></i><b>4.2.1</b> Plotting a spectrum</a></li>
+<li class="chapter" data-level="4.2.2" data-path="static-digital-images.html"><a href="static-digital-images.html#plotting-a-spectrogram"><i class="fa fa-check"></i><b>4.2.2</b> Plotting a spectrogram</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="dynamic-digital-visualisations.html"><a href="dynamic-digital-visualisations.html"><i class="fa fa-check"></i><b>5</b> Dynamic digital visualisations</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="dynamic-digital-visualisations.html"><a href="dynamic-digital-visualisations.html#video-spectrograms"><i class="fa fa-check"></i><b>5.1</b> Video spectrograms</a></li>
@@ -252,7 +263,42 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="static-digital-images" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Static digital images<a href="static-digital-images.html#static-digital-images" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="static-digital-images.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(seewave)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="static-digital-images.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(sheep, <span class="at">package=</span><span class="st">&quot;seewave&quot;</span>)</span></code></pre></div>
+<div id="the-time-domain" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> The time domain<a href="static-digital-images.html#the-time-domain" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="oscillograms" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Oscillograms<a href="static-digital-images.html#oscillograms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:oscillo"></span>
+<img src="_main_files/figure-html/oscillo-1.png" alt="Oscillogram" width="90%" />
+<p class="caption">
+Figure 4.1: Oscillogram
+</p>
+</div>
+</div>
+</div>
+<div id="the-frequency-domain" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> The frequency domain<a href="static-digital-images.html#the-frequency-domain" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="plotting-a-spectrum" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Plotting a spectrum<a href="static-digital-images.html#plotting-a-spectrum" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:spectrum"></span>
+<img src="_main_files/figure-html/spectrum-1.png" alt="Spectrum" width="90%" />
+<p class="caption">
+Figure 4.2: Spectrum
+</p>
+</div>
+</div>
+<div id="plotting-a-spectrogram" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Plotting a spectrogram<a href="static-digital-images.html#plotting-a-spectrogram" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:spectrogram"></span>
+<img src="_main_files/figure-html/spectrogram-1.png" alt="Spectrogram" width="90%" />
+<p class="caption">
+Figure 4.3: Spectrogram
+</p>
+</div>
 
+</div>
+</div>
 </div>
             </section>
 
