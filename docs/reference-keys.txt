@@ -1,4 +1,6 @@
-fig:oscillo
+fig:amplitude-bars
+fig:amplitude-lines
+fig:amplitude-oscillo
 fig:spectrum
 fig:spectrogram
 fig:twilights
@@ -46,6 +48,7 @@ oscillograms
 the-frequency-domain
 plotting-a-spectrum
 plotting-a-spectrogram
+settings-for-a-fft
 dynamic-digital-visualisations
 video-spectrograms
 zcjs-zero-crossing-file-visualisation
@@ -88,7 +91,3 @@ displaying-annotations
 shiny-interactive-web-apps
 the-future
 acknowledgements
-fig:amplitude
-fig:amplitude-bars
-fig:amplitude-lines
-fig:amplitude-oscillo

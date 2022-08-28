@@ -4,7 +4,6 @@ The three basic quantities of sound waves are time, frequency, and amplitude. Th
 
 The `seewave` package [@seewave] is the easiest way to produce these plots, and we will use the `sheep` audio sample provided by `seewave` for the first plots.
 
-
 ```{r}
 library(seewave)
 data(sheep, package="seewave")
@@ -36,7 +35,11 @@ oscillo(sheep)
 
 ## The frequency domain
 
+The _frequency domain_ covers analyses in which frequency data is extracted from the sampled waveform. This information is generally extracted using the _Fast Fourier Transform_ algorithm.
+
 ### Plotting a spectrum
+
+A spectrum is a plot of amplitude against frequency.
 
 ```{r, spectrum,  fig.width=9, fig.cap='Spectrum', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
 spec(sheep)
@@ -48,3 +51,5 @@ spec(sheep)
 ```{r, spectrogram,  fig.width=9, fig.cap='Spectrogram', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
 spectro(sheep)
 ```
+
+#### Settings for a FFT

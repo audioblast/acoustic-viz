@@ -117,7 +117,7 @@
 
 \title{Visualisation for bioacoustics and ecoacoustics in R}
 \author{Ed Baker}
-\date{2022-08-27}
+\date{2022-08-28}
 
 \begin{document}
 \maketitle
@@ -204,16 +204,13 @@ Typical musical notation shows broad similarities with a typical audio visualisa
 \hypertarget{static-digital-images}{%
 \chapter{Static digital images}\label{static-digital-images}}
 
-The \texttt{seewave} package \citep{seewave} is the easiest way to produce these plots.
+The three basic quantities of sound waves are time, frequency, and amplitude. The most commonly used visualisations of sounds are consequently combinations of these properties.
+
+The \texttt{seewave} package \citep{seewave} is the easiest way to produce these plots, and we will use the \texttt{sheep} audio sample provided by \texttt{seewave} for the first plots.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(seewave)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \FunctionTok{data}\NormalTok{(sheep, }\AttributeTok{package=}\StringTok{"seewave"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -221,23 +218,53 @@ The \texttt{seewave} package \citep{seewave} is the easiest way to produce these
 \hypertarget{the-time-domain}{%
 \section{The time domain}\label{the-time-domain}}
 
+The \emph{time domain} is used to describe acoustic analyses where the recorded waveform is not analysed for frequency. Conversion of a waveform to a spectrum of frequencies is a relatively costly computation and, before digital computers, hard to achieve with the precision and resolution we are accustomed to today.
+
 \hypertarget{oscillograms}{%
 \subsection{Oscillograms}\label{oscillograms}}
 
+Digitally sampled audio is a series of amplitude measurements, sampled at a regular time time interval. Given that it now seems natural for time to be expressed on the x axis, increasing towards the right, the most basic plot we could recreate from a sampled file would be plotting amplitude values against time.
+
 \begin{figure}
 
-{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/oscillo-1} 
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/amplitude-bars-1} 
 
 }
 
-\caption{Oscillogram}\label{fig:oscillo}
+\caption{Plotting a waveform}\label{fig:amplitude-bars}
+\end{figure}
+
+Figure \ref{fig:amplitude-bars} shows 50 samples from the \texttt{sheep} audio file plotted using the standard R \texttt{barplot()} function. This representation has the advantage that the individual bars ar a visual reminder that we are handling a sampled representation, as opposed to a continuously varying waveform. It is common however to create a visual representation closer to that of an actual wave (Figure @ref(fig:amplitude-lines shows how this is achieved using base R functions).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/amplitude-lines-1} 
+
+}
+
+\caption{Plotting a waveform}\label{fig:amplitude-lines}
+\end{figure}
+
+The \texttt{oscillo()} function from \texttt{seewave} handles the labelling of axes for us, and is a very convenient solution. Figure \ref{fig:amplitude-oscillo} shows the resulting plot, an oscillogram, for the entire \texttt{sheep} file.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/amplitude-oscillo-1} 
+
+}
+
+\caption{Oscillogram}\label{fig:amplitude-oscillo}
 \end{figure}
 
 \hypertarget{the-frequency-domain}{%
 \section{The frequency domain}\label{the-frequency-domain}}
 
+The \emph{frequency domain} covers analyses in which frequency data is extracted from the sampled waveform. This information is generally extracted using the \emph{Fast Fourier Transform} algorithm.
+
 \hypertarget{plotting-a-spectrum}{%
 \subsection{Plotting a spectrum}\label{plotting-a-spectrum}}
+
+A spectrum is a plot of amplitude against frequency.
 
 \begin{figure}
 
@@ -259,6 +286,9 @@ The \texttt{seewave} package \citep{seewave} is the easiest way to produce these
 
 \caption{Spectrogram}\label{fig:spectrogram}
 \end{figure}
+
+\hypertarget{settings-for-a-fft}{%
+\subsubsection{Settings for a FFT}\label{settings-for-a-fft}}
 
 \hypertarget{dynamic-digital-visualisations}{%
 \chapter{Dynamic digital visualisations}\label{dynamic-digital-visualisations}}
@@ -937,7 +967,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-08-27 11:15:42 BST"
+## [1] "2022-08-28 11:35:31 BST"
 \end{verbatim}
 
 \begin{Shaded}
@@ -948,7 +978,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 2.948322
+## [1] 3.034792
 \end{verbatim}
 
 The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
@@ -961,7 +991,7 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-08-27 11:15:42 BST"
+## [1] "2022-08-28 11:35:31 BST"
 \end{verbatim}
 
 \begin{Shaded}
@@ -972,7 +1002,7 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.4692405
+## [1] 0.4830024
 \end{verbatim}
 
 \hypertarget{yearlyfraction}{%
@@ -999,7 +1029,7 @@ Similarly to \texttt{dielFraction()}, \texttt{yearlyFraction()} by default retur
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-08-27"
+## [1] "2022-08-28"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1010,7 +1040,7 @@ Similarly to \texttt{dielFraction()}, \texttt{yearlyFraction()} by default retur
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.096981
+## [1] 4.114195
 \end{verbatim}
 
 \hypertarget{interactive-plots}{%

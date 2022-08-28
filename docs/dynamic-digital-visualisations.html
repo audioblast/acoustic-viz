@@ -23,7 +23,7 @@
 <meta name="author" content="Ed Baker" />
 
 
-<meta name="date" content="2022-08-27" />
+<meta name="date" content="2022-08-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -270,10 +270,10 @@ div.csl-indent {
 <h2><span class="header-section-number">5.2</span> zcjs: Zero-crossing File Visualisation<a href="dynamic-digital-visualisations.html#zcjs-zero-crossing-file-visualisation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The zcjs JavaScript library was originally developed for displaying zero-crossing audio files (<a href="intro.html#zero-crossing-files">1.2.2</a>) on the web as part of the BioAcoustica project (<a href="https://bio.acousti.ca">https://bio.acousti.ca</a>; <span class="citation">Edward Baker et al. (<a href="#ref-baker2015bioacoustica" role="doc-biblioref">2015</a>)</span>). The <code>zcjs</code> package <span class="citation">(<a href="#ref-zcjsr" role="doc-biblioref">Ed Baker 2022</a>)</span> imports this visualisation functionality into R.</p>
 <p>The following code installs the <code>zcjs</code> package.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="dynamic-digital-visualisations.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
-<span id="cb3-2"><a href="dynamic-digital-visualisations.html#cb3-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;bioacoustica/zcjs-r&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="dynamic-digital-visualisations.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
+<span id="cb2-2"><a href="dynamic-digital-visualisations.html#cb2-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;bioacoustica/zcjs-r&quot;</span>)</span></code></pre></div>
 <p>To load the package:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="dynamic-digital-visualisations.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(zcjs)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="dynamic-digital-visualisations.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(zcjs)</span></code></pre></div>
 <p>The package comes with a demonstration file for testing the package’s functionality.</p>
 <div id="customising-a-zcjs-plot" class="section level3 hasAnchor" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> Customising a zcjs plot<a href="dynamic-digital-visualisations.html#customising-a-zcjs-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
