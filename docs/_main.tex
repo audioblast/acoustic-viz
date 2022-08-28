@@ -846,7 +846,7 @@ By defaults the limits for the rings are \texttt{1,2} for use with a \emph{core}
 \hypertarget{periodic-data-horizons}{%
 \subsection{Periodic data: horizons}\label{periodic-data-horizons}}
 
-In this example we will plot the average monthly minimum and maximum temperatures for Lyme Regis, UK onto a \texttt{yearlyPlot()}. This example introduces two helper functions; \texttt{yearlyLabels()} and \texttt{circularise()}.
+In this example we will plot the average monthly minimum and maximum temperatures for Lyme Regis, UK onto a \texttt{yearlyPlot()}. This example introduces three small helper functions; \texttt{yearlyLabels()}, \texttt{yearlyPositions()} and \texttt{circularise()}.
 
 \hypertarget{yearlylabels-and-yearlypositions}{%
 \subsubsection{\texorpdfstring{\texttt{yearlyLabels()} and \texttt{yearlyPositions}}{yearlyLabels() and yearlyPositions}}\label{yearlylabels-and-yearlypositions}}
@@ -859,7 +859,7 @@ These two functions are closely related, and used internally by \texttt{SonicScr
 \end{Highlighting}
 \end{Shaded}
 
-The optional \texttt{pos} parameter when set to \texttt{TRUE} returns a vector of positions for the labels around the plot (in radians).
+The related \texttt{yearlyPositions()} gives angular positions for the data around the plot (in radians).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -967,7 +967,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-08-28 11:35:31 BST"
+## [1] "2022-08-28 11:53:00 BST"
 \end{verbatim}
 
 \begin{Shaded}
@@ -978,7 +978,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.034792
+## [1] 3.111085
 \end{verbatim}
 
 The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
@@ -991,7 +991,7 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-08-28 11:35:31 BST"
+## [1] "2022-08-28 11:53:00 BST"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1002,7 +1002,7 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.4830024
+## [1] 0.495145
 \end{verbatim}
 
 \hypertarget{yearlyfraction}{%

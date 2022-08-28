@@ -596,12 +596,12 @@ Figure 7.20: A ‘ring’ diel plot with diel rings.
 </div>
 <div id="periodic-data-horizons" class="section level3 hasAnchor" number="7.7.2">
 <h3><span class="header-section-number">7.7.2</span> Periodic data: horizons<a href="patterns-of-activity.html#periodic-data-horizons" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In this example we will plot the average monthly minimum and maximum temperatures for Lyme Regis, UK onto a <code>yearlyPlot()</code>. This example introduces two helper functions; <code>yearlyLabels()</code> and <code>circularise()</code>.</p>
+<p>In this example we will plot the average monthly minimum and maximum temperatures for Lyme Regis, UK onto a <code>yearlyPlot()</code>. This example introduces three small helper functions; <code>yearlyLabels()</code>, <code>yearlyPositions()</code> and <code>circularise()</code>.</p>
 <div id="yearlylabels-and-yearlypositions" class="section level4 hasAnchor" number="7.7.2.1">
 <h4><span class="header-section-number">7.7.2.1</span> <code>yearlyLabels()</code> and <code>yearlyPositions</code><a href="patterns-of-activity.html#yearlylabels-and-yearlypositions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>These two functions are closely related, and used internally by <code>SonicScrewdriveR</code> to label a yearly plot.</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="patterns-of-activity.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">yearlyLabels</span>()</span></code></pre></div>
-<p>The optional <code>pos</code> parameter when set to <code>TRUE</code> returns a vector of positions for the labels around the plot (in radians).</p>
+<p>The related <code>yearlyPositions()</code> gives angular positions for the data around the plot (in radians).</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="patterns-of-activity.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">yearlyPositions</span>(<span class="at">year=</span><span class="dv">2022</span>)</span></code></pre></div>
 <pre><code>##  [1] 0.0000000 0.5336404 1.0156382 1.5492786 2.0657048 2.5993452 3.1157713
 ##  [8] 3.6494117 4.1830521 4.6994783 5.2331187 5.7495449</code></pre>
@@ -666,17 +666,17 @@ Figure 7.22: Horizon data plot with circularise().
 <p>The <code>dielFraction()</code> function is used to convert a POSIX time, or a time in <code>HHMM</code> string format, into a radial fraction. This function is called by <code>dielPlot()</code> and <code>dielRings()</code>. By default the output is multiplied by 2π to output a position round a circle.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="patterns-of-activity.html#cb32-1" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
 <span id="cb32-2"><a href="patterns-of-activity.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(time)</span></code></pre></div>
-<pre><code>## [1] &quot;2022-08-28 11:35:14 BST&quot;</code></pre>
+<pre><code>## [1] &quot;2022-08-28 11:52:42 BST&quot;</code></pre>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="patterns-of-activity.html#cb34-1" aria-hidden="true" tabindex="-1"></a>frac <span class="ot">&lt;-</span> <span class="fu">dielFraction</span>(time)</span>
 <span id="cb34-2"><a href="patterns-of-activity.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(frac)</span></code></pre></div>
-<pre><code>## [1] 3.033598</code></pre>
+<pre><code>## [1] 3.109769</code></pre>
 <p>The raw fraction can be specified using the parameter <code>unit="fraction"</code>.</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="patterns-of-activity.html#cb36-1" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
 <span id="cb36-2"><a href="patterns-of-activity.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(time)</span></code></pre></div>
-<pre><code>## [1] &quot;2022-08-28 11:35:15 BST&quot;</code></pre>
+<pre><code>## [1] &quot;2022-08-28 11:52:42 BST&quot;</code></pre>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="patterns-of-activity.html#cb38-1" aria-hidden="true" tabindex="-1"></a>frac <span class="ot">&lt;-</span> <span class="fu">dielFraction</span>(time, <span class="at">unit=</span><span class="st">&quot;fraction&quot;</span>)</span>
 <span id="cb38-2"><a href="patterns-of-activity.html#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(frac)</span></code></pre></div>
-<pre><code>## [1] 0.4828131</code></pre>
+<pre><code>## [1] 0.4949362</code></pre>
 </div>
 <div id="yearlyfraction" class="section level4 hasAnchor" number="7.7.3.2">
 <h4><span class="header-section-number">7.7.3.2</span> <code>yearlyFraction()</code><a href="patterns-of-activity.html#yearlyfraction" class="anchor-section" aria-label="Anchor link to header"></a></h4>

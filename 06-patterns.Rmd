@@ -310,7 +310,7 @@ dielRings(names, starts, ends, cols=cols, limits=c(0,1))
 
 ### Periodic data: horizons
 
-In this example we will plot the average monthly minimum and maximum temperatures for Lyme Regis, UK onto a `yearlyPlot()`. This example introduces two helper functions; `yearlyLabels()` and `circularise()`.
+In this example we will plot the average monthly minimum and maximum temperatures for Lyme Regis, UK onto a `yearlyPlot()`. This example introduces three small helper functions; `yearlyLabels()`, `yearlyPositions()` and `circularise()`.
 
 #### `yearlyLabels()` and `yearlyPositions`
 
@@ -320,13 +320,13 @@ These two functions are closely related, and used internally by `SonicScrewdrive
 yearlyLabels()
 ```
 
-The optional `pos` parameter when set to `TRUE` returns a vector of positions for the labels around the plot (in radians).
+The related `yearlyPositions()` gives angular positions for the data around the plot (in radians).
 
 ```{r}
 yearlyPositions(year=2022)
 ```
 
-The temperature data we have for Lyme Regis is monthly, however we would like to plot the values at the middle of the respective month. For this we add the parameter `format="mid-month"` to get the appropriate radial angles.
+The temperature data we have for Lyme Regis is monthly, however we would like to plot the values at the middle of the respective month. For this we add the parameter `format="mid-month"` to get the appropriate radial angles. 
 
 ```{r}
 yearlyPositions(year=2022, format="mid-months")
