@@ -88,3 +88,7 @@ displaying-annotations
 shiny-interactive-web-apps
 the-future
 acknowledgements
+fig:amplitude
+fig:amplitude-bars
+fig:amplitude-lines
+fig:amplitude-oscillo
