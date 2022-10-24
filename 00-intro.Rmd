@@ -13,6 +13,12 @@ Historically both musical notation and phonemes have been used to describe the s
 ## Basic acoustic terminology
 
 ## Types of files
+Even though the costs of digital storage have fallen significantly (Figure \@ref(fig:storage-costs)) the cost of file transfer and storage are still significant factors in many acoustics projects. For this reason it is sometimes necessary to compress the audio file in some way: discarding some data in exchange for cost reductions.
+
+```{r, storage-costs,  fig.width=9, fig.cap='Storage costs per megabyte over time. Data from https://jcmit.net/diskprice.htm.', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
+library(figuREd)
+storageCosts()
+```
 
 ### Waveform files
 

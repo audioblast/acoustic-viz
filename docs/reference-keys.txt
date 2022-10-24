@@ -1,3 +1,4 @@
+fig:storage-costs
 fig:amplitude-bars
 fig:amplitude-lines
 fig:amplitude-oscillo

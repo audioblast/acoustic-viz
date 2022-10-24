@@ -117,7 +117,7 @@
 
 \title{Visualisation for bioacoustics and ecoacoustics in R}
 \author{Ed Baker}
-\date{2022-08-28}
+\date{2022-10-24}
 
 \begin{document}
 \maketitle
@@ -156,6 +156,17 @@ Historically both musical notation and phonemes have been used to describe the s
 
 \hypertarget{types-of-files}{%
 \section{Types of files}\label{types-of-files}}
+
+Even though the costs of digital storage have fallen significantly (Figure \ref{fig:storage-costs}) the cost of file transfer and storage are still significant factors in many acoustics projects. For this reason it is sometimes necessary to compress the audio file in some way: discarding some data in exchange for cost reductions.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/storage-costs-1} 
+
+}
+
+\caption{Storage costs per megabyte over time. Data from https://jcmit.net/diskprice.htm.}\label{fig:storage-costs}
+\end{figure}
 
 \hypertarget{waveform-files}{%
 \subsection{Waveform files}\label{waveform-files}}
@@ -859,6 +870,10 @@ These two functions are closely related, and used internally by \texttt{SonicScr
 \end{Highlighting}
 \end{Shaded}
 
+\begin{verbatim}
+##  [1] "Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov" "Dec"
+\end{verbatim}
+
 The related \texttt{yearlyPositions()} gives angular positions for the data around the plot (in radians).
 
 \begin{Shaded}
@@ -967,7 +982,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-08-28 11:53:00 BST"
+## [1] "2022-10-24 16:44:11 BST"
 \end{verbatim}
 
 \begin{Shaded}
@@ -978,7 +993,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.111085
+## [1] 4.381583
 \end{verbatim}
 
 The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
@@ -991,7 +1006,7 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-08-28 11:53:00 BST"
+## [1] "2022-10-24 16:44:11 BST"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1002,7 +1017,7 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.495145
+## [1] 0.6973508
 \end{verbatim}
 
 \hypertarget{yearlyfraction}{%
@@ -1029,7 +1044,7 @@ Similarly to \texttt{dielFraction()}, \texttt{yearlyFraction()} by default retur
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-08-28"
+## [1] "2022-10-24"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1040,7 +1055,7 @@ Similarly to \texttt{dielFraction()}, \texttt{yearlyFraction()} by default retur
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.114195
+## [1] 5.095405
 \end{verbatim}
 
 \hypertarget{interactive-plots}{%

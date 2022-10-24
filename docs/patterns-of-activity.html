@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Patterns of activity | Visualisation for bioacoustics and ecoacoustics in R</title>
   <meta name="description" content="All about acoustic visualisation for bioacoustics and ecoacoustics." />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Patterns of activity | Visualisation for bioacoustics and ecoacoustics in R" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Ed Baker" />
 
 
-<meta name="date" content="2022-08-28" />
+<meta name="date" content="2022-10-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -601,38 +601,16 @@ Figure 7.20: A ‘ring’ diel plot with diel rings.
 <h4><span class="header-section-number">7.7.2.1</span> <code>yearlyLabels()</code> and <code>yearlyPositions</code><a href="patterns-of-activity.html#yearlylabels-and-yearlypositions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>These two functions are closely related, and used internally by <code>SonicScrewdriveR</code> to label a yearly plot.</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="patterns-of-activity.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">yearlyLabels</span>()</span></code></pre></div>
+<pre><code>##  [1] &quot;Jan&quot; &quot;Feb&quot; &quot;Mar&quot; &quot;Apr&quot; &quot;May&quot; &quot;Jun&quot; &quot;Jul&quot; &quot;Aug&quot; &quot;Sep&quot; &quot;Oct&quot; &quot;Nov&quot; &quot;Dec&quot;</code></pre>
 <p>The related <code>yearlyPositions()</code> gives angular positions for the data around the plot (in radians).</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="patterns-of-activity.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">yearlyPositions</span>(<span class="at">year=</span><span class="dv">2022</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="patterns-of-activity.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">yearlyPositions</span>(<span class="at">year=</span><span class="dv">2022</span>)</span></code></pre></div>
 <pre><code>##  [1] 0.0000000 0.5336404 1.0156382 1.5492786 2.0657048 2.5993452 3.1157713
 ##  [8] 3.6494117 4.1830521 4.6994783 5.2331187 5.7495449</code></pre>
 <p>The temperature data we have for Lyme Regis is monthly, however we would like to plot the values at the middle of the respective month. For this we add the parameter <code>format="mid-month"</code> to get the appropriate radial angles.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="patterns-of-activity.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">yearlyPositions</span>(<span class="at">year=</span><span class="dv">2022</span>, <span class="at">format=</span><span class="st">&quot;mid-months&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="patterns-of-activity.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">yearlyPositions</span>(<span class="at">year=</span><span class="dv">2022</span>, <span class="at">format=</span><span class="st">&quot;mid-months&quot;</span>)</span></code></pre></div>
 <pre><code>##  [1] 0.2668202 0.7746393 1.2824584 1.8074917 2.3325250 2.8575582 3.3825915
 ##  [8] 3.9162319 4.4412652 4.9662985 5.4913318 5.9733296</code></pre>
 <p>If we now plot this data we see that the output is not quite a complete ring or horizon data as we might have expected.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="patterns-of-activity.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Temperature data for Lyme Regis</span></span>
-<span id="cb30-2"><a href="patterns-of-activity.html#cb30-2" aria-hidden="true" tabindex="-1"></a>t_min <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="fl">2.7</span>, <span class="fl">3.4</span>, <span class="fl">5.2</span>, <span class="fl">8.2</span>, <span class="fl">11.2</span>, <span class="fl">13.1</span>, <span class="dv">13</span>, <span class="fl">14.4</span>, <span class="fl">9.2</span>, <span class="fl">5.8</span>, <span class="fl">3.8</span>)</span>
-<span id="cb30-3"><a href="patterns-of-activity.html#cb30-3" aria-hidden="true" tabindex="-1"></a>t_max <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">7.9</span>,<span class="dv">8</span>, <span class="fl">9.8</span>, <span class="fl">12.4</span>, <span class="fl">15.4</span>, <span class="fl">18.2</span>, <span class="fl">20.1</span>, <span class="fl">19.5</span>, <span class="fl">17.8</span>, <span class="fl">14.4</span>, <span class="fl">10.6</span>, <span class="fl">8.4</span>)</span>
-<span id="cb30-4"><a href="patterns-of-activity.html#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-5"><a href="patterns-of-activity.html#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Scale the data</span></span>
-<span id="cb30-6"><a href="patterns-of-activity.html#cb30-6" aria-hidden="true" tabindex="-1"></a>sf <span class="ot">&lt;-</span> <span class="fu">max</span>(t_max)</span>
-<span id="cb30-7"><a href="patterns-of-activity.html#cb30-7" aria-hidden="true" tabindex="-1"></a>t_min <span class="ot">&lt;-</span> t_min<span class="sc">/</span>sf</span>
-<span id="cb30-8"><a href="patterns-of-activity.html#cb30-8" aria-hidden="true" tabindex="-1"></a>t_max <span class="ot">&lt;-</span> t_max<span class="sc">/</span>sf</span>
-<span id="cb30-9"><a href="patterns-of-activity.html#cb30-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-10"><a href="patterns-of-activity.html#cb30-10" aria-hidden="true" tabindex="-1"></a>angles <span class="ot">&lt;-</span> <span class="fu">yearlyPositions</span>(<span class="at">format=</span><span class="st">&quot;mid-months&quot;</span>)</span>
-<span id="cb30-11"><a href="patterns-of-activity.html#cb30-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-12"><a href="patterns-of-activity.html#cb30-12" aria-hidden="true" tabindex="-1"></a><span class="fu">yearlyPlot</span>(<span class="at">lat=</span><span class="fl">50.7</span>, <span class="at">lon=</span><span class="sc">-</span><span class="fl">2.9</span>)</span>
-<span id="cb30-13"><a href="patterns-of-activity.html#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="fu">radialPolygon</span>(angles, angles, t_min, t_max, <span class="at">col=</span><span class="st">&quot;orange&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:lyme-temp-1"></span>
-<img src="_main_files/figure-html/lyme-temp-1-1.png" alt="Horizon data plot without circularise()." width="90%" />
-<p class="caption">
-Figure 7.21: Horizon data plot without circularise().
-</p>
-</div>
-</div>
-<div id="circularise" class="section level4 hasAnchor" number="7.7.2.2">
-<h4><span class="header-section-number">7.7.2.2</span> <code>circularise()</code><a href="patterns-of-activity.html#circularise" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>In order to join the horizons into a complete ring we can use the <code>circularise()</code> function on the angle and temperature vectors.</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="patterns-of-activity.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Temperature data for Lyme Regis</span></span>
 <span id="cb31-2"><a href="patterns-of-activity.html#cb31-2" aria-hidden="true" tabindex="-1"></a>t_min <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="fl">2.7</span>, <span class="fl">3.4</span>, <span class="fl">5.2</span>, <span class="fl">8.2</span>, <span class="fl">11.2</span>, <span class="fl">13.1</span>, <span class="dv">13</span>, <span class="fl">14.4</span>, <span class="fl">9.2</span>, <span class="fl">5.8</span>, <span class="fl">3.8</span>)</span>
 <span id="cb31-3"><a href="patterns-of-activity.html#cb31-3" aria-hidden="true" tabindex="-1"></a>t_max <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">7.9</span>,<span class="dv">8</span>, <span class="fl">9.8</span>, <span class="fl">12.4</span>, <span class="fl">15.4</span>, <span class="fl">18.2</span>, <span class="fl">20.1</span>, <span class="fl">19.5</span>, <span class="fl">17.8</span>, <span class="fl">14.4</span>, <span class="fl">10.6</span>, <span class="fl">8.4</span>)</span>
@@ -644,13 +622,36 @@ Figure 7.21: Horizon data plot without circularise().
 <span id="cb31-9"><a href="patterns-of-activity.html#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-10"><a href="patterns-of-activity.html#cb31-10" aria-hidden="true" tabindex="-1"></a>angles <span class="ot">&lt;-</span> <span class="fu">yearlyPositions</span>(<span class="at">format=</span><span class="st">&quot;mid-months&quot;</span>)</span>
 <span id="cb31-11"><a href="patterns-of-activity.html#cb31-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-12"><a href="patterns-of-activity.html#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Circularise</span></span>
-<span id="cb31-13"><a href="patterns-of-activity.html#cb31-13" aria-hidden="true" tabindex="-1"></a>t_min <span class="ot">&lt;-</span> <span class="fu">circularise</span>(t_min)</span>
-<span id="cb31-14"><a href="patterns-of-activity.html#cb31-14" aria-hidden="true" tabindex="-1"></a>t_max <span class="ot">&lt;-</span> <span class="fu">circularise</span>(t_max)</span>
-<span id="cb31-15"><a href="patterns-of-activity.html#cb31-15" aria-hidden="true" tabindex="-1"></a>angles <span class="ot">&lt;-</span> <span class="fu">circularise</span>(angles)</span>
-<span id="cb31-16"><a href="patterns-of-activity.html#cb31-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-17"><a href="patterns-of-activity.html#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="fu">yearlyPlot</span>(<span class="at">lat=</span><span class="fl">50.7</span>, <span class="at">lon=</span><span class="sc">-</span><span class="fl">2.9</span>)</span>
-<span id="cb31-18"><a href="patterns-of-activity.html#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="fu">radialPolygon</span>(angles, angles, t_min, t_max, <span class="at">col=</span><span class="st">&quot;orange&quot;</span>)</span></code></pre></div>
+<span id="cb31-12"><a href="patterns-of-activity.html#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="fu">yearlyPlot</span>(<span class="at">lat=</span><span class="fl">50.7</span>, <span class="at">lon=</span><span class="sc">-</span><span class="fl">2.9</span>)</span>
+<span id="cb31-13"><a href="patterns-of-activity.html#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="fu">radialPolygon</span>(angles, angles, t_min, t_max, <span class="at">col=</span><span class="st">&quot;orange&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:lyme-temp-1"></span>
+<img src="_main_files/figure-html/lyme-temp-1-1.png" alt="Horizon data plot without circularise()." width="90%" />
+<p class="caption">
+Figure 7.21: Horizon data plot without circularise().
+</p>
+</div>
+</div>
+<div id="circularise" class="section level4 hasAnchor" number="7.7.2.2">
+<h4><span class="header-section-number">7.7.2.2</span> <code>circularise()</code><a href="patterns-of-activity.html#circularise" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In order to join the horizons into a complete ring we can use the <code>circularise()</code> function on the angle and temperature vectors.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="patterns-of-activity.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Temperature data for Lyme Regis</span></span>
+<span id="cb32-2"><a href="patterns-of-activity.html#cb32-2" aria-hidden="true" tabindex="-1"></a>t_min <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="fl">2.7</span>, <span class="fl">3.4</span>, <span class="fl">5.2</span>, <span class="fl">8.2</span>, <span class="fl">11.2</span>, <span class="fl">13.1</span>, <span class="dv">13</span>, <span class="fl">14.4</span>, <span class="fl">9.2</span>, <span class="fl">5.8</span>, <span class="fl">3.8</span>)</span>
+<span id="cb32-3"><a href="patterns-of-activity.html#cb32-3" aria-hidden="true" tabindex="-1"></a>t_max <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">7.9</span>,<span class="dv">8</span>, <span class="fl">9.8</span>, <span class="fl">12.4</span>, <span class="fl">15.4</span>, <span class="fl">18.2</span>, <span class="fl">20.1</span>, <span class="fl">19.5</span>, <span class="fl">17.8</span>, <span class="fl">14.4</span>, <span class="fl">10.6</span>, <span class="fl">8.4</span>)</span>
+<span id="cb32-4"><a href="patterns-of-activity.html#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="patterns-of-activity.html#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Scale the data</span></span>
+<span id="cb32-6"><a href="patterns-of-activity.html#cb32-6" aria-hidden="true" tabindex="-1"></a>sf <span class="ot">&lt;-</span> <span class="fu">max</span>(t_max)</span>
+<span id="cb32-7"><a href="patterns-of-activity.html#cb32-7" aria-hidden="true" tabindex="-1"></a>t_min <span class="ot">&lt;-</span> t_min<span class="sc">/</span>sf</span>
+<span id="cb32-8"><a href="patterns-of-activity.html#cb32-8" aria-hidden="true" tabindex="-1"></a>t_max <span class="ot">&lt;-</span> t_max<span class="sc">/</span>sf</span>
+<span id="cb32-9"><a href="patterns-of-activity.html#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-10"><a href="patterns-of-activity.html#cb32-10" aria-hidden="true" tabindex="-1"></a>angles <span class="ot">&lt;-</span> <span class="fu">yearlyPositions</span>(<span class="at">format=</span><span class="st">&quot;mid-months&quot;</span>)</span>
+<span id="cb32-11"><a href="patterns-of-activity.html#cb32-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-12"><a href="patterns-of-activity.html#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Circularise</span></span>
+<span id="cb32-13"><a href="patterns-of-activity.html#cb32-13" aria-hidden="true" tabindex="-1"></a>t_min <span class="ot">&lt;-</span> <span class="fu">circularise</span>(t_min)</span>
+<span id="cb32-14"><a href="patterns-of-activity.html#cb32-14" aria-hidden="true" tabindex="-1"></a>t_max <span class="ot">&lt;-</span> <span class="fu">circularise</span>(t_max)</span>
+<span id="cb32-15"><a href="patterns-of-activity.html#cb32-15" aria-hidden="true" tabindex="-1"></a>angles <span class="ot">&lt;-</span> <span class="fu">circularise</span>(angles)</span>
+<span id="cb32-16"><a href="patterns-of-activity.html#cb32-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-17"><a href="patterns-of-activity.html#cb32-17" aria-hidden="true" tabindex="-1"></a><span class="fu">yearlyPlot</span>(<span class="at">lat=</span><span class="fl">50.7</span>, <span class="at">lon=</span><span class="sc">-</span><span class="fl">2.9</span>)</span>
+<span id="cb32-18"><a href="patterns-of-activity.html#cb32-18" aria-hidden="true" tabindex="-1"></a><span class="fu">radialPolygon</span>(angles, angles, t_min, t_max, <span class="at">col=</span><span class="st">&quot;orange&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:lyme-temp-2"></span>
 <img src="_main_files/figure-html/lyme-temp-2-1.png" alt="Horizon data plot with circularise()." width="90%" />
 <p class="caption">
@@ -664,32 +665,32 @@ Figure 7.22: Horizon data plot with circularise().
 <div id="dielfraction" class="section level4 hasAnchor" number="7.7.3.1">
 <h4><span class="header-section-number">7.7.3.1</span> <code>dielFraction()</code><a href="patterns-of-activity.html#dielfraction" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The <code>dielFraction()</code> function is used to convert a POSIX time, or a time in <code>HHMM</code> string format, into a radial fraction. This function is called by <code>dielPlot()</code> and <code>dielRings()</code>. By default the output is multiplied by 2π to output a position round a circle.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="patterns-of-activity.html#cb32-1" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb32-2"><a href="patterns-of-activity.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(time)</span></code></pre></div>
-<pre><code>## [1] &quot;2022-08-28 11:52:42 BST&quot;</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="patterns-of-activity.html#cb34-1" aria-hidden="true" tabindex="-1"></a>frac <span class="ot">&lt;-</span> <span class="fu">dielFraction</span>(time)</span>
-<span id="cb34-2"><a href="patterns-of-activity.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(frac)</span></code></pre></div>
-<pre><code>## [1] 3.109769</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="patterns-of-activity.html#cb33-1" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb33-2"><a href="patterns-of-activity.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(time)</span></code></pre></div>
+<pre><code>## [1] &quot;2022-10-24 16:43:53 BST&quot;</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="patterns-of-activity.html#cb35-1" aria-hidden="true" tabindex="-1"></a>frac <span class="ot">&lt;-</span> <span class="fu">dielFraction</span>(time)</span>
+<span id="cb35-2"><a href="patterns-of-activity.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(frac)</span></code></pre></div>
+<pre><code>## [1] 4.380283</code></pre>
 <p>The raw fraction can be specified using the parameter <code>unit="fraction"</code>.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="patterns-of-activity.html#cb36-1" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb36-2"><a href="patterns-of-activity.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(time)</span></code></pre></div>
-<pre><code>## [1] &quot;2022-08-28 11:52:42 BST&quot;</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="patterns-of-activity.html#cb38-1" aria-hidden="true" tabindex="-1"></a>frac <span class="ot">&lt;-</span> <span class="fu">dielFraction</span>(time, <span class="at">unit=</span><span class="st">&quot;fraction&quot;</span>)</span>
-<span id="cb38-2"><a href="patterns-of-activity.html#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(frac)</span></code></pre></div>
-<pre><code>## [1] 0.4949362</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="patterns-of-activity.html#cb37-1" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb37-2"><a href="patterns-of-activity.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(time)</span></code></pre></div>
+<pre><code>## [1] &quot;2022-10-24 16:43:53 BST&quot;</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="patterns-of-activity.html#cb39-1" aria-hidden="true" tabindex="-1"></a>frac <span class="ot">&lt;-</span> <span class="fu">dielFraction</span>(time, <span class="at">unit=</span><span class="st">&quot;fraction&quot;</span>)</span>
+<span id="cb39-2"><a href="patterns-of-activity.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(frac)</span></code></pre></div>
+<pre><code>## [1] 0.6971444</code></pre>
 </div>
 <div id="yearlyfraction" class="section level4 hasAnchor" number="7.7.3.2">
 <h4><span class="header-section-number">7.7.3.2</span> <code>yearlyFraction()</code><a href="patterns-of-activity.html#yearlyfraction" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Similarly to <code>dielFraction()</code>, <code>yearlyFraction()</code> by default returns a fraction of a cycle. It can take either a number representing a day of the year, or an object that can be coerced into <code>POSIXlt</code> format.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="patterns-of-activity.html#cb40-1" aria-hidden="true" tabindex="-1"></a>frac <span class="ot">&lt;-</span> <span class="fu">yearlyFraction</span>(<span class="dv">31</span>, <span class="at">input=</span><span class="st">&quot;day&quot;</span>)</span>
-<span id="cb40-2"><a href="patterns-of-activity.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(frac)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="patterns-of-activity.html#cb41-1" aria-hidden="true" tabindex="-1"></a>frac <span class="ot">&lt;-</span> <span class="fu">yearlyFraction</span>(<span class="dv">31</span>, <span class="at">input=</span><span class="st">&quot;day&quot;</span>)</span>
+<span id="cb41-2"><a href="patterns-of-activity.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(frac)</span></code></pre></div>
 <pre><code>## [1] 0.5336404</code></pre>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="patterns-of-activity.html#cb42-1" aria-hidden="true" tabindex="-1"></a>date <span class="ot">&lt;-</span> <span class="fu">Sys.Date</span>()</span>
-<span id="cb42-2"><a href="patterns-of-activity.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(date)</span></code></pre></div>
-<pre><code>## [1] &quot;2022-08-28&quot;</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="patterns-of-activity.html#cb44-1" aria-hidden="true" tabindex="-1"></a>frac <span class="ot">&lt;-</span> <span class="fu">yearlyFraction</span>(date, <span class="at">input=</span><span class="st">&quot;POSIXlt&quot;</span>)</span>
-<span id="cb44-2"><a href="patterns-of-activity.html#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(frac)</span></code></pre></div>
-<pre><code>## [1] 4.114195</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="patterns-of-activity.html#cb43-1" aria-hidden="true" tabindex="-1"></a>date <span class="ot">&lt;-</span> <span class="fu">Sys.Date</span>()</span>
+<span id="cb43-2"><a href="patterns-of-activity.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(date)</span></code></pre></div>
+<pre><code>## [1] &quot;2022-10-24&quot;</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="patterns-of-activity.html#cb45-1" aria-hidden="true" tabindex="-1"></a>frac <span class="ot">&lt;-</span> <span class="fu">yearlyFraction</span>(date, <span class="at">input=</span><span class="st">&quot;POSIXlt&quot;</span>)</span>
+<span id="cb45-2"><a href="patterns-of-activity.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(frac)</span></code></pre></div>
+<pre><code>## [1] 5.095405</code></pre>
 </div>
 </div>
 </div>
