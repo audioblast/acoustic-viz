@@ -117,7 +117,7 @@
 
 \title{Visualisation for bioacoustics and ecoacoustics in R}
 \author{Ed Baker}
-\date{2022-10-24}
+\date{2022-10-26}
 
 \begin{document}
 \maketitle
@@ -170,6 +170,28 @@ Even though the costs of digital storage have fallen significantly (Figure \ref{
 
 \hypertarget{waveform-files}{%
 \subsection{Waveform files}\label{waveform-files}}
+
+Waveform files are created by sampling the amplitude at a sensor at a constant rate, typically tens of thousands of times per second (Figure @ref\{fig:wave-sampling\}).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/wave-sampling-1} 
+
+}
+
+\caption{Sampling a waveform.}\label{fig:wave-sampling}
+\end{figure}
+
+This is achieved using an analogue-to-digital converter (DAC) that converts the continuous variations in amplitude into a number of discrete levels that can be represented numerically (Figure \ref{fig:sampled-wave}. The number of discrete levels is called the bit depth.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/sampled-wave-1} 
+
+}
+
+\caption{A sampled waveform with low bit depth (top) and higher bit depth(bottom).}\label{fig:sampled-wave}
+\end{figure}
 
 \hypertarget{zero-crossing-files}{%
 \subsection{zero-crossing}\label{zero-crossing-files}}
@@ -982,7 +1004,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-10-24 16:44:11 BST"
+## [1] "2022-10-26 16:00:32 BST"
 \end{verbatim}
 
 \begin{Shaded}
@@ -993,7 +1015,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.381583
+## [1] 4.191134
 \end{verbatim}
 
 The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
@@ -1006,7 +1028,7 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-10-24 16:44:11 BST"
+## [1] "2022-10-26 16:00:32 BST"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1017,7 +1039,7 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.6973508
+## [1] 0.6670401
 \end{verbatim}
 
 \hypertarget{yearlyfraction}{%
@@ -1044,7 +1066,7 @@ Similarly to \texttt{dielFraction()}, \texttt{yearlyFraction()} by default retur
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-10-24"
+## [1] "2022-10-26"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1055,7 +1077,7 @@ Similarly to \texttt{dielFraction()}, \texttt{yearlyFraction()} by default retur
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 5.095405
+## [1] 5.129833
 \end{verbatim}
 
 \hypertarget{interactive-plots}{%

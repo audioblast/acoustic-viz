@@ -23,7 +23,7 @@
 <meta name="author" content="Ed Baker" />
 
 
-<meta name="date" content="2022-10-24" />
+<meta name="date" content="2022-10-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -286,6 +286,20 @@ Figure 1.1: Storage costs per megabyte over time. Data from <a href="https://jcm
 </div>
 <div id="waveform-files" class="section level3 hasAnchor" number="1.2.1">
 <h3><span class="header-section-number">1.2.1</span> Waveform files<a href="intro.html#waveform-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Waveform files are created by sampling the amplitude at a sensor at a constant rate, typically tens of thousands of times per second (Figure @ref{fig:wave-sampling}).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:wave-sampling"></span>
+<img src="_main_files/figure-html/wave-sampling-1.png" alt="Sampling a waveform." width="90%" />
+<p class="caption">
+Figure 1.2: Sampling a waveform.
+</p>
+</div>
+<p>This is achieved using an analogue-to-digital converter (DAC) that converts the continuous variations in amplitude into a number of discrete levels that can be represented numerically (Figure <a href="intro.html#fig:sampled-wave">1.3</a>. The number of discrete levels is called the bit depth.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:sampled-wave"></span>
+<img src="_main_files/figure-html/sampled-wave-1.png" alt="A sampled waveform with low bit depth (top) and higher bit depth(bottom)." width="90%" />
+<p class="caption">
+Figure 1.3: A sampled waveform with low bit depth (top) and higher bit depth(bottom).
+</p>
+</div>
 </div>
 <div id="zero-crossing-files" class="section level3 hasAnchor" number="1.2.2">
 <h3><span class="header-section-number">1.2.2</span> zero-crossing<a href="intro.html#zero-crossing-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>

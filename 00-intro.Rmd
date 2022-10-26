@@ -21,6 +21,22 @@ storageCosts()
 ```
 
 ### Waveform files
+Waveform files are created by sampling the amplitude at a sensor at a constant rate, typically tens of thousands of times per second (Figure \@ref{fig:wave-sampling}).
+
+```{r, wave-sampling,  fig.width=9, fig.cap='Sampling a waveform.', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
+library(tuneR)
+waveSampling(sine(freq=1), 2000)
+```
+
+This is achieved using an analogue-to-digital converter (DAC) that converts the continuous variations in amplitude into a number of discrete levels that can be represented numerically (Figure \@ref(fig:sampled-wave). The number of discrete levels is called the bit depth.
+
+```{r, sampled-wave,  fig.width=9, fig.height=8, fig.cap='A sampled waveform with low bit depth (top) and higher bit depth(bottom).', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
+library(figuREd)
+library(tuneR)
+par(mfrow=c(2,1))
+waveSampled(sine(freq=1), 1000, 10)
+waveSampled(sine(freq=1), 1000, 50)
+```
 
 ### zero-crossing { #zero-crossing-files }
 

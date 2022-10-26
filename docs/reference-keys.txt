@@ -1,4 +1,6 @@
 fig:storage-costs
+fig:wave-sampling
+fig:sampled-wave
 fig:amplitude-bars
 fig:amplitude-lines
 fig:amplitude-oscillo
