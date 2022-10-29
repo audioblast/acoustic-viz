@@ -266,30 +266,30 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="static-digital-images" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Static digital images<a href="static-digital-images.html#static-digital-images" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>The three basic quantities of sound waves are time, frequency, and amplitude. The most commonly used visualisations of sounds are consequently combinations of these properties.</p>
-<p>The <code>seewave</code> package <span class="citation">(<a href="#ref-seewave" role="doc-biblioref">Sueur, Aubin, and Simonis 2008</a>)</span> is the easiest way to produce these plots, and we will use the <code>sheep</code> audio sample provided by <code>seewave</code> for the first plots.</p>
+<p>The three fundamental quantities of sound waves are time, frequency, and amplitude. The most commonly used visualisations of sounds are consequently combinations of these properties.</p>
+<p>The <code>seewave</code> package <span class="citation">(<a href="#ref-seewave" role="doc-biblioref">Sueur, Aubin, and Simonis 2008</a>)</span> is the easiest way to produce these plots. We will use the <code>sheep</code> audio sample provided by <code>seewave</code> for the first plots.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="static-digital-images.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(seewave)</span>
 <span id="cb1-2"><a href="static-digital-images.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(sheep, <span class="at">package=</span><span class="st">&quot;seewave&quot;</span>)</span></code></pre></div>
 <div id="the-time-domain" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> The time domain<a href="static-digital-images.html#the-time-domain" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The <em>time domain</em> is used to describe acoustic analyses where the recorded waveform is not analysed for frequency. Conversion of a waveform to a spectrum of frequencies is a relatively costly computation and, before digital computers, hard to achieve with the precision and resolution we are accustomed to today.</p>
+<p><em>Time domain</em> techniques analyse the recorded waveform directly. Conversion of a waveform to a spectrum of frequencies is a relatively costly computation. Before digital computers, frequency analysis was hard to achieve with the precision and resolution we are accustomed to today.</p>
 <div id="oscillograms" class="section level3 hasAnchor" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Oscillograms<a href="static-digital-images.html#oscillograms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Digitally sampled audio is a series of amplitude measurements, sampled at a regular time time interval. Given that it now seems natural for time to be expressed on the x axis, increasing towards the right, the most basic plot we could recreate from a sampled file would be plotting amplitude values against time.</p>
+<p>Digitally sampled audio is a series of amplitude measurements sampled at a regular time interval. The most basic plot we could recreate from a sampled file would be plotting amplitude values against time, a plot known as an oscillogram.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:amplitude-bars"></span>
 <img src="_main_files/figure-html/amplitude-bars-1.png" alt="Plotting a waveform" width="90%" />
 <p class="caption">
 Figure 4.1: Plotting a waveform
 </p>
 </div>
-<p>Figure <a href="static-digital-images.html#fig:amplitude-bars">4.1</a> shows 50 samples from the <code>sheep</code> audio file plotted using the standard R <code>barplot()</code> function. This representation has the advantage that the individual bars ar a visual reminder that we are handling a sampled representation, as opposed to a continuously varying waveform. It is common however to create a visual representation closer to that of an actual wave (Figure @ref(fig:amplitude-lines shows how this is achieved using base R functions).</p>
+<p>Figure <a href="static-digital-images.html#fig:amplitude-bars">4.1</a> shows 50 samples from the sheep audio file plotted using the standard R barplot()function. This representation has the advantage that the individual bars are a visual reminder that we are handling a sampled representation instead of a continuously varying waveform. It is common, however, to create a visual representation closer to that of an actual wave (Figure <a href="static-digital-images.html#fig:amplitude-lines">4.2</a> shows how this is achieved using base R functions).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:amplitude-lines"></span>
 <img src="_main_files/figure-html/amplitude-lines-1.png" alt="Plotting a waveform" width="90%" />
 <p class="caption">
 Figure 4.2: Plotting a waveform
 </p>
 </div>
-<p>The <code>oscillo()</code> function from <code>seewave</code> handles the labelling of axes for us, and is a very convenient solution. Figure <a href="static-digital-images.html#fig:amplitude-oscillo">4.3</a> shows the resulting plot, an oscillogram, for the entire <code>sheep</code> file.</p>
+<p>The <code>oscillo()</code> function from <code>seewave</code> handles the labelling of axes for us and is a very convenient solution. Figure <a href="static-digital-images.html#fig:amplitude-oscillo">4.3</a> shows the resulting plot, an oscillogram, for the entire <code>sheep</code> file.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:amplitude-oscillo"></span>
 <img src="_main_files/figure-html/amplitude-oscillo-1.png" alt="Oscillogram" width="90%" />
 <p class="caption">
@@ -300,7 +300,7 @@ Figure 4.3: Oscillogram
 </div>
 <div id="the-frequency-domain" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> The frequency domain<a href="static-digital-images.html#the-frequency-domain" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The <em>frequency domain</em> covers analyses in which frequency data is extracted from the sampled waveform. This information is generally extracted using the <em>Fast Fourier Transform</em> algorithm.</p>
+<p>The <em>frequency domain</em> covers analyses in which frequency data are extracted from the sampled waveform, typically using the <em>Fast Fourier Transform</em> algorithm.</p>
 <div id="plotting-a-spectrum" class="section level3 hasAnchor" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> Plotting a spectrum<a href="static-digital-images.html#plotting-a-spectrum" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A spectrum is a plot of amplitude against frequency.</p>

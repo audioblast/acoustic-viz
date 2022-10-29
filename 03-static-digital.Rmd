@@ -1,8 +1,8 @@
 # Static digital images
 
-The three basic quantities of sound waves are time, frequency, and amplitude. The most commonly used visualisations of sounds are consequently combinations of these properties.
+The three fundamental quantities of sound waves are time, frequency, and amplitude. The most commonly used visualisations of sounds are consequently combinations of these properties.
 
-The `seewave` package [@seewave] is the easiest way to produce these plots, and we will use the `sheep` audio sample provided by `seewave` for the first plots.
+The `seewave` package [@seewave] is the easiest way to produce these plots. We will use the `sheep` audio sample provided by `seewave` for the first plots.
 
 ```{r}
 library(seewave)
@@ -11,23 +11,23 @@ data(sheep, package="seewave")
 
 ## The time domain
 
-The _time domain_ is used to describe acoustic analyses where the recorded waveform is not analysed for frequency. Conversion of a waveform to a spectrum of frequencies is a relatively costly computation and, before digital computers, hard to achieve with the precision and resolution we are accustomed to today.
+_Time domain_ techniques analyse the recorded waveform directly. Conversion of a waveform to a spectrum of frequencies is a relatively costly computation. Before digital computers, frequency analysis was hard to achieve with the precision and resolution we are accustomed to today. 
 
 ### Oscillograms
 
-Digitally sampled audio is a series of amplitude measurements, sampled at a regular time time interval. Given that it now seems natural for time to be expressed on the x axis, increasing towards the right, the most basic plot we could recreate from a sampled file would be plotting amplitude values against time.
+Digitally sampled audio is a series of amplitude measurements sampled at a regular time interval. The most basic plot we could recreate from a sampled file would be plotting amplitude values against time, a plot known as an oscillogram.
 
 ```{r, amplitude-bars,  fig.width=9, fig.cap='Plotting a waveform', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
 barplot(sheep@left[8001:8050])
 ```
 
-Figure \@ref(fig:amplitude-bars) shows 50 samples from the `sheep` audio file plotted using the standard R `barplot()` function. This representation has the advantage that the individual bars ar a visual reminder that we are handling a sampled representation, as opposed to a continuously varying waveform. It is common however to create a visual representation closer to that of an actual wave (Figure \@ref(fig:amplitude-lines shows how this is achieved using base R functions).
+Figure \@ref(fig:amplitude-bars) shows 50 samples from the sheep audio file plotted using the standard R barplot()function. This representation has the advantage that the individual bars are a visual reminder that we are handling a sampled representation instead of a continuously varying waveform. It is common, however, to create a visual representation closer to that of an actual wave (Figure \@ref(fig:amplitude-lines) shows how this is achieved using base R functions).
 
 ```{r, amplitude-lines,  fig.width=9, fig.cap='Plotting a waveform', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
 plot(sheep@left[8001:8050], type="l")
 ```
 
-The `oscillo()` function from `seewave` handles the labelling of axes for us, and is a very convenient solution. Figure \@ref(fig:amplitude-oscillo) shows the resulting plot, an oscillogram, for the entire `sheep` file.
+The `oscillo()` function from `seewave` handles the labelling of axes for us and is a very convenient solution. Figure \@ref(fig:amplitude-oscillo) shows the resulting plot, an oscillogram, for the entire `sheep` file.
 
 ```{r, amplitude-oscillo,  fig.width=9, fig.cap='Oscillogram', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
 oscillo(sheep)
@@ -35,7 +35,7 @@ oscillo(sheep)
 
 ## The frequency domain
 
-The _frequency domain_ covers analyses in which frequency data is extracted from the sampled waveform. This information is generally extracted using the _Fast Fourier Transform_ algorithm.
+The _frequency domain_ covers analyses in which frequency data are extracted from the sampled waveform, typically using the _Fast Fourier Transform_ algorithm.
 
 ### Plotting a spectrum
 

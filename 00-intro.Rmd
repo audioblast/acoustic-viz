@@ -4,37 +4,35 @@
 >
 > `r tufte::quote_footer('--- @schafer1977')`
 
-While Murray Schafer's _Tuning of the World_ [@schafer1977] inspired many soundscape scientists, this view is of an earlier time, where the concept of multiple simultaneous streams of acoustic data being processed by a single individual was still an idea beyond the horizon. Individual sounds could be isolated and studied (as today they still are by bioacousticians interested in the behaviour of individual species). The scale of many contemporary ecoacoustics projects precludes an individual from listening to every minute that is recorded, the task no longer delegated to students but networks of machines. 
+While Murray Schafer's _Tuning of the World_ [@schafer1977] inspired many soundscape scientists, this view is of an earlier time when the concept of multiple simultaneous streams of acoustic data processed in real time was still an idea beyond the horizon. Individual sounds could be isolated and studied (as today they still are by bioacousticians interested in the behaviour of individual species). The scale of many contemporary ecoacoustics projects precludes an individual from listening to every minute recorded; the task is no longer delegated to students but to networks of machines.
 
-Additionally, it is now useful to distinguish between two concepts that Schafer bought together under the concept of _notation_. Schafer used this term to bring together what is more typically known as notation -- phonetics and musical notation -- alongside visual representations of the physical properties of acoustic waves (amplitude, frequency, etc).
+Additionally, it is now helpful to distinguish between two concepts that Schafer bought together under the concept of _notation_. That is to separate notation (phonetics and musical notation) from visual representations of the physical properties of acoustic waves (e.g. amplitude, frequency).
 
-Historically both musical notation and phonemes have been used to describe the songs of various animals, however these methods do not scale to the entirety of the biological soundscape. There is after all, a great deal of the soundscape that is beyond the limits of human hearing, the infrasound, the ultrasound, and the quiet. All manner of information is gathered and shared by other species beyond the limits of our perception, and visualisation is the main tool by which we are able to interpret the entire soundscape. For all species that share it.
+Historically, researchers used musical notation and phonemes to describe the songs of various animals. However, these methods do not scale to the entirety of the natural soundscape. Parts of the soundscape are beyond the limits of human hearing; the infrasound, the ultrasound, and the quiet. All manner of information is gathered and shared by other species beyond the limits of our perception. Visualisation is the primary tool by which we can interpret the entire soundscape for all species that share it.
 
 ## Predominance of the visual
 
 ## Basic acoustic terminology
 
 ## Types of files
-Even though the costs of digital storage have fallen significantly (Figure \@ref(fig:storage-costs)) the cost of file transfer and storage are still significant factors in many acoustics projects. For this reason it is sometimes necessary to compress the audio file in some way: discarding some data in exchange for cost reductions.
+Even though the costs of digital storage have fallen significantly (Figure \@ref(fig:storage-costs)), the cost of file transfer and storage are still significant factors in many acoustics projects. For this reason, it is sometimes necessary to compress the audio file in some way: discarding some data in exchange for cost reductions.
 
 ```{r, storage-costs,  fig.width=9, fig.cap='Storage costs per megabyte over time. Data from https://jcmit.net/diskprice.htm.', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
 library(figuREd)
 storageCosts()
 ```
 
-This process of compression may affect visualisation of the audio files, or even the types of visualisation that are possible for a given file.
+This process of compression may affect the visualisation of the audio files or even the possible types of visualisation for a given file.
 
 ### Uncompressed waveform files
-Waveform files are created by sampling the amplitude at a sensor at a constant rate, typically tens of thousands of times per second (Figure \@ref(fig:wave-sampling)).
+Waveform files are created by sampling the wave amplitude at a sensor at a constant rate, typically tens of thousands of times per second (Figure \@ref(fig:wave-sampling)).
 
 ```{r, wave-sampling,  fig.width=9, fig.cap='Sampling a waveform.', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
 library(tuneR)
 waveSampling(sine(freq=1), 2000)
 ```
 
-This is achieved using an analogue-to-digital converter (DAC) that converts the continuous variations in amplitude into a number of discrete levels that can be represented numerically (Figure \@ref(fig:sampled-wave). The number of discrete levels is dependant on the analogue-to-digitial converter (ADC), a typical 16-bit depth has $2^{16}=65536$ possible values.
-
-The 
+An analogue-to-digital converter (ADC) converts the continuous variations in amplitude into one of the numerous discrete levels that the ADC can represent (Figure 1.3. The number of discrete levels is dependent on the analogue-to-digital converter (ADC); a typical 16-bit depth has $2^{16}=65536$ possible values.
 
 ```{r, sampled-wave,  fig.width=9, fig.height=8, fig.cap='A sampled waveform with low bit depth (top) and higher bit depth(bottom).', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
 library(figuREd)

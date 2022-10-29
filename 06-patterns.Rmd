@@ -1,7 +1,7 @@
 # Patterns of activity
-Lots of organismal activities are tied to the cycles of the day, and particularly in temperate zones, cycles of the year. These cycles bring regular fluctuations in light levels, day lengths, temperatures, and a host of other influences. Often these cycles interact, with the dawn chorus peaking in the early daylight hours, and it's timing and intensity fluctuating on a yearly cycle. This chapter looks at visualising these cycles, and additionally the effects of lunar cycles.
+Many organismal activities are tied to the cycles of the day, particularly in temperate zones, cycles of the year. These cycles bring regular fluctuations in light levels, day lengths, temperatures, and various other influences. Often these cycles interact, with the dawn chorus peaking in the early daylight hours and its timing and intensity fluctuating on a yearly cycle. This chapter looks at visualising these cycles and the effects of lunar cycles.
 
-These plots are created using the SonicScrewdriver package [@sonicscrewdriver] which in turn uses the suncalc package [@suncalc] to perform the required sun and moon position calculations. The Plotrix package [@plotrix] is used for creating the visualisation. These packages can be installed as shown below.
+These plots are created using the SonicScrewdriver package [@sonicscrewdriver], which uses the suncalc package [@suncalc] to perform the required sun and moon position calculations. The Plotrix package [@plotrix] is used for creating the visualisation. These packages are installed as shown below.
 
 ```{r eval=FALSE}
 install.packages(c("plotrix", "sonicscrewdriver"))
@@ -14,9 +14,9 @@ library(sonicscrewdriver)
 ```
 
 ## Daily Cycles { #daily-cycles }
-The use of the term _diel_ for daily cycles has been contested by @broughton1963 as being an incorrectly formed unnecessary neologism, it sees greater use (according to the online Oxford English Dictionary) than his suggested _nycthemeral_.
+Broughton (1963) contests the term diel for daily cycles as an incorrectly formed, unnecessary neologism. However, it sees greater use (according to the online Oxford English Dictionary) than his suggested nycthemeral.
 
-The design for these plots came from a desire to compare the dawn chorus at various locations around the UK, although they also offer great potential for comparing locations with greater longitudinal and/or latitudinal separation. The plots show the times of day, night, twilight (\@ref(twilight-types)), sunrise, sunset, nadir and solar noon. The day part of the plot shows the altitude (angle of the sun above the horizon) throughout the day, with the maximum value representing the sun being directly overhead.
+The design for these plots came from a desire to compare the dawn chorus at various locations around the UK. However, they also offer great potential for comparing locations with greater longitudinal or latitudinal separation. The plots show the times of day, night, twilight (\@ref(twilight-types)), sunrise, sunset, nadir and solar noon. The day part of the plot shows the altitude (angle of the sun above the horizon) throughout the day, with the maximum value representing the sun directly overhead.
 
 ### The Types of Twilight { #twilight-types }
 
@@ -53,13 +53,13 @@ for (i in 1:length(sunset_y)) {
 ```
 
 #### Civil Twilight
-Civil twilight occurs when the geometric centre of the sun (as seen from Earth) passes between 0° and 6° below the horizon. During this time it is normal for humans not to need the assistance of artifical light for everyday tasks.
+Civil twilight occurs when the sun's geometric centre (as seen from Earth) passes between 0° and 6° below the horizon. During this time, it is normal for humans not to need the assistance of artificial light for everyday tasks.
 
 #### Nautical Twilight
-Nautical twilight occurs when the sun is between 6° and 12° below the horizon. During this time there is sufficient light to distinguish the horizon even without illumination from the moon (allowing determination of position at sea through star sightings).
+Nautical twilight occurs when the sun is between 6° and 12° below the horizon. During this time, there is sufficient light to distinguish the horizon without illumination from the moon (allowing the determination of position at sea through star sightings).
 
 #### Astronomical Twilight
-When the sun is between 12° and 18° below the horizon many astronomical observations are possible even though some light from the sun is visible through the atmosphere. In urban areas with light pollution this is often considered to be a dark sky.
+Many astronomical observations are possible when the sun is between 12° and 18° below the horizon. Some light from the sun is visible through the atmosphere. Often considered a dark sky in urban areas with light pollution.
 
 ### Diel Plots {#diel-plots }
 As the times of the solar day are dependent both on the date and location these must be passed to the `dielPlot()` function.
@@ -144,7 +144,7 @@ yearlyPlot(2022, lat=53, lon=0.1)
 
 ## Core and ring plots
 
-These visualisations for cyclical data plot their information onto a circle with radius of two units. It is possible to limit the plot either to the centre of the circle (a 'core' plot) or to the edge (a 'ring plot'). These alternative forms may be more useful when these plots are used to visualise addition variables (\@ref(adding-to-cyclical)).
+These visualisations for cyclical data plot their information onto a circle with a radius of two units. It is possible to limit the plot either to the centre of the circle (a 'core' plot) or to the edge (a 'ring plot'). These alternative forms may be more useful when these plots are used to visualise addition variables (\@ref(adding-to-cyclical)).
 
 ```{r diel-plot-core, fig.height=7, fig.width=9, fig.cap='A \'core\' diel plot.', fig.align='center', out.width='90%', cache=TRUE}
 dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(0,1))
@@ -157,10 +157,9 @@ dielPlot("2022-08-08", lat=53, lon=0.1, limits=c(1,2))
 ## Behind the scenes
 
 ### `radialPolygon()`
+The `radialPolygon()` function handles most of the plotting functionality for cyclical data in `SonicScrewdriveR`. It handles sectors, annuli, horizon plots and irregular polygons. It is used by the plotting functions such as `dielPlot()` and helper functions such as `dielRings()` to add data to cyclical plots.
 
-The majority of the plotting performed for cyclical plots in `SonicScrewdriver` is performed by the `radialPolygon()` function. This function can be used to plot sectors, annuli, horizon plots and irregular polygons. It is used by the plotting functions such as `dielPlot()` as well as helper functions such as `dielRings()` to add data to cyclical plots.
-
-For simple use cases, knowledge of the operation of `radialPolygon()` may not be needed. A number of helper functions cover the most common uses. However, an understanding of how this function works will allow for far greater customisation of cyclical plots than would otherwise be possible.
+For simple use cases, knowledge of the operation of `radialPolygon()` may not be needed. Several helper functions cover the most common uses. However, understanding how this function works will allow for far greater customisation of cyclical plots than would otherwise be possible.
 
 ```{r radialPolygon-types, fig.height=7, fig.width=9, fig.cap='Types of radial polygon plot', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
 emptyDiel()
