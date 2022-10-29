@@ -117,7 +117,7 @@
 
 \title{Visualisation for bioacoustics and ecoacoustics in R}
 \author{Ed Baker}
-\date{2022-10-26}
+\date{2022-10-29}
 
 \begin{document}
 \maketitle
@@ -151,6 +151,9 @@ Additionally, it is now useful to distinguish between two concepts that Schafer 
 
 Historically both musical notation and phonemes have been used to describe the songs of various animals, however these methods do not scale to the entirety of the biological soundscape. There is after all, a great deal of the soundscape that is beyond the limits of human hearing, the infrasound, the ultrasound, and the quiet. All manner of information is gathered and shared by other species beyond the limits of our perception, and visualisation is the main tool by which we are able to interpret the entire soundscape. For all species that share it.
 
+\hypertarget{predominance-of-the-visual}{%
+\section{Predominance of the visual}\label{predominance-of-the-visual}}
+
 \hypertarget{basic-acoustic-terminology}{%
 \section{Basic acoustic terminology}\label{basic-acoustic-terminology}}
 
@@ -168,10 +171,12 @@ Even though the costs of digital storage have fallen significantly (Figure \ref{
 \caption{Storage costs per megabyte over time. Data from https://jcmit.net/diskprice.htm.}\label{fig:storage-costs}
 \end{figure}
 
-\hypertarget{waveform-files}{%
-\subsection{Waveform files}\label{waveform-files}}
+This process of compression may affect visualisation of the audio files, or even the types of visualisation that are possible for a given file.
 
-Waveform files are created by sampling the amplitude at a sensor at a constant rate, typically tens of thousands of times per second (Figure @ref\{fig:wave-sampling\}).
+\hypertarget{uncompressed-waveform-files}{%
+\subsection{Uncompressed waveform files}\label{uncompressed-waveform-files}}
+
+Waveform files are created by sampling the amplitude at a sensor at a constant rate, typically tens of thousands of times per second (Figure \ref{fig:wave-sampling}).
 
 \begin{figure}
 
@@ -182,7 +187,9 @@ Waveform files are created by sampling the amplitude at a sensor at a constant r
 \caption{Sampling a waveform.}\label{fig:wave-sampling}
 \end{figure}
 
-This is achieved using an analogue-to-digital converter (DAC) that converts the continuous variations in amplitude into a number of discrete levels that can be represented numerically (Figure \ref{fig:sampled-wave}. The number of discrete levels is called the bit depth.
+This is achieved using an analogue-to-digital converter (DAC) that converts the continuous variations in amplitude into a number of discrete levels that can be represented numerically (Figure \ref{fig:sampled-wave}. The number of discrete levels is dependant on the analogue-to-digitial converter (ADC), a typical 16-bit depth has \(2^{16}=65536\) possible values.
+
+The
 
 \begin{figure}
 
@@ -193,11 +200,38 @@ This is achieved using an analogue-to-digital converter (DAC) that converts the 
 \caption{A sampled waveform with low bit depth (top) and higher bit depth(bottom).}\label{fig:sampled-wave}
 \end{figure}
 
+\hypertarget{lossy-compression}{%
+\subsection{Lossy compression}\label{lossy-compression}}
+
 \hypertarget{zero-crossing-files}{%
 \subsection{zero-crossing}\label{zero-crossing-files}}
 
 \hypertarget{history}{%
 \chapter{History}\label{history}}
+
+\hypertarget{goals-of-visualisation}{%
+\section{Goals of visualisation}\label{goals-of-visualisation}}
+
+Visualisation of acoustic information may be performed for a number of reasons. Purely descriptive graphical representations may have the goal of invoking in the mind the sound that is being represented, allowing knowledge of how somethng sounds to be passed from one mind to another via visual media.
+
+\begin{quote}
+``I have frequently experimented with graphic notations, and in the course of these experiments it has occurred to me that a new type of artistic experience may be opening up to us, in which musical clements could have revitalized graphic correspondences in such a way that one sensation could be triggered by another to produce synaesthesia - that is, a fusion of two art forms into a unitary experience.''
+
+\hfill --- \citep{schafer1975}
+\end{quote}
+
+While it may be argued that the decreasing costs of electronic data storage and transmission remove the need for converting audio into graphical form, these trends contribute to an increased abundance and availability of acoustic data. It is normally the case that it is quicker and easier to scan this large quantity of acoustic information when it is represented visually than by listening to it (Figure \ref{fig:quicker-visually}).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/quicker-visually-1} 
+
+}
+
+\caption{Even for a short file of three minutes duration it is quicker to identify regions of interest visually than by listening.}\label{fig:quicker-visually}
+\end{figure}
+
+It should also be said that many current machine learning techniques used in acoustics work upon data that has initially been converted into graphical form. Is this an optimum method, or just a consequence of the Predominance of the Visual?
 
 \hypertarget{descriptive-acoustics}{%
 \section{Descriptive acoustics}\label{descriptive-acoustics}}
@@ -1004,7 +1038,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-10-26 16:00:32 BST"
+## [1] "2022-10-29 10:10:33 BST"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1015,7 +1049,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.191134
+## [1] 2.664088
 \end{verbatim}
 
 The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
@@ -1028,7 +1062,7 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-10-26 16:00:32 BST"
+## [1] "2022-10-29 10:10:33 BST"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1039,7 +1073,7 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.6670401
+## [1] 0.4240029
 \end{verbatim}
 
 \hypertarget{yearlyfraction}{%
@@ -1066,7 +1100,7 @@ Similarly to \texttt{dielFraction()}, \texttt{yearlyFraction()} by default retur
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2022-10-26"
+## [1] "2022-10-29"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1077,7 +1111,7 @@ Similarly to \texttt{dielFraction()}, \texttt{yearlyFraction()} by default retur
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 5.129833
+## [1] 5.181476
 \end{verbatim}
 
 \hypertarget{interactive-plots}{%

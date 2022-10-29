@@ -1,5 +1,22 @@
 # History {#history}
 
+## Goals of visualisation
+Visualisation of acoustic information may be performed for a number of reasons. Purely descriptive graphical representations may have the goal of invoking in the mind the sound that is being represented, allowing knowledge of how somethng sounds to be passed from one mind to another via visual media.
+
+> "I have frequently experimented with graphic notations, and in the course of these experiments it has occurred to me that a new type of artistic experience may be opening up to us, in which musical clements could have revitalized graphic correspondences in such a way that one sensation could be triggered by another to produce synaesthesia - that is, a fusion of two art forms into a unitary experience."
+>
+> `r tufte::quote_footer('--- [@schafer1975]')`
+
+While it may be argued that the decreasing costs of electronic data storage and transmission remove the need for converting audio into graphical form, these trends contribute to an increased abundance and availability of acoustic data. It is normally the case that it is quicker and easier to scan this large quantity of acoustic information when it is represented visually than by listening to it (Figure \@ref(fig:quicker-visually)).
+
+```{r, quicker-visually,  fig.width=9, fig.cap='Even for a short file of three minutes duration it is quicker to identify regions of interest visually than by listening.', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
+library(tuneR)
+library(seewave)
+wave <- readWave("H.raggei.wav")
+spectro(wave, flim=c(0,3))
+```
+It should also be said that many current machine learning techniques used in acoustics work upon data that has initially been converted into graphical form. Is this an optimum method, or just a consequence of the Predominance of the Visual?
+
 ## Descriptive acoustics
 
 ### Phonemes and onomatopoeia
@@ -16,3 +33,4 @@ Typical musical notation shows broad similarities with a typical audio visualisa
 #### Ampltiude vs Frequency
 
 #### Frequency vs Time
+

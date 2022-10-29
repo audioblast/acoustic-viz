@@ -1,6 +1,7 @@
 fig:storage-costs
 fig:wave-sampling
 fig:sampled-wave
+fig:quicker-visually
 fig:amplitude-bars
 fig:amplitude-lines
 fig:amplitude-oscillo
@@ -29,11 +30,14 @@ fig:diel-plot-rings-2
 fig:lyme-temp-1
 fig:lyme-temp-2
 intro
+predominance-of-the-visual
 basic-acoustic-terminology
 types-of-files
-waveform-files
+uncompressed-waveform-files
+lossy-compression
 zero-crossing-files
 history
+goals-of-visualisation
 descriptive-acoustics
 phonemes-and-onomatopoeia
 musical-notation

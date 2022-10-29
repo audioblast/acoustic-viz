@@ -10,6 +10,8 @@ Additionally, it is now useful to distinguish between two concepts that Schafer 
 
 Historically both musical notation and phonemes have been used to describe the songs of various animals, however these methods do not scale to the entirety of the biological soundscape. There is after all, a great deal of the soundscape that is beyond the limits of human hearing, the infrasound, the ultrasound, and the quiet. All manner of information is gathered and shared by other species beyond the limits of our perception, and visualisation is the main tool by which we are able to interpret the entire soundscape. For all species that share it.
 
+## Predominance of the visual
+
 ## Basic acoustic terminology
 
 ## Types of files
@@ -20,15 +22,19 @@ library(figuREd)
 storageCosts()
 ```
 
-### Waveform files
-Waveform files are created by sampling the amplitude at a sensor at a constant rate, typically tens of thousands of times per second (Figure \@ref{fig:wave-sampling}).
+This process of compression may affect visualisation of the audio files, or even the types of visualisation that are possible for a given file.
+
+### Uncompressed waveform files
+Waveform files are created by sampling the amplitude at a sensor at a constant rate, typically tens of thousands of times per second (Figure \@ref(fig:wave-sampling)).
 
 ```{r, wave-sampling,  fig.width=9, fig.cap='Sampling a waveform.', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
 library(tuneR)
 waveSampling(sine(freq=1), 2000)
 ```
 
-This is achieved using an analogue-to-digital converter (DAC) that converts the continuous variations in amplitude into a number of discrete levels that can be represented numerically (Figure \@ref(fig:sampled-wave). The number of discrete levels is called the bit depth.
+This is achieved using an analogue-to-digital converter (DAC) that converts the continuous variations in amplitude into a number of discrete levels that can be represented numerically (Figure \@ref(fig:sampled-wave). The number of discrete levels is dependant on the analogue-to-digitial converter (ADC), a typical 16-bit depth has $2^{16}=65536$ possible values.
+
+The 
 
 ```{r, sampled-wave,  fig.width=9, fig.height=8, fig.cap='A sampled waveform with low bit depth (top) and higher bit depth(bottom).', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
 library(figuREd)
@@ -37,6 +43,8 @@ par(mfrow=c(2,1))
 waveSampled(sine(freq=1), 1000, 10)
 waveSampled(sine(freq=1), 1000, 50)
 ```
+
+### Lossy compression
 
 ### zero-crossing { #zero-crossing-files }
 
