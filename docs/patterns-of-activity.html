@@ -183,7 +183,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.3.1" data-path="history.html"><a href="history.html#the-big-three"><i class="fa fa-check"></i><b>2.3.1</b> The ‘big-three’</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="early-viz.html"><a href="early-viz.html"><i class="fa fa-check"></i><b>3</b> Early visualisations - the analog years</a>
+<li class="chapter" data-level="3" data-path="early-viz.html"><a href="early-viz.html"><i class="fa fa-check"></i><b>3</b> Early visualisations - the analogue years</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="early-viz.html"><a href="early-viz.html#crts"><i class="fa fa-check"></i><b>3.1</b> CRTs</a></li>
 <li class="chapter" data-level="3.2" data-path="early-viz.html"><a href="early-viz.html#print-outs"><i class="fa fa-check"></i><b>3.2</b> Print outs</a></li>
@@ -670,17 +670,17 @@ Figure 7.22: Horizon data plot with circularise().
 <p>The <code>dielFraction()</code> function is used to convert a POSIX time, or a time in <code>HHMM</code> string format, into a radial fraction. This function is called by <code>dielPlot()</code> and <code>dielRings()</code>. By default the output is multiplied by 2π to output a position round a circle.</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="patterns-of-activity.html#cb33-1" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
 <span id="cb33-2"><a href="patterns-of-activity.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(time)</span></code></pre></div>
-<pre><code>## [1] &quot;2022-10-29 13:22:55 BST&quot;</code></pre>
+<pre><code>## [1] &quot;2022-10-29 16:56:46 BST&quot;</code></pre>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="patterns-of-activity.html#cb35-1" aria-hidden="true" tabindex="-1"></a>frac <span class="ot">&lt;-</span> <span class="fu">dielFraction</span>(time)</span>
 <span id="cb35-2"><a href="patterns-of-activity.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(frac)</span></code></pre></div>
-<pre><code>## [1] 3.503433</code></pre>
+<pre><code>## [1] 4.436508</code></pre>
 <p>The raw fraction can be specified using the parameter <code>unit="fraction"</code>.</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="patterns-of-activity.html#cb37-1" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
 <span id="cb37-2"><a href="patterns-of-activity.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(time)</span></code></pre></div>
-<pre><code>## [1] &quot;2022-10-29 13:22:55 BST&quot;</code></pre>
+<pre><code>## [1] &quot;2022-10-29 16:56:46 BST&quot;</code></pre>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="patterns-of-activity.html#cb39-1" aria-hidden="true" tabindex="-1"></a>frac <span class="ot">&lt;-</span> <span class="fu">dielFraction</span>(time, <span class="at">unit=</span><span class="st">&quot;fraction&quot;</span>)</span>
 <span id="cb39-2"><a href="patterns-of-activity.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(frac)</span></code></pre></div>
-<pre><code>## [1] 0.5575888</code></pre>
+<pre><code>## [1] 0.7060921</code></pre>
 </div>
 <div id="yearlyfraction" class="section level4 hasAnchor" number="7.7.3.2">
 <h4><span class="header-section-number">7.7.3.2</span> <code>yearlyFraction()</code><a href="patterns-of-activity.html#yearlyfraction" class="anchor-section" aria-label="Anchor link to header"></a></h4>
