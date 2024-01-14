@@ -120,7 +120,7 @@
 
 \title{Visualisation for bioacoustics and ecoacoustics in R}
 \author{Ed Baker}
-\date{2024-01-13}
+\date{2024-01-14}
 
 \begin{document}
 \maketitle
@@ -163,8 +163,19 @@ Historically, researchers used musical notation and phonemes to describe the son
 \hypertarget{predominance-of-the-visual}{%
 \section{Predominance of the visual}\label{predominance-of-the-visual}}
 
-\hypertarget{basic-acoustic-terminology}{%
-\section{Basic acoustic terminology}\label{basic-acoustic-terminology}}
+\hypertarget{basic-acoustic-concepts}{%
+\section{Basic acoustic concepts}\label{basic-acoustic-concepts}}
+
+A sound wave is a disturbance in the air that propagates as a series of compressions (the regions between are known as regions of rarefaction), see Figure \ref{fig:wave-in-air}. The frequency of a sound wave is the number of compressions and rarefactions that pass a point in a second. The amplitude of a sound wave is the difference between the maximum and minimum pressure of the wave.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{_main_files/figure-latex/wave-in-air-1} 
+
+}
+
+\caption{A wave in air.}\label{fig:wave-in-air}
+\end{figure}
 
 \hypertarget{types-of-files}{%
 \section{Types of files}\label{types-of-files}}
@@ -265,6 +276,12 @@ The standard musical notations show broad similarities with a typical audio visu
 
 \hypertarget{frequency-vs-time}{%
 \subsubsection{Frequency vs Time}\label{frequency-vs-time}}
+
+\hypertarget{the-fourier-transform}{%
+\subsection{The Fourier Transform}\label{the-fourier-transform}}
+
+\hypertarget{fast-fourier-transform}{%
+\subsubsection{Fast Fourier Transform}\label{fast-fourier-transform}}
 
 \hypertarget{early-viz}{%
 \chapter{Early visualisations - the analogue years}\label{early-viz}}
@@ -1046,7 +1063,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2024-01-13 14:19:49 GMT"
+## [1] "2024-01-14 14:55:24 GMT"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1057,7 +1074,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.751681
+## [1] 3.906954
 \end{verbatim}
 
 The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
@@ -1070,7 +1087,7 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2024-01-13 14:19:49 GMT"
+## [1] "2024-01-14 14:55:24 GMT"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1081,7 +1098,7 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.5970989
+## [1] 0.6218115
 \end{verbatim}
 
 \hypertarget{yearlyfraction}{%
@@ -1108,7 +1125,7 @@ Similarly to \texttt{dielFraction()}, \texttt{yearlyFraction()} by default retur
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2024-01-13"
+## [1] "2024-01-14"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1119,7 +1136,7 @@ Similarly to \texttt{dielFraction()}, \texttt{yearlyFraction()} by default retur
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.2065705
+## [1] 0.2237847
 \end{verbatim}
 
 \hypertarget{interactive-plots}{%

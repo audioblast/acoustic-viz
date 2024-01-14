@@ -1,3 +1,4 @@
+fig:wave-in-air
 fig:storage-costs
 fig:wave-sampling
 fig:sampled-wave
@@ -31,7 +32,7 @@ fig:lyme-temp-1
 fig:lyme-temp-2
 intro
 predominance-of-the-visual
-basic-acoustic-terminology
+basic-acoustic-concepts
 types-of-files
 uncompressed-waveform-files
 lossy-compression
@@ -46,6 +47,8 @@ the-big-three
 amplitude-vs-time
 ampltiude-vs-frequency
 frequency-vs-time
+the-fourier-transform
+fast-fourier-transform
 early-viz
 crts
 print-outs

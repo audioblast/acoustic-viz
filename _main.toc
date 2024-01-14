@@ -1,0 +1,73 @@
+\contentsline {chapter}{About}{5}{chapter*.2}%
+\contentsline {section}{Author}{5}{section*.3}%
+\contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Predominance of the visual}{8}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Basic acoustic concepts}{8}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Types of files}{8}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Uncompressed waveform files}{8}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Lossy compression}{10}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}zero-crossing}{10}{subsection.1.3.3}%
+\contentsline {chapter}{\numberline {2}History}{11}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Goals of visualisation}{11}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Descriptive acoustics}{12}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Phonemes and onomatopoeia}{12}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Musical notation}{12}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Analytic acoustics}{12}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}The `big-three'}{12}{subsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.1}Amplitude vs Time}{12}{subsubsection.2.3.1.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.2}Ampltiude vs Frequency}{12}{subsubsection.2.3.1.2}%
+\contentsline {subsubsection}{\numberline {2.3.1.3}Frequency vs Time}{12}{subsubsection.2.3.1.3}%
+\contentsline {subsection}{\numberline {2.3.2}The Fourier Transform}{12}{subsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.2.1}Fast Fourier Transform}{12}{subsubsection.2.3.2.1}%
+\contentsline {chapter}{\numberline {3}Early visualisations - the analogue years}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}CRTs}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Print outs}{13}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Static digital images}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}The time domain}{15}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Oscillograms}{15}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.2}The frequency domain}{16}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Plotting a spectrum}{17}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Plotting a spectrogram}{17}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}Settings for a FFT}{17}{subsubsection.4.2.2.1}%
+\contentsline {chapter}{\numberline {5}Dynamic digital visualisations}{19}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Video spectrograms}{19}{section.5.1}%
+\contentsline {section}{\numberline {5.2}zcjs: Zero-crossing File Visualisation}{19}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Customising a zcjs plot}{19}{subsection.5.2.1}%
+\contentsline {chapter}{\numberline {6}Representing Soundscapes}{21}{chapter.6}%
+\contentsline {section}{\numberline {6.1}False Colour Index Spectrograms}{21}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Patterns of activity}{23}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Daily Cycles}{23}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}The Types of Twilight}{24}{subsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.1.1}Civil Twilight}{24}{subsubsection.7.1.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.1.2}Nautical Twilight}{24}{subsubsection.7.1.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.1.3}Astronomical Twilight}{25}{subsubsection.7.1.1.3}%
+\contentsline {subsection}{\numberline {7.1.2}Diel Plots}{25}{subsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.1}Rotations of a \texttt {dielPlot()}}{25}{subsubsection.7.1.2.1}%
+\contentsline {subsubsection}{\numberline {7.1.2.2}Customising a \texttt {dielPlot()}}{28}{subsubsection.7.1.2.2}%
+\contentsline {section}{\numberline {7.2}Yearly Cycles}{29}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Lunar Cycles}{29}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Core and ring plots}{29}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Behind the scenes}{29}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}\texttt {radialPolygon()}}{29}{subsection.7.5.1}%
+\contentsline {subsubsection}{\numberline {7.5.1.1}Orientation}{32}{subsubsection.7.5.1.1}%
+\contentsline {subsubsection}{\numberline {7.5.1.2}Sectors}{33}{subsubsection.7.5.1.2}%
+\contentsline {subsubsection}{\numberline {7.5.1.3}Annuli}{33}{subsubsection.7.5.1.3}%
+\contentsline {subsubsection}{\numberline {7.5.1.4}Horizons}{34}{subsubsection.7.5.1.4}%
+\contentsline {subsubsection}{\numberline {7.5.1.5}Polygons}{37}{subsubsection.7.5.1.5}%
+\contentsline {section}{\numberline {7.6}Empty plots}{37}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}\texttt {emptyDiel()}}{37}{subsection.7.6.1}%
+\contentsline {subsection}{\numberline {7.6.2}\texttt {emptyYearly()}}{37}{subsection.7.6.2}%
+\contentsline {section}{\numberline {7.7}Adding data to the visualisation}{38}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Periodic data: rings}{38}{subsection.7.7.1}%
+\contentsline {subsubsection}{\numberline {7.7.1.1}\texttt {dielRings()}}{38}{subsubsection.7.7.1.1}%
+\contentsline {subsection}{\numberline {7.7.2}Periodic data: horizons}{39}{subsection.7.7.2}%
+\contentsline {subsubsection}{\numberline {7.7.2.1}\texttt {yearlyLabels()} and \texttt {yearlyPositions}}{40}{subsubsection.7.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.7.2.2}\texttt {circularise()}}{42}{subsubsection.7.7.2.2}%
+\contentsline {subsection}{\numberline {7.7.3}Helper functions}{43}{subsection.7.7.3}%
+\contentsline {subsubsection}{\numberline {7.7.3.1}\texttt {dielFraction()}}{43}{subsubsection.7.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.7.3.2}\texttt {yearlyFraction()}}{43}{subsubsection.7.7.3.2}%
+\contentsline {section}{\numberline {7.8}Interactive Plots}{44}{section.7.8}%
+\contentsline {chapter}{\numberline {8}Displaying annotations}{45}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Shiny: Interactive Web Apps}{47}{chapter.9}%
+\contentsline {chapter}{\numberline {10}The Future}{49}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Acknowledgements}{51}{chapter.11}%

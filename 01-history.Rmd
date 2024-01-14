@@ -34,3 +34,7 @@ The standard musical notations show broad similarities with a typical audio visu
 
 #### Frequency vs Time
 
+### The Fourier Transform
+
+#### Fast Fourier Transform
+

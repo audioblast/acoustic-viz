@@ -12,13 +12,19 @@ Historically, researchers used musical notation and phonemes to describe the son
 
 ## Predominance of the visual
 
-## Basic acoustic terminology
+## Basic acoustic concepts
+
+A sound wave is a disturbance in the air that propagates as a series of compressions (the regions between are known as regions of  rarefaction), see Figure \@ref(fig:wave-in-air). The frequency of a sound wave is the number of compressions and rarefactions that pass a point in a second. The amplitude of a sound wave is the difference between the maximum and minimum pressure of the wave.
+
+```{r, wave-in-air, fig.width=9, fig.cap='A wave in air.', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
+library(figuREd)
+wave_particle()
+```
 
 ## Types of files
 Even though the costs of digital storage have fallen significantly (Figure \@ref(fig:storage-costs)), the cost of file transfer and storage are still significant factors in many acoustics projects. For this reason, it is sometimes necessary to compress the audio file in some way: discarding some data in exchange for cost reductions.
 
 ```{r, storage-costs,  fig.width=9, fig.cap='Storage costs per megabyte over time. Data from https://jcmit.net/diskprice.htm.', fig.align='center', out.width='90%', echo=FALSE, cache=TRUE}
-library(figuREd)
 storageCosts()
 ```
 

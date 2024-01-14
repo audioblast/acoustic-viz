@@ -23,7 +23,7 @@
 <meta name="author" content="Ed Baker" />
 
 
-<meta name="date" content="2024-01-13" />
+<meta name="date" content="2024-01-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -169,7 +169,7 @@ div.csl-indent {
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#predominance-of-the-visual"><i class="fa fa-check"></i><b>1.1</b> Predominance of the visual</a></li>
-<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#basic-acoustic-terminology"><i class="fa fa-check"></i><b>1.2</b> Basic acoustic terminology</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#basic-acoustic-concepts"><i class="fa fa-check"></i><b>1.2</b> Basic acoustic concepts</a></li>
 <li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#types-of-files"><i class="fa fa-check"></i><b>1.3</b> Types of files</a>
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#uncompressed-waveform-files"><i class="fa fa-check"></i><b>1.3.1</b> Uncompressed waveform files</a></li>
@@ -188,6 +188,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.3" data-path="history.html"><a href="history.html#analytic-acoustics"><i class="fa fa-check"></i><b>2.3</b> Analytic acoustics</a>
 <ul>
 <li class="chapter" data-level="2.3.1" data-path="history.html"><a href="history.html#the-big-three"><i class="fa fa-check"></i><b>2.3.1</b> The ‘big-three’</a></li>
+<li class="chapter" data-level="2.3.2" data-path="history.html"><a href="history.html#the-fourier-transform"><i class="fa fa-check"></i><b>2.3.2</b> The Fourier Transform</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="early-viz.html"><a href="early-viz.html"><i class="fa fa-check"></i><b>3</b> Early visualisations - the analogue years</a>
@@ -285,33 +286,40 @@ div.csl-indent {
 <div id="predominance-of-the-visual" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Predominance of the visual<a href="intro.html#predominance-of-the-visual" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="basic-acoustic-terminology" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Basic acoustic terminology<a href="intro.html#basic-acoustic-terminology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="basic-acoustic-concepts" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Basic acoustic concepts<a href="intro.html#basic-acoustic-concepts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A sound wave is a disturbance in the air that propagates as a series of compressions (the regions between are known as regions of rarefaction), see Figure <a href="intro.html#fig:wave-in-air">1.1</a>. The frequency of a sound wave is the number of compressions and rarefactions that pass a point in a second. The amplitude of a sound wave is the difference between the maximum and minimum pressure of the wave.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:wave-in-air"></span>
+<img src="_main_files/figure-html/wave-in-air-1.png" alt="A wave in air." width="90%" />
+<p class="caption">
+Figure 1.1: A wave in air.
+</p>
+</div>
 </div>
 <div id="types-of-files" class="section level2 hasAnchor" number="1.3">
 <h2><span class="header-section-number">1.3</span> Types of files<a href="intro.html#types-of-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Even though the costs of digital storage have fallen significantly (Figure <a href="intro.html#fig:storage-costs">1.1</a>), the cost of file transfer and storage are still significant factors in many acoustics projects. For this reason, it is sometimes necessary to compress the audio file in some way: discarding some data in exchange for cost reductions.</p>
+<p>Even though the costs of digital storage have fallen significantly (Figure <a href="intro.html#fig:storage-costs">1.2</a>), the cost of file transfer and storage are still significant factors in many acoustics projects. For this reason, it is sometimes necessary to compress the audio file in some way: discarding some data in exchange for cost reductions.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:storage-costs"></span>
 <img src="_main_files/figure-html/storage-costs-1.png" alt="Storage costs per megabyte over time. Data from https://jcmit.net/diskprice.htm." width="90%" />
 <p class="caption">
-Figure 1.1: Storage costs per megabyte over time. Data from <a href="https://jcmit.net/diskprice.htm" class="uri">https://jcmit.net/diskprice.htm</a>.
+Figure 1.2: Storage costs per megabyte over time. Data from <a href="https://jcmit.net/diskprice.htm" class="uri">https://jcmit.net/diskprice.htm</a>.
 </p>
 </div>
 <p>This process of compression may affect the visualisation of the audio files or even the possible types of visualisation for a given file.</p>
 <div id="uncompressed-waveform-files" class="section level3 hasAnchor" number="1.3.1">
 <h3><span class="header-section-number">1.3.1</span> Uncompressed waveform files<a href="intro.html#uncompressed-waveform-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Waveform files are created by sampling the wave amplitude at a sensor at a constant rate, typically tens of thousands of times per second (Figure <a href="intro.html#fig:wave-sampling">1.2</a>).</p>
+<p>Waveform files are created by sampling the wave amplitude at a sensor at a constant rate, typically tens of thousands of times per second (Figure <a href="intro.html#fig:wave-sampling">1.3</a>).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:wave-sampling"></span>
 <img src="_main_files/figure-html/wave-sampling-1.png" alt="Sampling a waveform." width="90%" />
 <p class="caption">
-Figure 1.2: Sampling a waveform.
+Figure 1.3: Sampling a waveform.
 </p>
 </div>
 <p>An analogue-to-digital converter (ADC) converts the continuous variations in amplitude into one of the numerous discrete levels that the ADC can represent (Figure 1.3. The number of discrete levels is dependent on the analogue-to-digital converter (ADC); a typical 16-bit depth has <span class="math inline">\(2^{16}=65536\)</span> possible values.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:sampled-wave"></span>
 <img src="_main_files/figure-html/sampled-wave-1.png" alt="A sampled waveform with low bit depth (top) and higher bit depth(bottom)." width="90%" />
 <p class="caption">
-Figure 1.3: A sampled waveform with low bit depth (top) and higher bit depth(bottom).
+Figure 1.4: A sampled waveform with low bit depth (top) and higher bit depth(bottom).
 </p>
 </div>
 </div>
