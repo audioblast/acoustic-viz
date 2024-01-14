@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Static digital images | Visualisation for bioacoustics and ecoacoustics in R</title>
   <meta name="description" content="All about acoustic visualisation for bioacoustics and ecoacoustics." />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Static digital images | Visualisation for bioacoustics and ecoacoustics in R" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Ed Baker" />
 
 
-<meta name="date" content="2022-11-10" />
+<meta name="date" content="2024-01-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -92,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -119,6 +119,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -158,7 +162,10 @@ div.csl-indent {
 <li><a href="./">Acoustic Visualisation</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#author"><i class="fa fa-check"></i>Author</a></li>
+</ul></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#predominance-of-the-visual"><i class="fa fa-check"></i><b>1.1</b> Predominance of the visual</a></li>
@@ -267,9 +274,9 @@ div.csl-indent {
 <div id="static-digital-images" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Static digital images<a href="static-digital-images.html#static-digital-images" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The three fundamental quantities of sound waves are time, frequency, and amplitude. The most commonly used visualisations of sounds are consequently combinations of these properties.</p>
-<p>The <code>seewave</code> package <span class="citation">(<a href="#ref-seewave" role="doc-biblioref">Sueur, Aubin, and Simonis 2008</a>)</span> is the easiest way to produce these plots. We will use the <code>sheep</code> audio sample provided by <code>seewave</code> for the first plots.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="static-digital-images.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(seewave)</span>
-<span id="cb1-2"><a href="static-digital-images.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(sheep, <span class="at">package=</span><span class="st">&quot;seewave&quot;</span>)</span></code></pre></div>
+<p>The <code>seewave</code> package <span class="citation">(<a href="#ref-seewave">Sueur, Aubin, and Simonis 2008</a>)</span> is the easiest way to produce these plots. We will use the <code>sheep</code> audio sample provided by <code>seewave</code> for the first plots.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="static-digital-images.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(seewave)</span>
+<span id="cb1-2"><a href="static-digital-images.html#cb1-2" tabindex="-1"></a><span class="fu">data</span>(sheep, <span class="at">package=</span><span class="st">&quot;seewave&quot;</span>)</span></code></pre></div>
 <div id="the-time-domain" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> The time domain<a href="static-digital-images.html#the-time-domain" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><em>Time domain</em> techniques analyse the recorded waveform directly. Conversion of a waveform to a spectrum of frequencies is a relatively costly computation. Before digital computers, frequency analysis was hard to achieve with the precision and resolution we are accustomed to today.</p>

@@ -1,4 +1,4 @@
---- 
+---
 title: "Visualisation for bioacoustics and ecoacoustics in R"
 author: "Ed Baker"
 date: "`r Sys.Date()`"
@@ -13,10 +13,14 @@ link-citations: yes
 github-repo: audioblast/acoustic-viz
 ---
 
-# About {-}
+# About {.unnumbered}
+
 Bioacoustics and ecoacoustics are rapidly advancing multi-disciplinary fields of study that focus on how organisms communicate using sound and the overall sound of a landscape (the soundscape). Despite focusing on sound, much of the sharing of ideas between researchers uses graphical representations of some audio features.
 
 The use of visual aids should not come as a surprise; the printing press came centuries before the radio as a means of long-distance communication. Ink on paper has a permanence that sounds would not achieve for a long time after the invention of writing. The current flourishing of acoustic disciplines is driven as much by the low cost and ease of use of products such as AudioMoth and the decreasing cost of digital storage and processing as by novel ideas.
 
-Visualizations of acoustic data, however, are not going away. We are a predominantly visual species, and as ways of summarising acoustic data - or making the ultrasound tangible, they are powerful tools in the hands of the acoustician.
+Visualisations of acoustic data, however, are not going away. We are a predominantly visual species, and as ways of summarising acoustic data - or making the ultrasound tangible, they are powerful tools in the hands of the acoustician.
 
+## Author {.unnumbered}
+
+[Ed Baker](https://ebaker.me.uk) is Acoustic Biology Researcher in the Centre for UK Nature at the Natural History Museum, London.
