@@ -55,6 +55,7 @@ print-outs
 static-digital-images
 the-time-domain
 oscillograms
+relation-to-time-series
 the-frequency-domain
 plotting-a-spectrum
 plotting-a-spectrogram

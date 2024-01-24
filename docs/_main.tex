@@ -109,7 +109,7 @@
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
@@ -120,7 +120,7 @@
 
 \title{Visualisation for bioacoustics and ecoacoustics in R}
 \author{Ed Baker}
-\date{2024-01-14}
+\date{2024-01-24}
 
 \begin{document}
 \maketitle
@@ -129,8 +129,7 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{about}{%
-\chapter*{About}\label{about}}
+\chapter*{About}\label{about}
 \addcontentsline{toc}{chapter}{About}
 
 Bioacoustics and ecoacoustics are rapidly advancing multi-disciplinary fields of study that focus on how organisms communicate using sound and the overall sound of a landscape (the soundscape). Despite focusing on sound, much of the sharing of ideas between researchers uses graphical representations of some audio features.
@@ -139,14 +138,12 @@ The use of visual aids should not come as a surprise; the printing press came ce
 
 Visualisations of acoustic data, however, are not going away. We are a predominantly visual species, and as ways of summarising acoustic data - or making the ultrasound tangible, they are powerful tools in the hands of the acoustician.
 
-\hypertarget{author}{%
-\section*{Author}\label{author}}
+\section*{Author}\label{author}
 \addcontentsline{toc}{section}{Author}
 
 \href{https://ebaker.me.uk}{Ed Baker} is Acoustic Biology Researcher in the Centre for UK Nature at the Natural History Museum, London.
 
-\hypertarget{intro}{%
-\chapter{Introduction}\label{intro}}
+\chapter{Introduction}\label{intro}
 
 \begin{quote}
 ``\ldots while we take it for granted that sounds may be described visually, the convention is recent, is by no means universal and, as I will show, is in many ways dangerous and inappropriate.''
@@ -160,11 +157,9 @@ Additionally, it is now helpful to distinguish between two concepts that Schafer
 
 Historically, researchers used musical notation and phonemes to describe the songs of various animals. However, these methods do not scale to the entirety of the natural soundscape. Parts of the soundscape are beyond the limits of human hearing; the infrasound, the ultrasound, and the quiet. All manner of information is gathered and shared by other species beyond the limits of our perception. Visualisation is the primary tool by which we can interpret the entire soundscape for all species that share it.
 
-\hypertarget{predominance-of-the-visual}{%
-\section{Predominance of the visual}\label{predominance-of-the-visual}}
+\section{Predominance of the visual}\label{predominance-of-the-visual}
 
-\hypertarget{basic-acoustic-concepts}{%
-\section{Basic acoustic concepts}\label{basic-acoustic-concepts}}
+\section{Basic acoustic concepts}\label{basic-acoustic-concepts}
 
 A sound wave is a disturbance in the air that propagates as a series of compressions (the regions between are known as regions of rarefaction), see Figure \ref{fig:wave-in-air}. The frequency of a sound wave is the number of compressions and rarefactions that pass a point in a second. The amplitude of a sound wave is the difference between the maximum and minimum pressure of the wave.
 
@@ -177,8 +172,7 @@ A sound wave is a disturbance in the air that propagates as a series of compress
 \caption{A wave in air.}\label{fig:wave-in-air}
 \end{figure}
 
-\hypertarget{types-of-files}{%
-\section{Types of files}\label{types-of-files}}
+\section{Types of files}\label{types-of-files}
 
 Even though the costs of digital storage have fallen significantly (Figure \ref{fig:storage-costs}), the cost of file transfer and storage are still significant factors in many acoustics projects. For this reason, it is sometimes necessary to compress the audio file in some way: discarding some data in exchange for cost reductions.
 
@@ -193,8 +187,7 @@ Even though the costs of digital storage have fallen significantly (Figure \ref{
 
 This process of compression may affect the visualisation of the audio files or even the possible types of visualisation for a given file.
 
-\hypertarget{uncompressed-waveform-files}{%
-\subsection{Uncompressed waveform files}\label{uncompressed-waveform-files}}
+\subsection{Uncompressed waveform files}\label{uncompressed-waveform-files}
 
 Waveform files are created by sampling the wave amplitude at a sensor at a constant rate, typically tens of thousands of times per second (Figure \ref{fig:wave-sampling}).
 
@@ -218,17 +211,13 @@ An analogue-to-digital converter (ADC) converts the continuous variations in amp
 \caption{A sampled waveform with low bit depth (top) and higher bit depth(bottom).}\label{fig:sampled-wave}
 \end{figure}
 
-\hypertarget{lossy-compression}{%
-\subsection{Lossy compression}\label{lossy-compression}}
+\subsection{Lossy compression}\label{lossy-compression}
 
-\hypertarget{zero-crossing-files}{%
-\subsection{zero-crossing}\label{zero-crossing-files}}
+\subsection{zero-crossing}\label{zero-crossing-files}
 
-\hypertarget{history}{%
-\chapter{History}\label{history}}
+\chapter{History}\label{history}
 
-\hypertarget{goals-of-visualisation}{%
-\section{Goals of visualisation}\label{goals-of-visualisation}}
+\section{Goals of visualisation}\label{goals-of-visualisation}
 
 Many tasks require the visualisation of acoustic information. Purely descriptive graphical representations may aim to invoke in the mind the sound represented. These visualisations allow passing knowledge of how something sounds from one mind to another.
 
@@ -251,49 +240,35 @@ The decreasing costs of electronic data storage and transmission reduce the need
 
 Notably, many current machine learning techniques used in acoustics work upon data previously converted into graphical form. Is this an optimum method, or just a consequence of the Predominance of the Visual?
 
-\hypertarget{descriptive-acoustics}{%
-\section{Descriptive acoustics}\label{descriptive-acoustics}}
+\section{Descriptive acoustics}\label{descriptive-acoustics}
 
-\hypertarget{phonemes-and-onomatopoeia}{%
-\subsection{Phonemes and onomatopoeia}\label{phonemes-and-onomatopoeia}}
+\subsection{Phonemes and onomatopoeia}\label{phonemes-and-onomatopoeia}
 
-\hypertarget{musical-notation}{%
-\subsection{Musical notation}\label{musical-notation}}
+\subsection{Musical notation}\label{musical-notation}
 
 The standard musical notations show broad similarities with a typical audio visualisation familiar to all bioacousticians and ecoacousticians - the frequency against time plot. Time proceeds in a strictly linear fashion from left to right, and frequency increases from bottom to top.
 
-\hypertarget{analytic-acoustics}{%
-\section{Analytic acoustics}\label{analytic-acoustics}}
+\section{Analytic acoustics}\label{analytic-acoustics}
 
-\hypertarget{the-big-three}{%
-\subsection{The `big-three'}\label{the-big-three}}
+\subsection{The `big-three'}\label{the-big-three}
 
-\hypertarget{amplitude-vs-time}{%
-\subsubsection{Amplitude vs Time}\label{amplitude-vs-time}}
+\subsubsection{Amplitude vs Time}\label{amplitude-vs-time}
 
-\hypertarget{ampltiude-vs-frequency}{%
-\subsubsection{Ampltiude vs Frequency}\label{ampltiude-vs-frequency}}
+\subsubsection{Ampltiude vs Frequency}\label{ampltiude-vs-frequency}
 
-\hypertarget{frequency-vs-time}{%
-\subsubsection{Frequency vs Time}\label{frequency-vs-time}}
+\subsubsection{Frequency vs Time}\label{frequency-vs-time}
 
-\hypertarget{the-fourier-transform}{%
-\subsection{The Fourier Transform}\label{the-fourier-transform}}
+\subsection{The Fourier Transform}\label{the-fourier-transform}
 
-\hypertarget{fast-fourier-transform}{%
-\subsubsection{Fast Fourier Transform}\label{fast-fourier-transform}}
+\subsubsection{Fast Fourier Transform}\label{fast-fourier-transform}
 
-\hypertarget{early-viz}{%
-\chapter{Early visualisations - the analogue years}\label{early-viz}}
+\chapter{Early visualisations - the analogue years}\label{early-viz}
 
-\hypertarget{crts}{%
-\section{CRTs}\label{crts}}
+\section{CRTs}\label{crts}
 
-\hypertarget{print-outs}{%
-\section{Print outs}\label{print-outs}}
+\section{Print outs}\label{print-outs}
 
-\hypertarget{static-digital-images}{%
-\chapter{Static digital images}\label{static-digital-images}}
+\chapter{Static digital images}\label{static-digital-images}
 
 The three fundamental quantities of sound waves are time, frequency, and amplitude. The most commonly used visualisations of sounds are consequently combinations of these properties.
 
@@ -306,13 +281,11 @@ The \texttt{seewave} package \citep{seewave} is the easiest way to produce these
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{the-time-domain}{%
-\section{The time domain}\label{the-time-domain}}
+\section{The time domain}\label{the-time-domain}
 
 \emph{Time domain} techniques analyse the recorded waveform directly. Conversion of a waveform to a spectrum of frequencies is a relatively costly computation. Before digital computers, frequency analysis was hard to achieve with the precision and resolution we are accustomed to today.
 
-\hypertarget{oscillograms}{%
-\subsection{Oscillograms}\label{oscillograms}}
+\subsection{Oscillograms}\label{oscillograms}
 
 Digitally sampled audio is a series of amplitude measurements sampled at a regular time interval. The most basic plot we could recreate from a sampled file would be plotting amplitude values against time, a plot known as an oscillogram.
 
@@ -347,13 +320,15 @@ The \texttt{oscillo()} function from \texttt{seewave} handles the labelling of a
 \caption{Oscillogram}\label{fig:amplitude-oscillo}
 \end{figure}
 
-\hypertarget{the-frequency-domain}{%
-\section{The frequency domain}\label{the-frequency-domain}}
+\subsubsection{Relation to time series}\label{relation-to-time-series}
+
+The time series plot of a variable against time is often used in statistical analysis of time series. The oscillogram is in fact a time series plot, in this case a plot of a series of amplitude (air pressure) measurements against time.
+
+\section{The frequency domain}\label{the-frequency-domain}
 
 The \emph{frequency domain} covers analyses in which frequency data are extracted from the sampled waveform, typically using the \emph{Fast Fourier Transform} algorithm.
 
-\hypertarget{plotting-a-spectrum}{%
-\subsection{Plotting a spectrum}\label{plotting-a-spectrum}}
+\subsection{Plotting a spectrum}\label{plotting-a-spectrum}
 
 A spectrum is a plot of amplitude against frequency.
 
@@ -366,8 +341,7 @@ A spectrum is a plot of amplitude against frequency.
 \caption{Spectrum}\label{fig:spectrum}
 \end{figure}
 
-\hypertarget{plotting-a-spectrogram}{%
-\subsection{Plotting a spectrogram}\label{plotting-a-spectrogram}}
+\subsection{Plotting a spectrogram}\label{plotting-a-spectrogram}
 
 \begin{figure}
 
@@ -378,17 +352,13 @@ A spectrum is a plot of amplitude against frequency.
 \caption{Spectrogram}\label{fig:spectrogram}
 \end{figure}
 
-\hypertarget{settings-for-a-fft}{%
-\subsubsection{Settings for a FFT}\label{settings-for-a-fft}}
+\subsubsection{Settings for a FFT}\label{settings-for-a-fft}
 
-\hypertarget{dynamic-digital-visualisations}{%
-\chapter{Dynamic digital visualisations}\label{dynamic-digital-visualisations}}
+\chapter{Dynamic digital visualisations}\label{dynamic-digital-visualisations}
 
-\hypertarget{video-spectrograms}{%
-\section{Video spectrograms}\label{video-spectrograms}}
+\section{Video spectrograms}\label{video-spectrograms}
 
-\hypertarget{zcjs-zero-crossing-file-visualisation}{%
-\section{zcjs: Zero-crossing File Visualisation}\label{zcjs-zero-crossing-file-visualisation}}
+\section{zcjs: Zero-crossing File Visualisation}\label{zcjs-zero-crossing-file-visualisation}
 
 The zcjs JavaScript library was originally developed for displaying zero-crossing audio files (\ref{zero-crossing-files}) on the web as part of the BioAcoustica project (\url{https://bio.acousti.ca}; \citet{baker2015bioacoustica}). The \texttt{zcjs} package \citep{zcjsr} imports this visualisation functionality into R.
 
@@ -411,19 +381,15 @@ To load the package:
 
 The package comes with a demonstration file for testing the package's functionality.
 
-\hypertarget{customising-a-zcjs-plot}{%
-\subsection{Customising a zcjs plot}\label{customising-a-zcjs-plot}}
+\subsection{Customising a zcjs plot}\label{customising-a-zcjs-plot}
 
 \textbf{x-compress}
 
-\hypertarget{representing-soundscapes}{%
-\chapter{Representing Soundscapes}\label{representing-soundscapes}}
+\chapter{Representing Soundscapes}\label{representing-soundscapes}
 
-\hypertarget{false-colour-index-spectrograms}{%
-\section{False Colour Index Spectrograms}\label{false-colour-index-spectrograms}}
+\section{False Colour Index Spectrograms}\label{false-colour-index-spectrograms}
 
-\hypertarget{patterns-of-activity}{%
-\chapter{Patterns of activity}\label{patterns-of-activity}}
+\chapter{Patterns of activity}\label{patterns-of-activity}
 
 Many organismal activities are tied to the cycles of the day, particularly in temperate zones, cycles of the year. These cycles bring regular fluctuations in light levels, day lengths, temperatures, and various other influences. Often these cycles interact, with the dawn chorus peaking in the early daylight hours and its timing and intensity fluctuating on a yearly cycle. This chapter looks at visualising these cycles and the effects of lunar cycles.
 
@@ -443,15 +409,13 @@ The SonicScrewdriver package must be loaded before constructing a visual.
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{daily-cycles}{%
-\section{Daily Cycles}\label{daily-cycles}}
+\section{Daily Cycles}\label{daily-cycles}
 
 Broughton (1963) contests the term diel for daily cycles as an incorrectly formed, unnecessary neologism. However, it sees greater use (according to the online Oxford English Dictionary) than his suggested nycthemeral.
 
 The design for these plots came from a desire to compare the dawn chorus at various locations around the UK. However, they also offer great potential for comparing locations with greater longitudinal or latitudinal separation. The plots show the times of day, night, twilight (\ref{twilight-types}), sunrise, sunset, nadir and solar noon. The day part of the plot shows the altitude (angle of the sun above the horizon) throughout the day, with the maximum value representing the sun directly overhead.
 
-\hypertarget{twilight-types}{%
-\subsection{The Types of Twilight}\label{twilight-types}}
+\subsection{The Types of Twilight}\label{twilight-types}
 
 \begin{figure}
 
@@ -462,23 +426,19 @@ The design for these plots came from a desire to compare the dawn chorus at vari
 \caption{Different types of twilight as the sun sets below the horizon}\label{fig:twilights}
 \end{figure}
 
-\hypertarget{civil-twilight}{%
-\subsubsection{Civil Twilight}\label{civil-twilight}}
+\subsubsection{Civil Twilight}\label{civil-twilight}
 
 Civil twilight occurs when the sun's geometric centre (as seen from Earth) passes between 0° and 6° below the horizon. During this time, it is normal for humans not to need the assistance of artificial light for everyday tasks.
 
-\hypertarget{nautical-twilight}{%
-\subsubsection{Nautical Twilight}\label{nautical-twilight}}
+\subsubsection{Nautical Twilight}\label{nautical-twilight}
 
 Nautical twilight occurs when the sun is between 6° and 12° below the horizon. During this time, there is sufficient light to distinguish the horizon without illumination from the moon (allowing the determination of position at sea through star sightings).
 
-\hypertarget{astronomical-twilight}{%
-\subsubsection{Astronomical Twilight}\label{astronomical-twilight}}
+\subsubsection{Astronomical Twilight}\label{astronomical-twilight}
 
 Many astronomical observations are possible when the sun is between 12° and 18° below the horizon. Some light from the sun is visible through the atmosphere. Often considered a dark sky in urban areas with light pollution.
 
-\hypertarget{diel-plots}{%
-\subsection{Diel Plots}\label{diel-plots}}
+\subsection{Diel Plots}\label{diel-plots}
 
 As the times of the solar day are dependent both on the date and location these must be passed to the \texttt{dielPlot()} function.
 
@@ -497,8 +457,7 @@ As the times of the solar day are dependent both on the date and location these 
 \caption{Example of a diel plot}\label{fig:diel-plot-1}
 \end{figure}
 
-\hypertarget{rotations-of-a-dielplot}{%
-\subsubsection{\texorpdfstring{Rotations of a \texttt{dielPlot()}}{Rotations of a dielPlot()}}\label{rotations-of-a-dielplot}}
+\subsubsection{\texorpdfstring{Rotations of a \texttt{dielPlot()}}{Rotations of a dielPlot()}}\label{rotations-of-a-dielplot}
 
 By default the information is plotted in the UTC timezone, so locations in other timezones will have an overall rotation.
 
@@ -560,8 +519,7 @@ By setting the \texttt{rot} parameter to \texttt{Solar\ Noon} it is possible to 
 \caption{The same diel plots aligned to solar noon}\label{fig:diel-plot-sn}
 \end{figure}
 
-\hypertarget{customising-a-dielplot}{%
-\subsubsection{\texorpdfstring{Customising a \texttt{dielPlot()}}{Customising a dielPlot()}}\label{customising-a-dielplot}}
+\subsubsection{\texorpdfstring{Customising a \texttt{dielPlot()}}{Customising a dielPlot()}}\label{customising-a-dielplot}
 
 In addition to the \texttt{date}, \texttt{lat} and \texttt{lon} parameters to \texttt{dielPlot()} it is possible to make additional customisations to how the information is presented.
 
@@ -622,8 +580,7 @@ The components that are plotted can be specified using the \texttt{plot} paramet
 \caption{Selecting the components to plot}\label{fig:diel-plot-components}
 \end{figure}
 
-\hypertarget{yearly-cycles}{%
-\section{Yearly Cycles}\label{yearly-cycles}}
+\section{Yearly Cycles}\label{yearly-cycles}
 
 The \texttt{yearlyPlot()} function from the SonicScrewdriver package shows daylight changes throughout a year. It behaves in a very similar fashion to \texttt{dielPlot} but takes a single year rather a date as input.
 
@@ -642,11 +599,9 @@ The \texttt{yearlyPlot()} function from the SonicScrewdriver package shows dayli
 \caption{Example of a yearly plot}\label{fig:yearly-plot-1}
 \end{figure}
 
-\hypertarget{lunar-cycles}{%
-\section{Lunar Cycles}\label{lunar-cycles}}
+\section{Lunar Cycles}\label{lunar-cycles}
 
-\hypertarget{core-and-ring-plots}{%
-\section{Core and ring plots}\label{core-and-ring-plots}}
+\section{Core and ring plots}\label{core-and-ring-plots}
 
 These visualisations for cyclical data plot their information onto a circle with a radius of two units. It is possible to limit the plot either to the centre of the circle (a `core' plot) or to the edge (a `ring plot'). These alternative forms may be more useful when these plots are used to visualise addition variables (\ref{adding-to-cyclical}).
 
@@ -680,11 +635,9 @@ These visualisations for cyclical data plot their information onto a circle with
 \caption{A 'ring' diel plot.}\label{fig:diel-plot-ring}
 \end{figure}
 
-\hypertarget{behind-the-scenes}{%
-\section{Behind the scenes}\label{behind-the-scenes}}
+\section{Behind the scenes}\label{behind-the-scenes}
 
-\hypertarget{radialpolygon}{%
-\subsection{\texorpdfstring{\texttt{radialPolygon()}}{radialPolygon()}}\label{radialpolygon}}
+\subsection{\texorpdfstring{\texttt{radialPolygon()}}{radialPolygon()}}\label{radialpolygon}
 
 The \texttt{radialPolygon()} function handles most of the plotting functionality for cyclical data in \texttt{SonicScrewdriveR}. It handles sectors, annuli, horizon plots and irregular polygons. It is used by the plotting functions such as \texttt{dielPlot()} and helper functions such as \texttt{dielRings()} to add data to cyclical plots.
 
@@ -707,13 +660,11 @@ The various types of plots are created by changing the angle and radius paramete
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{orientation}{%
-\subsubsection{Orientation}\label{orientation}}
+\subsubsection{Orientation}\label{orientation}
 
 Unlike traditional polar plots, diel and yearly plots start their periods on the left hand horizontal, and proceed clockwise. This orientation is assumed by \texttt{radialPolygon()}, although it may be modified (e.g.~the parameters \texttt{reverse=FALSE} and \texttt{rot=0} will plot using the standard conventions for polar coordinate systems.)
 
-\hypertarget{sectors}{%
-\subsubsection{Sectors}\label{sectors}}
+\subsubsection{Sectors}\label{sectors}
 
 A sector is a section of a circle defined by two radii and an arc between them. Sectors are used widely in the default settings of \texttt{dielPlot()} to plot the times of night and twilight.
 
@@ -751,8 +702,7 @@ Reversing the angle arguments allows the complementary sector to be drawn.
 \caption{Plotting a sector}\label{fig:radialPolygon-sector2}
 \end{figure}
 
-\hypertarget{annuli}{%
-\subsubsection{Annuli}\label{annuli}}
+\subsubsection{Annuli}\label{annuli}
 
 An annulus is the region between two concentric circles. Annuli and annular sectors are generated by \texttt{radialPolygon()} when the parameter \texttt{radius} is greater than zero.
 
@@ -781,8 +731,7 @@ An annulus is the region between two concentric circles. Annuli and annular sect
 \caption{Plotting an annulus and an annular sector}\label{fig:radialPolygon-annuli}
 \end{figure}
 
-\hypertarget{horizons}{%
-\subsubsection{Horizons}\label{horizons}}
+\subsubsection{Horizons}\label{horizons}
 
 Horizons have one circular edge, and one that represents data, they are named as they often resemble a landscape or cityscape horizon. The example below uses a generated sine pattern to form the data edge.
 
@@ -834,16 +783,13 @@ The inner edge can be used to show data by swapping the order of the angle and r
 
 The \texttt{yearlyPlot()} function uses two horizon plots, with a shared data edge.
 
-\hypertarget{polygons}{%
-\subsubsection{Polygons}\label{polygons}}
+\subsubsection{Polygons}\label{polygons}
 
-\hypertarget{empty-plots}{%
-\section{Empty plots}\label{empty-plots}}
+\section{Empty plots}\label{empty-plots}
 
 The uses of daily and yearly plots extend beyond linking data to earthly cycles. The following functions provide the basic coordinate system without any data plotted (these functions are used intenally by \texttt{dielPlot()} and \texttt{yearlyPlot()} to establish their coordinate system).
 
-\hypertarget{emptydiel}{%
-\subsection{\texorpdfstring{\texttt{emptyDiel()}}{emptyDiel()}}\label{emptydiel}}
+\subsection{\texorpdfstring{\texttt{emptyDiel()}}{emptyDiel()}}\label{emptydiel}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -860,8 +806,7 @@ The uses of daily and yearly plots extend beyond linking data to earthly cycles.
 \caption{An empty dielPlot().}\label{fig:emptyDiel}
 \end{figure}
 
-\hypertarget{emptyyearly}{%
-\subsection{\texorpdfstring{\texttt{emptyYearly()}}{emptyYearly()}}\label{emptyyearly}}
+\subsection{\texorpdfstring{\texttt{emptyYearly()}}{emptyYearly()}}\label{emptyyearly}
 
 The \texttt{emptyYearly()} function takes an option \texttt{year} parameter that automatically adjusts the grid positions for leap years, although the visual effect is marginal.
 
@@ -880,18 +825,15 @@ The \texttt{emptyYearly()} function takes an option \texttt{year} parameter that
 \caption{An empty yearlyPlot().}\label{fig:emptyYearly}
 \end{figure}
 
-\hypertarget{adding-to-cyclical}{%
-\section{Adding data to the visualisation}\label{adding-to-cyclical}}
+\section{Adding data to the visualisation}\label{adding-to-cyclical}
 
-\hypertarget{periodic-data-rings}{%
-\subsection{Periodic data: rings}\label{periodic-data-rings}}
+\subsection{Periodic data: rings}\label{periodic-data-rings}
 
 The ring functions (\texttt{dielRing()},\ldots) plot ring segments on top of a base cyclical plot. These rings are useful for showing typical periods of activity for a species, or events that happen continuously for a specified period of time.
 
 By defaults the limits for the rings are \texttt{1,2} for use with a \emph{core} type plot, but this can be changed by specifying the \texttt{limits} parameter to the ring function. Similarly, the plot legend may be removed with the paramater \texttt{legend=FALSE}.
 
-\hypertarget{dielrings}{%
-\subsubsection{\texorpdfstring{\texttt{dielRings()}}{dielRings()}}\label{dielrings}}
+\subsubsection{\texorpdfstring{\texttt{dielRings()}}{dielRings()}}\label{dielrings}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -935,13 +877,11 @@ By defaults the limits for the rings are \texttt{1,2} for use with a \emph{core}
 \caption{A 'ring' diel plot with diel rings.}\label{fig:diel-plot-rings-2}
 \end{figure}
 
-\hypertarget{periodic-data-horizons}{%
-\subsection{Periodic data: horizons}\label{periodic-data-horizons}}
+\subsection{Periodic data: horizons}\label{periodic-data-horizons}
 
 In this example we will plot the average monthly minimum and maximum temperatures for Lyme Regis, UK onto a \texttt{yearlyPlot()}. This example introduces three small helper functions; \texttt{yearlyLabels()}, \texttt{yearlyPositions()} and \texttt{circularise()}.
 
-\hypertarget{yearlylabels-and-yearlypositions}{%
-\subsubsection{\texorpdfstring{\texttt{yearlyLabels()} and \texttt{yearlyPositions}}{yearlyLabels() and yearlyPositions}}\label{yearlylabels-and-yearlypositions}}
+\subsubsection{\texorpdfstring{\texttt{yearlyLabels()} and \texttt{yearlyPositions}}{yearlyLabels() and yearlyPositions}}\label{yearlylabels-and-yearlypositions}
 
 These two functions are closely related, and used internally by \texttt{SonicScrewdriveR} to label a yearly plot.
 
@@ -1010,8 +950,7 @@ If we now plot this data we see that the output is not quite a complete ring or 
 \caption{Horizon data plot without circularise().}\label{fig:lyme-temp-1}
 \end{figure}
 
-\hypertarget{circularise}{%
-\subsubsection{\texorpdfstring{\texttt{circularise()}}{circularise()}}\label{circularise}}
+\subsubsection{\texorpdfstring{\texttt{circularise()}}{circularise()}}\label{circularise}
 
 In order to join the horizons into a complete ring we can use the \texttt{circularise()} function on the angle and temperature vectors.
 
@@ -1047,11 +986,9 @@ In order to join the horizons into a complete ring we can use the \texttt{circul
 \caption{Horizon data plot with circularise().}\label{fig:lyme-temp-2}
 \end{figure}
 
-\hypertarget{helper-functions}{%
-\subsection{Helper functions}\label{helper-functions}}
+\subsection{Helper functions}\label{helper-functions}
 
-\hypertarget{dielfraction}{%
-\subsubsection{\texorpdfstring{\texttt{dielFraction()}}{dielFraction()}}\label{dielfraction}}
+\subsubsection{\texorpdfstring{\texttt{dielFraction()}}{dielFraction()}}\label{dielfraction}
 
 The \texttt{dielFraction()} function is used to convert a POSIX time, or a time in \texttt{HHMM} string format, into a radial fraction. This function is called by \texttt{dielPlot()} and \texttt{dielRings()}. By default the output is multiplied by 2π to output a position round a circle.
 
@@ -1063,7 +1000,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2024-01-14 14:55:24 GMT"
+## [1] "2024-01-24 19:11:32 GMT"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1074,7 +1011,7 @@ The \texttt{dielFraction()} function is used to convert a POSIX time, or a time 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.906954
+## [1] 5.024525
 \end{verbatim}
 
 The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
@@ -1087,7 +1024,7 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2024-01-14 14:55:24 GMT"
+## [1] "2024-01-24 19:11:32 GMT"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1098,11 +1035,10 @@ The raw fraction can be specified using the parameter \texttt{unit="fraction"}.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.6218115
+## [1] 0.7996782
 \end{verbatim}
 
-\hypertarget{yearlyfraction}{%
-\subsubsection{\texorpdfstring{\texttt{yearlyFraction()}}{yearlyFraction()}}\label{yearlyfraction}}
+\subsubsection{\texorpdfstring{\texttt{yearlyFraction()}}{yearlyFraction()}}\label{yearlyfraction}
 
 Similarly to \texttt{dielFraction()}, \texttt{yearlyFraction()} by default returns a fraction of a cycle. It can take either a number representing a day of the year, or an object that can be coerced into \texttt{POSIXlt} format.
 
@@ -1125,7 +1061,7 @@ Similarly to \texttt{dielFraction()}, \texttt{yearlyFraction()} by default retur
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2024-01-14"
+## [1] "2024-01-24"
 \end{verbatim}
 
 \begin{Shaded}
@@ -1136,11 +1072,10 @@ Similarly to \texttt{dielFraction()}, \texttt{yearlyFraction()} by default retur
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.2237847
+## [1] 0.3959267
 \end{verbatim}
 
-\hypertarget{interactive-plots}{%
-\section{Interactive Plots}\label{interactive-plots}}
+\section{Interactive Plots}\label{interactive-plots}
 
 These plots can be used to create Shiny apps
 
@@ -1150,17 +1085,13 @@ These plots can be used to create Shiny apps
   \href{https://shiny.ebaker.me.uk/shiny-diel/}{shiny-diel} is an example that shows diel plots for a number of locations, and can be animated using the play button under the date slider.
 \end{itemize}
 
-\hypertarget{displaying-annotations}{%
-\chapter{Displaying annotations}\label{displaying-annotations}}
+\chapter{Displaying annotations}\label{displaying-annotations}
 
-\hypertarget{shiny-interactive-web-apps}{%
-\chapter{Shiny: Interactive Web Apps}\label{shiny-interactive-web-apps}}
+\chapter{Shiny: Interactive Web Apps}\label{shiny-interactive-web-apps}
 
-\hypertarget{the-future}{%
-\chapter{The Future}\label{the-future}}
+\chapter{The Future}\label{the-future}
 
-\hypertarget{acknowledgements}{%
-\chapter{Acknowledgements}\label{acknowledgements}}
+\chapter{Acknowledgements}\label{acknowledgements}
 
 For discussions around visualisation as part of the Urban Nature Project: Chris Raper, John Tweddle.
 

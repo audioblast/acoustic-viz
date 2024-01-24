@@ -25,10 +25,11 @@
 \contentsline {chapter}{\numberline {4}Static digital images}{15}{chapter.4}%
 \contentsline {section}{\numberline {4.1}The time domain}{15}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Oscillograms}{15}{subsection.4.1.1}%
-\contentsline {section}{\numberline {4.2}The frequency domain}{16}{section.4.2}%
+\contentsline {subsubsection}{\numberline {4.1.1.1}Relation to time series}{16}{subsubsection.4.1.1.1}%
+\contentsline {section}{\numberline {4.2}The frequency domain}{17}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Plotting a spectrum}{17}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Plotting a spectrogram}{17}{subsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.2.1}Settings for a FFT}{17}{subsubsection.4.2.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Plotting a spectrogram}{18}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}Settings for a FFT}{18}{subsubsection.4.2.2.1}%
 \contentsline {chapter}{\numberline {5}Dynamic digital visualisations}{19}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Video spectrograms}{19}{section.5.1}%
 \contentsline {section}{\numberline {5.2}zcjs: Zero-crossing File Visualisation}{19}{section.5.2}%

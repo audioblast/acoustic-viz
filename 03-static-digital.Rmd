@@ -33,6 +33,10 @@ The `oscillo()` function from `seewave` handles the labelling of axes for us and
 oscillo(sheep)
 ```
 
+#### Relation to time series
+
+The time series plot of a variable against time is often used in statistical analysis of time series. The oscillogram is in fact a time series plot, in this case a plot of a series of amplitude (air pressure) measurements against time. 
+
 ## The frequency domain
 
 The _frequency domain_ covers analyses in which frequency data are extracted from the sampled waveform, typically using the _Fast Fourier Transform_ algorithm.
